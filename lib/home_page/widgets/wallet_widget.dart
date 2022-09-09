@@ -13,36 +13,52 @@ class WalletWidget extends HookConsumerWidget {
     Size size = MediaQuery.of(context).size;
     final viewWalletValue = ref.watch(viewWalletValueProvider.state);
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+      padding: EdgeInsets.only(
+        top: size.height * .04,
+        bottom: size.height * .1,
+        left: size.width * .06,
+        right: size.width * .06,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text('Carteira',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: size.height * .03)),
-              IconButton(
-                padding: EdgeInsets.zero,
-                constraints: const BoxConstraints(),
-                onPressed: () {
-                  viewWalletValue.state = !viewWalletValue.state;
-                },
-                icon: (viewWalletValue.state)
-                    ? const Icon(
-                        Icons.visibility,
-                        size: 22,
-                      )
-                    : const Icon(Icons.visibility_off, size: 22),
-              )
-            ],
+          Padding(
+            padding: const EdgeInsets.only(),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Cripto',
+                    style: TextStyle(
+                        color: const Color.fromARGB(255, 244, 43, 87),
+                        fontWeight: FontWeight.bold,
+                        fontSize: size.height * .045)),
+                IconButton(
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(),
+                  onPressed: () {
+                    viewWalletValue.state = !viewWalletValue.state;
+                  },
+                  icon: (viewWalletValue.state)
+                      ? Icon(
+                          Icons.visibility,
+                          size: size.height * .04,
+                        )
+                      : const Icon(Icons.visibility_off, size: 22),
+                )
+              ],
+            ),
           ),
           Text((viewWalletValue.state) ? 'US\$ 1.000,00' : "******",
               style: TextStyle(
-                  fontWeight: FontWeight.bold, fontSize: size.height * .03)),
+                  fontWeight: FontWeight.bold, fontSize: size.height * .045)),
+          Text(
+            "Valor total de moedas",
+            style: TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.w500,
+                color: Colors.grey.shade600),
+          )
         ],
       ),
     );

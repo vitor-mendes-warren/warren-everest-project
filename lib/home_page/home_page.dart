@@ -10,23 +10,35 @@ class HomePage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          color: Colors.white,
-          height: size.height,
-          width: size.width,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              //TODO implementar um formatador monetário e o valor da carteira por referência.
-
-              const WalletWidget(),
-              Container(
-                width: size.width,
-                height: 200,
-                color: Colors.red,
-              )
-            ],
-          ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //TODO implementar um formatador monetário e o valor da carteira por referência.
+            const WalletWidget(),
+            Expanded(
+              child: ListView.builder(
+                itemBuilder: (context, index) {
+                  return Container(
+                    height: size.height * .13,
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      border: Border(
+                        top: BorderSide(
+                          color: Color.fromARGB(255, 227, 228, 235),
+                          width: 2,
+                        ),
+                      ),
+                    ),
+                    child: Row(children: const [
+                      CircleAvatar(
+                        radius: 30,
+                      )
+                    ]),
+                  );
+                },
+              ),
+            )
+          ],
         ),
       ),
     );
