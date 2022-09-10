@@ -14,7 +14,7 @@ class WalletWidget extends HookConsumerWidget {
     final viewWalletValue = ref.watch(viewWalletValueProvider.state);
     return Padding(
       padding: EdgeInsets.only(
-        top: size.height * .04,
+        top: size.height * .02,
         bottom: size.height * .1,
         left: size.width * .06,
         right: size.width * .06,
@@ -49,7 +49,7 @@ class WalletWidget extends HookConsumerWidget {
               ],
             ),
           ),
-          Text((viewWalletValue.state) ? 'US\$ 1.000,00' : "******",
+          Text((viewWalletValue.state) ? 'R\$ 14.798,00' : "******",
               style: TextStyle(
                   fontWeight: FontWeight.bold, fontSize: size.height * .045)),
           Text(

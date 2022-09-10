@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
               child: ListView.builder(
                 itemBuilder: (context, index) {
                   return Container(
-                    height: size.height * .13,
+                    height: size.height * .12,
                     decoration: const BoxDecoration(
                       color: Colors.white,
                       border: Border(
@@ -29,11 +29,56 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    child: Row(children: const [
-                      CircleAvatar(
-                        radius: 30,
-                      )
-                    ]),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: size.width * .04,
+                          vertical: size.height * .02),
+                      child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Expanded(
+                              flex: 1,
+                              child: CircleAvatar(
+                                radius: 30,
+                              ),
+                            ),
+                            Expanded(
+                              flex: 4,
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: const [
+                                      Text("BTC",
+                                          style: TextStyle(fontSize: 21)),
+                                      Text("R\$ 6.557,00"),
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: const [
+                                      Text("Bitcoin"),
+                                      Text("0,65 BC")
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  top: size.height * .015,
+                                  left: size.width * .04),
+                              child: Icon(
+                                Icons.arrow_forward_ios_sharp,
+                                size: 14,
+                              ),
+                            )
+                          ]),
+                    ),
                   );
                 },
               ),
