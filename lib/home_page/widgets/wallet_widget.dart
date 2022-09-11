@@ -15,7 +15,7 @@ class WalletWidget extends HookConsumerWidget {
     return Padding(
       padding: EdgeInsets.only(
         top: size.height * .02,
-        bottom: size.height * .1,
+        bottom: size.height * .05,
         left: size.width * .06,
         right: size.width * .06,
       ),
@@ -30,8 +30,8 @@ class WalletWidget extends HookConsumerWidget {
               children: [
                 Text('Cripto',
                     style: TextStyle(
+                        fontFamily: "Montserrat",
                         color: const Color.fromARGB(255, 244, 43, 87),
-                        fontWeight: FontWeight.bold,
                         fontSize: size.height * .045)),
                 IconButton(
                   padding: EdgeInsets.zero,
@@ -51,13 +51,13 @@ class WalletWidget extends HookConsumerWidget {
           ),
           Text((viewWalletValue.state) ? 'R\$ 14.798,00' : "******",
               style: TextStyle(
-                  fontWeight: FontWeight.bold, fontSize: size.height * .045)),
-          Text(
+                  fontFamily: "Montserrat", fontSize: size.height * .045)),
+          const Text(
             "Valor total de moedas",
             style: TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.w500,
-                color: Colors.grey.shade600),
+                color: Color.fromARGB(255, 117, 118, 128)),
           )
         ],
       ),
