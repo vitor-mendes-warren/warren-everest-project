@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:warren_task_one/home_page/widgets/bottom_nav_bar.dart';
 
 import 'widgets/wallet_widget.dart';
 
@@ -10,51 +11,7 @@ class HomePage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
-      bottomNavigationBar: Container(
-        height: size.height * .08,
-        decoration: const BoxDecoration(
-          color: Colors.white,
-          border: Border(
-            top: BorderSide(
-              color: Color.fromARGB(255, 227, 228, 235),
-              width: 2,
-            ),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Image(
-                  height: size.height * 0.03,
-                  image: const AssetImage('assets/image/warren_icon_pink.png'),
-                  fit: BoxFit.cover,
-                ),
-                Text(
-                  'Portfólio',
-                  style: TextStyle(fontSize: size.width * 0.03),
-                )
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Image(
-                  height: size.height * 0.03,
-                  image: const AssetImage('assets/image/crypto_icon_white.png'),
-                  fit: BoxFit.cover,
-                ),
-                Text(
-                  'Movimentações',
-                  style: TextStyle(fontSize: size.width * 0.03),
-                )
-              ],
-            ),
-          ],
-        ),
-      ),
+      bottomNavigationBar: const BottomNavBar(),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
