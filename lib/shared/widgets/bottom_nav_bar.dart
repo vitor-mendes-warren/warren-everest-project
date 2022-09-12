@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:warren_task_one/core/assets.dart';
 import 'package:warren_task_one/core/provider.dart';
 
 class BottomNavBar extends HookConsumerWidget {
@@ -36,9 +37,9 @@ class BottomNavBar extends HookConsumerWidget {
                 children: [
                   Image(
                     height: size.height * 0.03,
-                    image: AssetImage((pageIndex.state == 1)
-                        ? 'assets/image/warren_icon_white.png'
-                        : 'assets/image/warren_icon_pink.png'),
+                    image: AssetImage((pageIndex.state == 0)
+                        ? imgWarrenMagenta
+                        : imgWarrenWhite),
                     fit: BoxFit.cover,
                   ),
                   Text(
@@ -61,8 +62,8 @@ class BottomNavBar extends HookConsumerWidget {
                   Image(
                     height: size.height * 0.03,
                     image: AssetImage((pageIndex.state == 1)
-                        ? 'assets/image/crypto_icon_pink.png'
-                        : 'assets/image/crypto_icon_white.png'),
+                        ? imgCryptoMagenta
+                        : imgCryptoWhite),
                     fit: BoxFit.cover,
                   ),
                   Text(

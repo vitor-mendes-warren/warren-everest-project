@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:warren_task_one/home_page/widgets/crypto_item.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:warren_task_one/core/provider.dart';
+import 'package:warren_task_one/presenter/ui/home_page/widgets/crypto_item.dart';
 
-class CryptoList extends StatelessWidget {
+class CryptoList extends HookConsumerWidget {
   const CryptoList({
     Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final walletController = ref.watch(walletControllerProvider);
     return Expanded(
       child: ListView.builder(
-        itemCount: 1,
+        itemCount: walletController.coins.length,
         itemBuilder: (context, index) {
-          return const CryptoItem();
+          return CryptoItem(
+            coin: walletController.coins[index],
+          );
         },
       ),
     );

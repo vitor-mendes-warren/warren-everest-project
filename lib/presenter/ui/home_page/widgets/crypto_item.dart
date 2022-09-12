@@ -2,20 +2,20 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
+
 import 'package:warren_task_one/core/provider.dart';
+import 'package:warren_task_one/data/model/coin_model.dart';
 
 class CryptoItem extends HookConsumerWidget {
+  final CoinModel coin;
   const CryptoItem({
-    Key? key,
-    required this.size,
-  }) : super(key: key);
-
-  final Size size;
-
+    super.key,
+    required this.coin,
+  });
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final viewWalletValue = ref.watch(viewWalletValueProvider.state);
-
+    Size size = MediaQuery.of(context).size;
     return Container(
       height: size.height * .12,
       decoration: const BoxDecoration(
@@ -36,10 +36,9 @@ class CryptoItem extends HookConsumerWidget {
             child: Center(
               child: Container(
                 height: size.height * .07,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    image: DecorationImage(
-                        image: AssetImage('assets/image/BTC.png'))),
+                    image: DecorationImage(image: AssetImage(coin.image))),
               ),
             ),
           ),
@@ -51,8 +50,9 @@ class CryptoItem extends HookConsumerWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text("BTC", style: TextStyle(fontSize: 21)),
+                    Text(coin.ticker, style: const TextStyle(fontSize: 21)),
                     AnimatedContainer(
+                        alignment: Alignment.centerRight,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(7),
                           color: (viewWalletValue.state)
@@ -61,13 +61,13 @@ class CryptoItem extends HookConsumerWidget {
                         ),
                         duration: const Duration(milliseconds: 700),
                         width: size.width * .24,
-                        height: size.height * .03,
+                        height: size.height * .026,
                         child: Visibility(
                             visible: (viewWalletValue.state),
                             child: AutoSizeText(
                                 NumberFormat.simpleCurrency(
                                         locale: 'pt_BR', decimalDigits: 2)
-                                    .format(6557),
+                                    .format(coin.userBalance),
                                 style: const TextStyle(
                                   color: Colors.black,
                                   fontSize: 21,
@@ -77,13 +77,14 @@ class CryptoItem extends HookConsumerWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      "Bitcoin",
-                      style: TextStyle(
+                    Text(
+                      coin.name,
+                      style: const TextStyle(
                           fontSize: 16,
                           color: Color.fromARGB(255, 117, 118, 128)),
                     ),
                     AnimatedContainer(
+                        alignment: Alignment.centerRight,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(7),
                           color: (viewWalletValue.state)
@@ -91,19 +92,17 @@ class CryptoItem extends HookConsumerWidget {
                               : const Color.fromARGB(255, 161, 161, 161),
                         ),
                         duration: const Duration(milliseconds: 700),
-                        width: size.width * .16,
-                        height: size.height * .025,
+                        width: size.width * .20,
+                        height: size.height * .023,
                         child: Visibility(
                             visible: (viewWalletValue.state),
-                            child: const AutoSizeText('0,65 BTC',
-                                style: TextStyle(
+                            child: AutoSizeText(
+                                maxLines: 1,
+                                "${coin.percent.toStringAsFixed(2)} ${coin.ticker}",
+                                style: const TextStyle(
                                   color: Color.fromARGB(255, 117, 118, 128),
                                   fontSize: 16,
                                 )))),
-                    // const Text("0,65 BC",
-                    //     style: TextStyle(
-                    //         fontSize: 16,
-                    //         color: Color.fromARGB(255, 117, 118, 128)))
                   ],
                 ),
               ],

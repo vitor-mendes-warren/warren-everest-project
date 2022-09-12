@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
-import '../../core/provider.dart';
+import '../../../../core/provider.dart';
 
 class WalletHeader extends HookConsumerWidget {
   const WalletHeader({
@@ -14,12 +14,14 @@ class WalletHeader extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     Size size = MediaQuery.of(context).size;
     final viewWalletValue = ref.watch(viewWalletValueProvider.state);
+    final walletController = ref.watch(walletControllerProvider);
+
     return Padding(
       padding: EdgeInsets.only(
+        right: size.height * .01,
         top: size.height * .02,
         bottom: size.height * .05,
         left: size.width * .06,
-        right: size.width * .06,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,21 +38,13 @@ class WalletHeader extends HookConsumerWidget {
                         color: const Color.fromARGB(255, 244, 43, 87),
                         fontSize: size.height * .045)),
                 IconButton(
-                  padding: EdgeInsets.zero,
-                  constraints: const BoxConstraints(),
-                  onPressed: () {
-                    viewWalletValue.state = !viewWalletValue.state;
-                  },
-                  icon: (viewWalletValue.state)
-                      ? Icon(
-                          Icons.visibility,
-                          size: size.height * .04,
-                        )
-                      : Icon(
-                          Icons.visibility_off,
-                          size: size.height * .04,
-                        ),
-                )
+                    onPressed: () {
+                      viewWalletValue.state = !viewWalletValue.state;
+                    },
+                    icon: Icon(
+                      getVisibilityIconData(viewWalletValue.state),
+                      size: size.height * 0.04,
+                    ))
               ],
             ),
           ),
@@ -63,13 +57,13 @@ class WalletHeader extends HookConsumerWidget {
               ),
               duration: const Duration(milliseconds: 700),
               width: size.width * 0.55,
-              height: size.height * .056,
+              height: size.height * .050,
               child: Visibility(
                   visible: (viewWalletValue.state),
                   child: AutoSizeText(
                       NumberFormat.simpleCurrency(
                               locale: 'pt_BR', decimalDigits: 2)
-                          .format(14798),
+                          .format(walletController.getTotalBalance()),
                       style: TextStyle(
                         color: Colors.black,
                         fontFamily: "Montserrat",
@@ -86,4 +80,10 @@ class WalletHeader extends HookConsumerWidget {
       ),
     );
   }
+
+  Color getContainerValuesColor(bool visible) =>
+      visible ? Colors.white : const Color.fromARGB(255, 161, 161, 161);
+
+  IconData getVisibilityIconData(bool visible) =>
+      visible ? Icons.visibility : Icons.visibility_off;
 }
