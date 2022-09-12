@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
+import 'package:warren_task_one/presenter/controller/wallet_controller.dart';
 
 import '../../../../core/provider.dart';
 
@@ -42,7 +43,8 @@ class WalletHeader extends HookConsumerWidget {
                       viewWalletValue.state = !viewWalletValue.state;
                     },
                     icon: Icon(
-                      getVisibilityIconData(viewWalletValue.state),
+                      WalletController.getVisibilityIconData(
+                          viewWalletValue.state),
                       size: size.height * 0.04,
                     ))
               ],
@@ -50,11 +52,9 @@ class WalletHeader extends HookConsumerWidget {
           ),
           AnimatedContainer(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(7),
-                color: (viewWalletValue.state)
-                    ? Colors.white
-                    : const Color.fromARGB(255, 161, 161, 161),
-              ),
+                  borderRadius: BorderRadius.circular(7),
+                  color: WalletController.getContainerValueColor(
+                      viewWalletValue.state)),
               duration: const Duration(milliseconds: 700),
               width: size.width * 0.55,
               height: size.height * .050,
@@ -80,10 +80,4 @@ class WalletHeader extends HookConsumerWidget {
       ),
     );
   }
-
-  Color getContainerValuesColor(bool visible) =>
-      visible ? Colors.white : const Color.fromARGB(255, 161, 161, 161);
-
-  IconData getVisibilityIconData(bool visible) =>
-      visible ? Icons.visibility : Icons.visibility_off;
 }

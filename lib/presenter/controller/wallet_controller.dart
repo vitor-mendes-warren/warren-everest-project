@@ -1,6 +1,6 @@
-import 'package:flutter/foundation.dart';
-import 'package:warren_task_one/data/model/coin_model.dart';
-import 'package:warren_task_one/data/repository/coin_repository.dart';
+import 'package:flutter/material.dart';
+import '../../data/model/coin_model.dart';
+import '../../data/repository/coin_repository.dart';
 
 class WalletController extends ChangeNotifier {
   CoinRepository coinRepo;
@@ -19,4 +19,10 @@ class WalletController extends ChangeNotifier {
     }
     return total;
   }
+
+  static Color getContainerValueColor(bool visible) =>
+      visible ? Colors.white : const Color.fromARGB(255, 161, 161, 161);
+
+  static IconData getVisibilityIconData(bool visible) =>
+      visible ? Icons.visibility : Icons.visibility_off;
 }
