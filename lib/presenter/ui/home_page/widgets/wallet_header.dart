@@ -1,10 +1,12 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:intl/intl.dart';
 
 import '../../core/provider.dart';
 
-class WalletWidget extends HookConsumerWidget {
-  const WalletWidget({
+class WalletHeader extends HookConsumerWidget {
+  const WalletHeader({
     Key? key,
   }) : super(key: key);
 
@@ -52,41 +54,27 @@ class WalletWidget extends HookConsumerWidget {
               ],
             ),
           ),
-
           AnimatedContainer(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(7),
                 color: (viewWalletValue.state)
                     ? Colors.white
-                    : const Color.fromARGB(255, 93, 93, 103),
+                    : const Color.fromARGB(255, 161, 161, 161),
               ),
-              duration: const Duration(milliseconds: 400),
-              width: size.width * 0.6,
-              height: size.height * .055,
-              child: (viewWalletValue.state)
-                  ? Text('R\$ 14.798,00',
+              duration: const Duration(milliseconds: 700),
+              width: size.width * 0.55,
+              height: size.height * .056,
+              child: Visibility(
+                  visible: (viewWalletValue.state),
+                  child: AutoSizeText(
+                      NumberFormat.simpleCurrency(
+                              locale: 'pt_BR', decimalDigits: 2)
+                          .format(14798),
                       style: TextStyle(
-                          color: Colors.black,
-                          // color: (viewWalletValue.state)
-                          //     ? Colors.black
-                          //     : Colors.white,
-                          fontFamily: "Montserrat",
-                          fontSize: size.height * .045))
-                  : null),
-
-          // Visibility(
-          //   visible: (viewWalletValue.state),
-          //   replacement: Container(
-          //     height: size.height * .045,
-          //     color: Colors.blue,
-          //   ),
-          //   child: Text('R\$ 14.798,00',
-          //       style: TextStyle(
-          //           fontFamily: "Montserrat", fontSize: size.height * .045)),
-          // ),
-          // Text((viewWalletValue.state) ? 'R\$ 14.798,00' : "******",
-          //     style: TextStyle(
-          //         fontFamily: "Montserrat", fontSize: size.height * .045)),
+                        color: Colors.black,
+                        fontFamily: "Montserrat",
+                        fontSize: size.height * .045,
+                      )))),
           const Text(
             "Valor total de moedas",
             style: TextStyle(
