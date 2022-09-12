@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/core/assets.dart';
-import 'package:warren_task_one/core/provider.dart';
+import '../../core/assets.dart';
+import '../../core/provider.dart';
 
 class BottomNavBar extends HookConsumerWidget {
   const BottomNavBar({

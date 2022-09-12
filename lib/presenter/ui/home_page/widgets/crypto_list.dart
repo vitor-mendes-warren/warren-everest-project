@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/core/provider.dart';
-import 'package:warren_task_one/presenter/ui/home_page/widgets/crypto_item.dart';
+
+import '../../../../core/provider.dart';
+import 'crypto_item.dart';
 
 class CryptoList extends HookConsumerWidget {
   const CryptoList({

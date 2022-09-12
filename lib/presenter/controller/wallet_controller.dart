@@ -25,4 +25,8 @@ class WalletController extends ChangeNotifier {
 
   static IconData getVisibilityIconData(bool visible) =>
       visible ? Icons.visibility : Icons.visibility_off;
+
+  static String getFormatedPercentage(double percentage, String ticker) {
+    return "${percentage.toStringAsFixed(2)} $ticker";
+  }
 }

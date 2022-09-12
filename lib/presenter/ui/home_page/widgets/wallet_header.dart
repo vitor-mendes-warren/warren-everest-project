@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:warren_task_one/presenter/controller/wallet_controller.dart';
+import '../../../controller/wallet_controller.dart';
 
 import '../../../../core/provider.dart';
 

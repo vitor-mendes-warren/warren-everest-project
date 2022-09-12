@@ -1,10 +1,14 @@
-import 'package:warren_task_one/core/assets.dart';
-import 'package:warren_task_one/data/model/coin_model.dart';
+import '../../core/assets.dart';
+import '../model/coin_model.dart';
 
 class CoinRepository {
   List<CoinModel> getAllUserCoin() {
     List<CoinModel> coins = [];
-    //vitor - this code bloc will be used to api get resquest
+    /*
+    vitor - this code block will be used to api get request
+    the mocked prices of the coins was from 09/12/2022
+    */
+
     coins.add(CoinModel(
         name: 'Bitcoin',
         ticker: 'BTC',

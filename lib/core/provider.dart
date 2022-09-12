@@ -1,10 +1,7 @@
-import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'package:warren_task_one/data/model/coin_model.dart';
-import 'package:warren_task_one/presenter/controller/wallet_controller.dart';
-
 import '../data/repository/coin_repository.dart';
+import '../presenter/controller/wallet_controller.dart';
 
 final viewWalletValueProvider = StateProvider<bool>(
   (ref) => false,

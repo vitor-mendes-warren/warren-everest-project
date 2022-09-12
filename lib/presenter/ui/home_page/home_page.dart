@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:warren_task_one/presenter/ui/home_page/widgets/crypto_list.dart';
-import 'package:warren_task_one/shared/widgets/bottom_nav_bar.dart';
 
+import '../../../shared/widgets/bottom_nav_bar.dart';
+import 'widgets/crypto_list.dart';
 import 'widgets/wallet_header.dart';
 
 class HomePage extends StatelessWidget {
