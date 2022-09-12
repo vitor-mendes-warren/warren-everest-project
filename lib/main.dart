@@ -1,14 +1,9 @@
-import 'dart:js';
-
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/home_page/home_page.dart';
+import 'presenter/ui/home_page/home_page.dart';
 
 void main() {
-  runApp(DevicePreview(builder: (context) {
-    return const MyApp();
-  }));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -21,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(),
-      home: const WalletPage(),
+      home: const HomePage(),
     ));
   }
 }
