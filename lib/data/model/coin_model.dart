@@ -1,10 +1,10 @@
-class Coin {
+class CoinModel {
   String name;
   String ticker;
   String image;
   double price;
   double percent;
-  Coin({
+  CoinModel({
     required this.name,
     required this.ticker,
     required this.image,
