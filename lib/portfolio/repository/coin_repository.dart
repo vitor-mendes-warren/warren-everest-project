@@ -19,6 +19,12 @@ class CoinRepository {
         image: imgEthereum,
         userBalance: Decimal.parse('1200.20'),
         coinPrice: Decimal.parse('8960.35')));
+    // coins.add(CoinModel(
+    //     name: 'fodase?',
+    //     ticker: 'fdc',
+    //     image: imgEthereum,
+    //     userBalance: Decimal.parse('20'),
+    //     coinPrice: Decimal.parse('8960.35')));
     coins.add(CoinModel(
         name: 'Dogecoin',
         ticker: 'DOGE',

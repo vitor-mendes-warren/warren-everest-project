@@ -16,7 +16,7 @@ class WalletController extends ChangeNotifier {
   Decimal getTotalBalance() {
     Decimal total = Decimal.fromInt(0);
     for (CoinModel coin in coins) {
-      total = total + coin.userBalance;
+      total += coin.userBalance;
     }
     return total;
   }
