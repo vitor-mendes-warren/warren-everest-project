@@ -3,10 +3,10 @@ import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:warren_task_one/presenter/controller/wallet_controller.dart';
+import 'package:warren_task_one/portfolio/presenter/controller/wallet_controller.dart';
 
-import '../../../../shared/provider/provider.dart';
-import '../../../../data/model/coin_model.dart';
+import '../../../../../shared/provider/provider.dart';
+import '../../../../model/coin_model.dart';
 
 class CryptoItem extends HookConsumerWidget {
   final CoinModel coin;
@@ -20,7 +20,7 @@ class CryptoItem extends HookConsumerWidget {
     Size size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () {
-        //TODO implement detail page navigation
+        //teste
       },
       child: Container(
         height: size.height * .12,

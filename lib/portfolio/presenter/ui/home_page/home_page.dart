@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../shared/widget/bottom_nav_bar.dart';
+import '../../../../shared/widget/bottom_nav_bar.dart';
 import 'widgets/crypto_list.dart';
 import 'widgets/wallet_header.dart';
 
