@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
@@ -63,7 +64,8 @@ class WalletHeader extends HookConsumerWidget {
                   child: AutoSizeText(
                       NumberFormat.simpleCurrency(
                               locale: 'pt_BR', decimalDigits: 2)
-                          .format(walletController.getTotalBalance()),
+                          .format(
+                              DecimalIntl(walletController.getTotalBalance())),
                       style: TextStyle(
                         color: Colors.black,
                         fontFamily: "Montserrat",

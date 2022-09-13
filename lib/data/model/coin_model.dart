@@ -1,9 +1,11 @@
+import 'package:decimal/decimal.dart';
+
 class CoinModel {
   String name;
   String ticker;
   String image;
-  double userBalance;
-  double coinPrice;
+  Decimal userBalance;
+  Decimal coinPrice;
   late double percent;
 
   CoinModel({
@@ -17,6 +19,6 @@ class CoinModel {
   }
 
   double getPercentageCoin() {
-    return ((userBalance * 100) / coinPrice) / 100;
+    return (userBalance.toDouble() * 100) / coinPrice.toDouble() / 100;
   }
 }
