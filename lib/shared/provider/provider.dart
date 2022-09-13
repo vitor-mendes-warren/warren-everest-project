@@ -12,4 +12,5 @@ final pageIndexProvider = StateProvider<int>(
 
 final walletControllerProvider = ChangeNotifierProvider(
   (ref) => WalletController(CoinRepository()),
+  //teste
 );
