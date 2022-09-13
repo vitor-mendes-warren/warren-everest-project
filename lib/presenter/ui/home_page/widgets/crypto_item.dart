@@ -5,7 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:warren_task_one/presenter/controller/wallet_controller.dart';
 
-import '../../../../core/provider.dart';
+import '../../../../shared/provider/provider.dart';
 import '../../../../data/model/coin_model.dart';
 
 class CryptoItem extends HookConsumerWidget {
