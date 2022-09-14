@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/shared/utils/provider.dart';
+import 'package:warren_task_one/portfolio/provider/provider.dart';
 
 import '../controller/wallet_controller.dart';
 import '../model/coin_model.dart';

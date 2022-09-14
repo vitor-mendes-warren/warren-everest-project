@@ -1,7 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../portfolio/controller/wallet_controller.dart';
-import '../../portfolio/repository/coin_repository.dart';
+import '../controller/wallet_controller.dart';
+import '../repository/coin_repository.dart';
 
 final viewWalletValueProvider = StateProvider<bool>(
   (ref) => false,
