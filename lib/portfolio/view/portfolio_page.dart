@@ -7,6 +7,8 @@ import '../widgets/wallet_header.dart';
 class PortfolioPage extends StatelessWidget {
   const PortfolioPage({Key? key}) : super(key: key);
 
+  static const route = '/portfolio-page';
+
   @override
   Widget build(BuildContext context) {
     return const Scaffold(

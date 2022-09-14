@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'core/app_routes.dart';
 import 'portfolio/view/portfolio_page.dart';
 
 void main() {
@@ -17,6 +18,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(),
       home: const PortfolioPage(),
+      initialRoute: PortfolioPage.route,
+      routes: appRoutes,
     ));
   }
 }
