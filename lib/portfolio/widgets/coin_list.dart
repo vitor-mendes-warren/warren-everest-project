@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../shared/provider/provider.dart';
-import 'crypto_item.dart';
+import '../../shared/utils/provider.dart';
+import 'coin_item.dart';
 
-class CryptoList extends HookConsumerWidget {
-  const CryptoList({
+class CoinList extends HookConsumerWidget {
+  const CoinList({
     Key? key,
   }) : super(key: key);
 
@@ -16,7 +16,7 @@ class CryptoList extends HookConsumerWidget {
       child: ListView.builder(
         itemCount: walletController.coins.length,
         itemBuilder: (context, index) {
-          return CryptoItem(
+          return CoinItem(
             coin: walletController.coins[index],
           );
         },

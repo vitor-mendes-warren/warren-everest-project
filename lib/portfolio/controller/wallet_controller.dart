@@ -1,7 +1,8 @@
 import 'package:decimal/decimal.dart';
 import 'package:flutter/material.dart';
-import '../../data/model/coin_model.dart';
-import '../../data/repository/coin_repository.dart';
+
+import '../model/coin_model.dart';
+import '../repository/coin_repository.dart';
 
 class WalletController extends ChangeNotifier {
   CoinRepository coinRepo;
@@ -16,7 +17,7 @@ class WalletController extends ChangeNotifier {
   Decimal getTotalBalance() {
     Decimal total = Decimal.fromInt(0);
     for (CoinModel coin in coins) {
-      total = total + coin.userBalance;
+      total += coin.userBalance;
     }
     return total;
   }
