@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../utils/assets.dart';
+import 'package:warren_task_one/movements/view/movements_page.dart';
+import 'package:warren_task_one/portfolio/view/portfolio_page.dart';
+
 import '../../portfolio/provider/provider.dart';
+import '../utils/assets.dart';
 
 class BottomNavBar extends HookConsumerWidget {
   const BottomNavBar({
@@ -11,7 +14,6 @@ class BottomNavBar extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     Size size = MediaQuery.of(context).size;
-    final pageIndex = ref.watch(pageIndexProvider.state);
     return Container(
       height: size.height * .08,
       decoration: const BoxDecoration(
@@ -26,55 +28,56 @@ class BottomNavBar extends HookConsumerWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          InkWell(
-            onTap: () {
-              pageIndex.state = 0;
-            },
-            child: SizedBox(
-              width: 100,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image(
-                    height: size.height * 0.03,
-                    image: AssetImage((pageIndex.state == 0)
-                        ? imgWarrenMagenta
-                        : imgWarrenWhite),
-                    fit: BoxFit.cover,
-                  ),
-                  Text(
-                    'Portfólio',
-                    style: TextStyle(fontSize: size.width * 0.03),
-                  )
-                ],
-              ),
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              pageIndex.state = 1;
-            },
-            child: SizedBox(
-              width: 100,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image(
-                    height: size.height * 0.03,
-                    image: AssetImage((pageIndex.state == 1)
-                        ? imgCryptoMagenta
-                        : imgCryptoWhite),
-                    fit: BoxFit.cover,
-                  ),
-                  Text(
-                    'Movimentações',
-                    style: TextStyle(fontSize: size.width * 0.03),
-                  )
-                ],
-              ),
-            ),
-          ),
+          NavBarButton(icons: warrenIcons, page: const PortfolioPage()),
+          NavBarButton(icons: cryptoIcons, page: const BodyPortfolio()),
         ],
+      ),
+    );
+  }
+}
+
+class NavBarButton extends HookConsumerWidget {
+  const NavBarButton({
+    Key? key,
+    required this.icons,
+    required this.page,
+  }) : super(key: key);
+
+  final Set<String> icons;
+  final Widget page;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final pageIndex = ref.watch(pageIndexProvider.state);
+    Size size = MediaQuery.of(context).size;
+    return InkWell(
+      onTap: () {
+        if (page.runtimeType == PortfolioPage) {
+          pageIndex.state = 0;
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const PortfolioPage()));
+        } else {
+          pageIndex.state = 1;
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const MovementsPage()));
+        }
+      },
+      child: SizedBox(
+        width: 100,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Image(
+              height: size.height * 0.03,
+              image: AssetImage(icons.elementAt(pageIndex.state)),
+              fit: BoxFit.cover,
+            ),
+            Text(
+              'Movimentações',
+              style: TextStyle(fontSize: size.width * 0.03),
+            )
+          ],
+        ),
       ),
     );
   }

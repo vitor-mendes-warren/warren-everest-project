@@ -18,3 +18,6 @@ String imgWarrenMagenta = 'assets/image/warren_icon_magenta.png';
 String imgWarrenWhite = 'assets/image/warren_icon_white.png';
 String imgCryptoMagenta = 'assets/image/crypto_icon_magenta.png';
 String imgCryptoWhite = 'assets/image/crypto_icon_white.png';
+
+Set<String> warrenIcons = {imgWarrenMagenta, imgWarrenWhite};
+Set<String> cryptoIcons = {imgCryptoWhite, imgCryptoMagenta};
