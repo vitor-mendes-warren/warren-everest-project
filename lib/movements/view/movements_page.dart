@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:warren_task_one/shared/widget/bottom_nav_bar.dart';
+import 'package:warren_task_one/shared/widget/navigation_bar/bottom_nav_bar.dart';
 
 class MovementsPage extends StatelessWidget {
   static const route = '/movements-page';

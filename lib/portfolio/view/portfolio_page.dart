@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../shared/widget/bottom_nav_bar.dart';
+import '../../shared/widget/navigation_bar/bottom_nav_bar.dart';
 import '../widgets/coin_list.dart';
 import '../widgets/wallet_header.dart';
 
@@ -19,6 +19,7 @@ class PortfolioPage extends StatelessWidget {
   }
 }
 
+//TODO tirar o body daqui
 class BodyPortfolio extends StatelessWidget {
   const BodyPortfolio({
     Key? key,
