@@ -29,7 +29,7 @@ class BottomNavBar extends HookConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           NavBarButton(icons: warrenIcons, page: const PortfolioPage()),
-          NavBarButton(icons: cryptoIcons, page: const BodyPortfolio()),
+          NavBarButton(icons: cryptoIcons, page: const MovementsPage()),
         ],
       ),
     );
@@ -52,15 +52,19 @@ class NavBarButton extends HookConsumerWidget {
     Size size = MediaQuery.of(context).size;
     return InkWell(
       onTap: () {
-        if (page.runtimeType == PortfolioPage) {
-          pageIndex.state = 0;
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const PortfolioPage()));
-        } else {
-          pageIndex.state = 1;
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const MovementsPage()));
-        }
+        // if (pageIndex.state == 0) {
+
+        // }
+        Navigator.push(context, MaterialPageRoute(builder: (context) => page));
+        // if (page.runtimeType == PortfolioPage) {
+        //   pageIndex.state = 0;
+        //   Navigator.push(context,
+        //       MaterialPageRoute(builder: (context) =>  page));
+        // } else {
+        //   pageIndex.state = 1;
+        //   Navigator.push(context,
+        //       MaterialPageRoute(builder: (context) => const MovementsPage()));
+        // }
       },
       child: SizedBox(
         width: 100,
