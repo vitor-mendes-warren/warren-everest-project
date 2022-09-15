@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:warren_task_one/shared/utils/assets.dart';
 
 import '../../../portfolio/provider/provider.dart';
 
@@ -19,7 +20,7 @@ class BottomNavButton extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final pageIndex = ref.watch(pageIndexProvider.state);
     void setPageIndex() {
-      if (pageIndex.state == 1) {
+      if (icons == warrenIcons) {
         pageIndex.state = 0;
       } else {
         pageIndex.state = 1;
