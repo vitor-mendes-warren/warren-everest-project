@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/shared/widget/navigation_bar/scaffold_pattern.dart';
+import 'package:warren_task_one/portfolio/view/portfolio_page.dart';
 import 'core/app_routes.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(),
-      initialRoute: ScaffoldPatten.route,
+      initialRoute: PortfolioPage.route,
       routes: appRoutes,
     ));
   }

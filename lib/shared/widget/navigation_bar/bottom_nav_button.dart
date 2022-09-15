@@ -1,28 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/shared/utils/assets.dart';
-import 'package:warren_task_one/shared/utils/utils.dart';
 
+import '../../../movements/view/movements_page.dart';
 import '../../../portfolio/provider/provider.dart';
+import '../../../portfolio/view/portfolio_page.dart';
 
-class NavButton extends HookConsumerWidget {
-  const NavButton({
-    super.key,
-    required this.pageController,
-    required this.onTap,
+class BottomNavButton extends HookConsumerWidget {
+  const BottomNavButton({
+    Key? key,
     required this.icons,
-  });
-  final PageController pageController;
-  final Function onTap;
+    required this.route,
+    required this.buttonName,
+  }) : super(key: key);
+
   final Set<String> icons;
+  final String route;
+  final String buttonName;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final pageIndex = ref.watch(pageIndexProvider.state);
     Size size = MediaQuery.of(context).size;
-    final index = ref.watch(pageIndexProvider.state);
     return InkWell(
       onTap: () {
-        onTap();
+        switch (pageIndex.state) {
+          case 0:
+            {
+              if (route != PortfolioPage.route) {
+                pageIndex.state = 1;
+                Navigator.pushNamed(context, route);
+              }
+              break;
+            }
+          case 1:
+            {
+              if (route != MovementsPage.route) {
+                pageIndex.state = 0;
+                Navigator.pushNamed(context, route);
+              }
+
+              break;
+            }
+        }
       },
       child: SizedBox(
         width: 100,
@@ -31,14 +50,12 @@ class NavButton extends HookConsumerWidget {
           children: [
             Image(
               height: size.height * 0.03,
-              image: AssetImage(icons.elementAt(index.state)),
+              image: AssetImage(icons.elementAt(pageIndex.state)),
               fit: BoxFit.cover,
             ),
             Text(
-              icons.elementAt(2),
-              style: TextStyle(
-                  fontSize: size.width * 0.03,
-                  fontWeight: getFontWeight(index.state, icons)),
+              buttonName,
+              style: TextStyle(fontSize: size.width * 0.03),
             )
           ],
         ),
