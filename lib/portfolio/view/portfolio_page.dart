@@ -10,7 +10,6 @@ class PortfolioPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Colors.white,
-      // bottomNavigationBar: BottomNavBar(),
       body: BodyPortfolio(),
     );
   }
