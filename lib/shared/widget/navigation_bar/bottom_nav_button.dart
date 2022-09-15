@@ -1,47 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../movements/view/movements_page.dart';
 import '../../../portfolio/provider/provider.dart';
-import '../../../portfolio/view/portfolio_page.dart';
 
-class BottomNavButton extends HookConsumerWidget {
-  const BottomNavButton({
-    Key? key,
+class NavButton extends HookConsumerWidget {
+  const NavButton({
+    super.key,
+    required this.pageController,
+    required this.onTap,
     required this.icons,
-    required this.route,
-    required this.buttonName,
-  }) : super(key: key);
-
+  });
+  final PageController pageController;
+  final Function onTap;
   final Set<String> icons;
-  final String route;
-  final String buttonName;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final pageIndex = ref.watch(pageIndexProvider.state);
     Size size = MediaQuery.of(context).size;
+    final index = ref.watch(pageIndexProvider.state);
     return InkWell(
       onTap: () {
-        switch (pageIndex.state) {
-          case 0:
-            {
-              if (route != PortfolioPage.route) {
-                pageIndex.state = 1;
-                Navigator.pushNamed(context, route);
-              }
-              break;
-            }
-          case 1:
-            {
-              if (route != MovementsPage.route) {
-                pageIndex.state = 0;
-                Navigator.pushNamed(context, route);
-              }
-
-              break;
-            }
-        }
+        onTap();
       },
       child: SizedBox(
         width: 100,
@@ -50,11 +29,11 @@ class BottomNavButton extends HookConsumerWidget {
           children: [
             Image(
               height: size.height * 0.03,
-              image: AssetImage(icons.elementAt(pageIndex.state)),
+              image: AssetImage(icons.elementAt(index.state)),
               fit: BoxFit.cover,
             ),
             Text(
-              buttonName,
+              icons.elementAt(2),
               style: TextStyle(fontSize: size.width * 0.03),
             )
           ],
