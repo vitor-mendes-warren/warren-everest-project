@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../movements/view/movements_page.dart';
 import '../../../portfolio/provider/provider.dart';
-import '../../../portfolio/view/portfolio_page.dart';
 
 class BottomNavButton extends HookConsumerWidget {
   const BottomNavButton({
@@ -20,28 +18,22 @@ class BottomNavButton extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final pageIndex = ref.watch(pageIndexProvider.state);
+    void setPageIndex() {
+      if (pageIndex.state == 1) {
+        pageIndex.state = 0;
+      } else {
+        pageIndex.state = 1;
+      }
+    }
+
     Size size = MediaQuery.of(context).size;
     return InkWell(
       onTap: () {
-        switch (pageIndex.state) {
-          case 0:
-            {
-              if (route != PortfolioPage.route) {
-                pageIndex.state = 1;
-                Navigator.pushNamed(context, route);
-              }
-              break;
-            }
-          case 1:
-            {
-              if (route != MovementsPage.route) {
-                pageIndex.state = 0;
-                Navigator.pushNamed(context, route);
-              }
-
-              break;
-            }
-        }
+        setPageIndex();
+        Navigator.pushReplacementNamed(
+          context,
+          route,
+        );
       },
       child: SizedBox(
         width: 100,
