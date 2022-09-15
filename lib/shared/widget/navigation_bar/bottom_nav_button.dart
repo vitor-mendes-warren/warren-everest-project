@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:warren_task_one/shared/utils/assets.dart';
+import 'package:warren_task_one/shared/utils/utils.dart';
 
 import '../../../portfolio/provider/provider.dart';
 
@@ -34,7 +36,9 @@ class NavButton extends HookConsumerWidget {
             ),
             Text(
               icons.elementAt(2),
-              style: TextStyle(fontSize: size.width * 0.03),
+              style: TextStyle(
+                  fontSize: size.width * 0.03,
+                  fontWeight: getFontWeight(index.state, icons)),
             )
           ],
         ),

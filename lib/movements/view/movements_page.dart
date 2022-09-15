@@ -12,7 +12,7 @@ class MovementsPage extends StatelessWidget {
         body: Center(
             child: AutoSizeText(
       maxLines: 1,
-      'futura página de movimentações',
+      ' página de movimentações',
       style: TextStyle(
         color: Colors.black,
         fontFamily: "Montserrat",
