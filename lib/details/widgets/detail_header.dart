@@ -48,7 +48,7 @@ class DetailsHeader extends StatelessWidget {
                   fontSize: size.height * .02,
                 )),
             Padding(
-              padding: const EdgeInsets.only(top: 7),
+              padding: const EdgeInsets.only(top: 09),
               child: AutoSizeText(
                   maxLines: 1,
                   NumberFormat.simpleCurrency(locale: 'pt_BR', decimalDigits: 2)

@@ -13,7 +13,7 @@ class PeriodButton extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.only(right: 15, bottom: 15, top: 15),
+      padding: const EdgeInsets.only(right: 15, bottom: 20, top: 12),
       child: SizedBox(
         height: size.height * .032,
         width: size.width * .08,
