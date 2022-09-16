@@ -15,7 +15,7 @@ class CoinItem extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, DetailsPage.route);
+        Navigator.pushNamed(context, DetailsPage.route, arguments: coin);
       },
       child: Container(
         height: size.height * .12,

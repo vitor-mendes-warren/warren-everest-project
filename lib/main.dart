@@ -3,6 +3,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:warren_task_one/portfolio/view/portfolio_page.dart';
 import 'core/app_routes.dart';
 
+// void main() {
+//   runApp(DevicePreview(builder: (context) => const MyApp()));
+// }
 void main() {
   runApp(const MyApp());
 }
