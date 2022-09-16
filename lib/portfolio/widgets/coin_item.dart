@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:warren_task_one/details/view/details_page.dart';
 import '../model/coin_model.dart';
 import 'coin_balance_detail.dart';
 import 'coin_image.dart';
@@ -13,7 +14,9 @@ class CoinItem extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, DetailsPage.route);
+      },
       child: Container(
         height: size.height * .12,
         decoration: const BoxDecoration(
