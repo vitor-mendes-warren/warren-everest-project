@@ -22,7 +22,11 @@ class CoinBalanceDetail extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(coin.ticker, style: const TextStyle(fontSize: 21)),
+              Text(coin.ticker,
+                  style: const TextStyle(
+                    fontSize: 21,
+                    fontFamily: "Mansny-Book",
+                  )),
               CoinBalance(coin: coin),
             ],
           ),
@@ -32,7 +36,9 @@ class CoinBalanceDetail extends StatelessWidget {
               Text(
                 coin.name,
                 style: const TextStyle(
-                    fontSize: 16, color: Color.fromARGB(255, 117, 118, 128)),
+                    fontFamily: "Mansny-Book",
+                    fontSize: 16,
+                    color: Color.fromARGB(255, 117, 118, 128)),
               ),
               CoinPercentage(coin: coin),
             ],
