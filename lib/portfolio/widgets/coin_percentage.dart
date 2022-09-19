@@ -1,8 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/portfolio/provider/wallet_provider.dart';
-import 'package:warren_task_one/shared/utils/util.dart';
+import '../provider/wallet_provider.dart';
+import '../../shared/utils/util.dart';
 
 import '../model/coin_model.dart';
 

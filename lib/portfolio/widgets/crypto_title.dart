@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/portfolio/provider/wallet_provider.dart';
-import 'package:warren_task_one/shared/utils/util.dart';
+import '../provider/wallet_provider.dart';
+import '../../shared/utils/util.dart';
 
 class CryptoTitle extends HookConsumerWidget {
   const CryptoTitle({

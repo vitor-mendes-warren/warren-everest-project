@@ -1,6 +1,6 @@
-import 'package:warren_task_one/detail/view/details_page.dart';
-import 'package:warren_task_one/movements/view/movements_page.dart';
-import 'package:warren_task_one/portfolio/view/portfolio_page.dart';
+import '../detail/view/details_page.dart';
+import '../movements/view/movements_page.dart';
+import '../portfolio/view/portfolio_page.dart';
 
 var appRoutes = {
   PortfolioPage.route: (context) => const PortfolioPage(),

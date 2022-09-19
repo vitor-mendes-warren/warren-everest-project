@@ -3,7 +3,7 @@ import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:warren_task_one/shared/utils/util.dart';
+import '../../shared/utils/util.dart';
 
 import '../provider/wallet_provider.dart';
 

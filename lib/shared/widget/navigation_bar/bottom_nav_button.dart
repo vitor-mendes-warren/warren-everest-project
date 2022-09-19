@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/core/app_routes.dart';
-import 'package:warren_task_one/movements/view/movements_page.dart';
-import 'package:warren_task_one/shared/utils/assets.dart';
+import '../../../core/app_routes.dart';
+import '../../utils/assets.dart';
 
 import '../../../portfolio/provider/wallet_provider.dart';
 

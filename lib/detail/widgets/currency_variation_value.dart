@@ -1,8 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:warren_task_one/shared/utils/util.dart';
 
-class DetailCoinValue extends StatelessWidget {
-  const DetailCoinValue({
+class CurrencyVariationValue extends StatelessWidget {
+  const CurrencyVariationValue({
     Key? key,
     required this.description,
     required this.value,
@@ -43,7 +44,7 @@ class DetailCoinValue extends StatelessWidget {
                 value,
                 style: TextStyle(
                   fontFamily: "Mansny-regular",
-                  color: Colors.black,
+                  color: Util.getVariationColor(value),
                   fontSize: size.height * .020,
                 ))
           ],

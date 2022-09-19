@@ -18,7 +18,7 @@ class DetailsHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: size.width * .05),
+      padding: EdgeInsets.symmetric(vertical: 27, horizontal: size.width * .05),
       child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,

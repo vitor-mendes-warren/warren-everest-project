@@ -1,7 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/detail/provider/detail_provider.dart';
+
+import '../provider/detail_provider.dart';
 
 class PeriodButton extends HookConsumerWidget {
   const PeriodButton({
@@ -16,7 +17,7 @@ class PeriodButton extends HookConsumerWidget {
     final detailController = ref.watch(detailControllerProvider);
     Size size = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.only(right: 15, bottom: 20, top: 12),
+      padding: const EdgeInsets.only(right: 15, top: 12, bottom: 20),
       child: SizedBox(
         height: size.height * .032,
         width: size.width * .08,

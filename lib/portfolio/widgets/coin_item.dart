@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:warren_task_one/detail/view/details_page.dart';
+import '../../detail/view/details_page.dart';
 import '../model/coin_model.dart';
 import 'coin_balance_detail.dart';
 import 'coin_image.dart';

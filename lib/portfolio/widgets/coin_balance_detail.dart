@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:warren_task_one/portfolio/widgets/coin_percentage.dart';
+import 'coin_percentage.dart';
 import '../model/coin_model.dart';
 
 import 'coin_balance.dart';
