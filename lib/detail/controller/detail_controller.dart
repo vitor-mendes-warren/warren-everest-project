@@ -7,7 +7,8 @@ class DetailsController extends ChangeNotifier {
   int period = 5;
 
   List<FlSpot> getChartSpots() {
-    //vai pedir do use case a requisição que devolve as coodenadas
+    //vai pedir do use case a requisição que devolve 
+    //as coordenadas de cada moeda a partir de coin model
     return [
       const FlSpot(0, 0),
       const FlSpot(0.5, 0.5),
