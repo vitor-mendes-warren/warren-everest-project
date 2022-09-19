@@ -2,7 +2,7 @@ import 'package:decimal/decimal.dart';
 import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:warren_task_one/detail/widgets/currency_variation_value.dart';
+import 'currency_variation_value.dart';
 import 'bottom_line.dart';
 import 'convert_button.dart';
 import 'detail_coin_value.dart';

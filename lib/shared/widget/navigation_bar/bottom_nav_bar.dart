@@ -3,7 +3,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../movements/view/movements_page.dart';
 import '../../../portfolio/view/portfolio_page.dart';
-
 import '../../utils/assets.dart';
 import 'bottom_nav_button.dart';
 

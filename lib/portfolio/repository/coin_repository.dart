@@ -29,7 +29,7 @@ class CoinRepository {
         coinPrice: Decimal.parse('0.33'),
         variationDay: '-0.03%'));
     coins.add(CoinModel(
-        name: 'Bitcoin',
+        name: 'XRP',
         ticker: 'XRP',
         image: imgXRP,
         userBalance: Decimal.parse('+0.4'),

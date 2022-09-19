@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'coin_percentage.dart';
-import '../model/coin_model.dart';
 
+import '../model/coin_model.dart';
 import 'coin_balance.dart';
+import 'coin_percentage.dart';
 
 class CoinBalanceDetail extends StatelessWidget {
   const CoinBalanceDetail({

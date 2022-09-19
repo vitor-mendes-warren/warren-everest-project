@@ -1,10 +1,9 @@
-import 'package:auto_size_text/auto_size_text.dart';
-import 'package:decimal/decimal.dart';
-import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'coin_price.dart';
+import 'coin_title_detail.dart';
 
 import '../../portfolio/model/coin_model.dart';
+import 'coin_ticker.dart';
 
 class DetailsHeader extends StatelessWidget {
   const DetailsHeader({
@@ -23,42 +22,13 @@ class DetailsHeader extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(coin.name,
-                    style: TextStyle(
-                      fontFamily: "Mansny regular",
-                      fontWeight: FontWeight.bold,
-                      fontSize: size.height * .040,
-                    )),
-                Container(
-                  width: size.height * .06,
-                  height: size.height * .06,
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(image: AssetImage(coin.image))),
-                ),
-              ],
+            CoinTitleDetail(
+              coinIcon: coin.image,
+              coinName: coin.name,
             ),
-            Text(coin.ticker,
-                style: TextStyle(
-                  fontFamily: "Mansny regular",
-                  fontWeight: FontWeight.normal,
-                  fontSize: size.height * .02,
-                )),
-            Padding(
-              padding: const EdgeInsets.only(top: 09),
-              child: AutoSizeText(
-                  maxLines: 1,
-                  NumberFormat.simpleCurrency(locale: 'pt_BR', decimalDigits: 2)
-                      .format(DecimalIntl(
-                          Decimal.parse(coin.coinPrice.toString()))),
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontFamily: "Montserrat",
-                    fontSize: size.height * .040,
-                  )),
+            CoinTicker(coinTicker: coin.ticker),
+            CoinPrice(
+              coinPrice: coin.coinPrice,
             ),
           ]),
     );

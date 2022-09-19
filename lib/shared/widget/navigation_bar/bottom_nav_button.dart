@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../../core/app_routes.dart';
-import '../../utils/assets.dart';
 
+import '../../../core/app_routes.dart';
 import '../../../portfolio/provider/wallet_provider.dart';
+import '../../utils/assets.dart';
 
 class BottomNavButton extends HookConsumerWidget {
   const BottomNavButton({

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../provider/wallet_provider.dart';
-import '../../shared/utils/util.dart';
 
-class CryptoTitle extends HookConsumerWidget {
-  const CryptoTitle({
+import '../../shared/utils/util.dart';
+import '../provider/wallet_provider.dart';
+
+class CoinTitle extends HookConsumerWidget {
+  const CoinTitle({
     Key? key,
   }) : super(key: key);
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../detail/view/details_page.dart';
 import '../model/coin_model.dart';
 import 'coin_balance_detail.dart';

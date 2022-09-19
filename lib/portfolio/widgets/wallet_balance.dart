@@ -3,8 +3,8 @@ import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
-import '../../shared/utils/util.dart';
 
+import '../../shared/utils/util.dart';
 import '../provider/wallet_provider.dart';
 
 class WalletBalance extends HookConsumerWidget {
