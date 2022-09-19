@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/portfolio/controller/wallet_controller.dart';
-import 'package:warren_task_one/portfolio/provider/provider.dart';
+import 'package:warren_task_one/portfolio/provider/wallet_provider.dart';
+import 'package:warren_task_one/shared/utils/util.dart';
 
 class CryptoTitle extends HookConsumerWidget {
   const CryptoTitle({
@@ -27,7 +27,7 @@ class CryptoTitle extends HookConsumerWidget {
                 viewWalletValue.state = !viewWalletValue.state;
               },
               icon: Icon(
-                WalletController.getVisibilityIconData(viewWalletValue.state),
+                Util.getVisibilityIconData(viewWalletValue.state),
                 size: size.height * 0.04,
               ))
         ],

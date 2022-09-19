@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:warren_task_one/shared/utils/assets.dart';
 
-import '../../../portfolio/provider/provider.dart';
+import '../../../portfolio/provider/wallet_provider.dart';
 
 class BottomNavButton extends HookConsumerWidget {
   const BottomNavButton({

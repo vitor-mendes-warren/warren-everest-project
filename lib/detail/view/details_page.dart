@@ -2,9 +2,9 @@ import 'package:decimal/decimal.dart';
 import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:warren_task_one/details/widgets/detail_graph.dart';
+import 'package:warren_task_one/detail/widgets/detail_chart.dart';
 import 'package:warren_task_one/portfolio/model/coin_model.dart';
-import '../../portfolio/controller/wallet_controller.dart';
+import 'package:warren_task_one/shared/utils/util.dart';
 import '../widgets/detail_header.dart';
 import '../widgets/detail_coin_value.dart';
 
@@ -29,7 +29,7 @@ class DetailsPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           DetailsHeader(coin: coin),
-          const DetailsGraph(),
+          DetailChart(coin: coin),
           DetailCoinValue(
             description: 'Preço atual',
             value: NumberFormat.simpleCurrency(
@@ -42,8 +42,7 @@ class DetailsPage extends StatelessWidget {
           ),
           DetailCoinValue(
             description: 'Quantidade',
-            value: WalletController.getFormatedPercentage(
-                coin.percent, coin.ticker),
+            value: Util.getFormatedPercentage(coin.percent, coin.ticker),
           ),
           DetailCoinValue(
             description: 'Valor',
@@ -59,7 +58,6 @@ class DetailsPage extends StatelessWidget {
               highlightColor: Colors.transparent,
               splashColor: Colors.transparent,
               minWidth: size.width,
-              // padding: EdgeInsets.symmetric(horizontal: 50),
               color: const Color.fromARGB(255, 224, 43, 87),
               height: size.height * 0.08,
               onPressed: () {},

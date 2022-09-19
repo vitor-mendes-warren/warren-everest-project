@@ -3,9 +3,9 @@ import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:warren_task_one/portfolio/controller/wallet_controller.dart';
 import 'package:warren_task_one/portfolio/model/coin_model.dart';
-import 'package:warren_task_one/portfolio/provider/provider.dart';
+import 'package:warren_task_one/portfolio/provider/wallet_provider.dart';
+import 'package:warren_task_one/shared/utils/util.dart';
 
 class CoinBalance extends HookConsumerWidget {
   const CoinBalance({
@@ -23,8 +23,7 @@ class CoinBalance extends HookConsumerWidget {
         alignment: Alignment.centerRight,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(7),
-            color:
-                WalletController.getContainerValueColor(viewWalletValue.state)),
+            color: Util.getContainerValueColor(viewWalletValue.state)),
         duration: const Duration(milliseconds: 700),
         width: size.width * .24,
         height: size.height * .026,

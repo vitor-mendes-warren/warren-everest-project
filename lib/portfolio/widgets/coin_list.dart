@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../provider/provider.dart';
+import '../provider/wallet_provider.dart';
 import 'coin_item.dart';
 
 class CoinList extends HookConsumerWidget {
