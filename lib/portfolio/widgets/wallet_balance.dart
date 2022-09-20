@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
-import '../provider/provider.dart';
-import '../controller/wallet_controller.dart';
+import '../../shared/utils/util.dart';
+import '../provider/wallet_provider.dart';
 
 class WalletBalance extends HookConsumerWidget {
   const WalletBalance({
@@ -20,8 +20,7 @@ class WalletBalance extends HookConsumerWidget {
     return AnimatedContainer(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(7),
-            color:
-                WalletController.getContainerValueColor(viewWalletValue.state)),
+            color: Util.getContainerValueColor(viewWalletValue.state)),
         duration: const Duration(milliseconds: 700),
         width: size.width * 0.55,
         height: size.height * .050,

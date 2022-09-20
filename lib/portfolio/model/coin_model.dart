@@ -7,6 +7,7 @@ class CoinModel {
   Decimal userBalance;
   Decimal coinPrice;
   late double percent;
+  double variationDay;
 
   CoinModel({
     required this.name,
@@ -14,6 +15,7 @@ class CoinModel {
     required this.image,
     required this.userBalance,
     required this.coinPrice,
+    required this.variationDay,
   }) {
     percent = getPercentageCoin();
   }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/shared/utils/assets.dart';
 
-import '../../../portfolio/provider/provider.dart';
+import '../../../core/app_routes.dart';
+import '../../../portfolio/provider/wallet_provider.dart';
+import '../../utils/assets.dart';
 
 class BottomNavButton extends HookConsumerWidget {
   const BottomNavButton({
@@ -31,10 +32,11 @@ class BottomNavButton extends HookConsumerWidget {
     return InkWell(
       onTap: () {
         setPageIndex();
-        Navigator.pushReplacementNamed(
-          context,
-          route,
-        );
+        Navigator.pushReplacement(context, PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) {
+            return appRoutes[route]!(context);
+          },
+        ));
       },
       child: SizedBox(
         width: 100,

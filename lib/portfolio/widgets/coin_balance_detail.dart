@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:warren_task_one/portfolio/widgets/coin_percentage.dart';
-import '../model/coin_model.dart';
 
+import '../model/coin_model.dart';
 import 'coin_balance.dart';
+import 'coin_percentage.dart';
 
 class CoinBalanceDetail extends StatelessWidget {
   const CoinBalanceDetail({
@@ -22,7 +22,11 @@ class CoinBalanceDetail extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(coin.ticker, style: const TextStyle(fontSize: 21)),
+              Text(coin.ticker,
+                  style: const TextStyle(
+                    fontSize: 21,
+                    fontFamily: "Mansny-Book",
+                  )),
               CoinBalance(coin: coin),
             ],
           ),
@@ -32,7 +36,9 @@ class CoinBalanceDetail extends StatelessWidget {
               Text(
                 coin.name,
                 style: const TextStyle(
-                    fontSize: 16, color: Color.fromARGB(255, 117, 118, 128)),
+                    fontFamily: "Mansny-Book",
+                    fontSize: 16,
+                    color: Color.fromARGB(255, 117, 118, 128)),
               ),
               CoinPercentage(coin: coin),
             ],
