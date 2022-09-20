@@ -8,16 +8,13 @@ class BottomLine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 5),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          color: Colors.black,
-        ),
-        height: size.height * 0.009,
-        width: 130.0,
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        color: Colors.black,
       ),
+      height: size.height * 0.009,
+      width: size.width * .36,
     );
   }
 }

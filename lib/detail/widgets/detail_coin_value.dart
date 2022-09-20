@@ -23,7 +23,7 @@ class DetailCoinValue extends StatelessWidget {
         ),
       ),
       margin: EdgeInsets.only(left: size.width * 0.05),
-      height: size.height * .07,
+      height: size.height * .08,
       child: Padding(
         padding: EdgeInsets.only(right: size.width * .04),
         child: Row(

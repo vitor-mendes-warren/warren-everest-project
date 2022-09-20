@@ -26,7 +26,7 @@ class DetailDescription extends HookConsumerWidget {
 
     return Expanded(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           DetailCoinValue(
             description: 'Preço atual',

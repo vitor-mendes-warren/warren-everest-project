@@ -9,11 +9,7 @@ class ConvertButton extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Padding(
-      padding: EdgeInsets.only(
-          right: size.width * 0.05,
-          left: size.width * 0.05,
-          top: size.width * 0.03,
-          bottom: size.width * 0.1),
+      padding: EdgeInsets.all(size.width * 0.05),
       child: MaterialButton(
         highlightColor: Colors.transparent,
         splashColor: Colors.transparent,
