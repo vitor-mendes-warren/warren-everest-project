@@ -7,7 +7,7 @@ class CoinModel {
   Decimal userBalance;
   Decimal coinPrice;
   late double percent;
-  String variationDay;
+  double variationDay;
 
   CoinModel({
     required this.name,
