@@ -4,9 +4,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'core/app_routes.dart';
 import 'portfolio/view/portfolio_page.dart';
 
-// void main() {
-//   runApp(DevicePreview(builder: (context) => const MyApp()));
-// }
 void main() {
   runApp(const MyApp());
 }

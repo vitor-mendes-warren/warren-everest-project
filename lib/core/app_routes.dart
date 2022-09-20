@@ -1,4 +1,4 @@
-import '../detail/view/details_page.dart';
+import '../detail/view/detail_page.dart';
 import '../movements/view/movements_page.dart';
 import '../portfolio/view/portfolio_page.dart';
 
