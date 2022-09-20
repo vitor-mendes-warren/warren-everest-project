@@ -1,4 +1,5 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:warren_task_one/portfolio/model/coin_model.dart';
 
 import '../controller/wallet_controller.dart';
 import '../repository/coin_repository.dart';
