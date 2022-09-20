@@ -8,7 +8,6 @@ class DetailsController extends ChangeNotifier {
   int period = 5;
 
   List<FlSpot> getChartSpots() {
-    //TODO criar um use case e requisitar os spots
     int j = 90;
     List<FlSpot> chartSpots = [];
     for (var i = UtilDataMocked.priceValues.length - 1;

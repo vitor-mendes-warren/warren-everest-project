@@ -3,9 +3,10 @@ import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
+
+import '../../shared/utils/util.dart';
 import '../model/coin_model.dart';
 import '../provider/wallet_provider.dart';
-import '../../shared/utils/util.dart';
 
 class CoinBalance extends HookConsumerWidget {
   const CoinBalance({
@@ -30,7 +31,7 @@ class CoinBalance extends HookConsumerWidget {
         child: Visibility(
             visible: (viewWalletValue.state),
             child: AutoSizeText(
-                NumberFormat.simpleCurrency(locale: 'pt_BR', decimalDigits: 2)
+                NumberFormat.simpleCurrency(name: 'US\$ ', decimalDigits: 2)
                     .format(DecimalIntl(coin.userBalance)),
                 style: const TextStyle(
                   color: Colors.black,

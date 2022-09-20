@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../widgets/body_detail.dart';
+
 import '../../portfolio/model/coin_model.dart';
+import '../widgets/body_detail.dart';
 
 class DetailsPage extends StatelessWidget {
   const DetailsPage({Key? key}) : super(key: key);

@@ -1,10 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../provider/wallet_provider.dart';
-import '../../shared/utils/util.dart';
 
+import '../../shared/utils/util.dart';
 import '../model/coin_model.dart';
+import '../provider/wallet_provider.dart';
 
 class CoinPercentage extends HookConsumerWidget {
   final CoinModel coin;

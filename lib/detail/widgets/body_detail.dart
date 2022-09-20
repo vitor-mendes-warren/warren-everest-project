@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+
+import '../../portfolio/model/coin_model.dart';
 import 'detail_chart.dart';
 import 'detail_description.dart';
 import 'detail_header.dart';
-import '../../portfolio/model/coin_model.dart';
 
 class BodyDetail extends StatelessWidget {
   const BodyDetail({

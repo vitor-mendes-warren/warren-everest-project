@@ -30,8 +30,7 @@ class DetailDescription extends HookConsumerWidget {
         children: [
           DetailCoinValue(
             description: 'Preço atual',
-            value: NumberFormat.simpleCurrency(
-                    locale: 'pt_BR', decimalDigits: 2)
+            value: NumberFormat.simpleCurrency(name: 'US\$ ', decimalDigits: 2)
                 .format(DecimalIntl(Decimal.parse(
                     (coin.coinPrice.toDouble() + detailController.period * 100)
                         .toString()))),
@@ -48,12 +47,10 @@ class DetailDescription extends HookConsumerWidget {
           ),
           DetailCoinValue(
             description: 'Valor',
-            value:
-                NumberFormat.simpleCurrency(locale: 'pt_BR', decimalDigits: 2)
-                    .format(DecimalIntl(Decimal.parse(
-                        (coin.userBalance.toDouble() +
-                                detailController.period * 100)
-                            .toString()))),
+            value: NumberFormat.simpleCurrency(name: 'US\$ ', decimalDigits: 2)
+                .format(DecimalIntl(Decimal.parse((coin.userBalance.toDouble() +
+                        detailController.period * 100)
+                    .toString()))),
           ),
           const ConvertButton(),
           const BottomLine(),

@@ -20,7 +20,7 @@ class CoinPrice extends StatelessWidget {
       padding: const EdgeInsets.only(top: 09),
       child: AutoSizeText(
           maxLines: 1,
-          NumberFormat.simpleCurrency(locale: 'pt_BR', decimalDigits: 2)
+          NumberFormat.simpleCurrency(name: 'US\$ ', decimalDigits: 2)
               .format(DecimalIntl(Decimal.parse(coinPrice.toString()))),
           style: TextStyle(
             color: Colors.black,
