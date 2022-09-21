@@ -3,7 +3,7 @@ import 'package:decimal/decimal.dart';
 import '../../shared/utils/assets.dart';
 import '../model/coin_model.dart';
 
-class CoinRepository {
+class CoinRepositoryOld {
   List<CoinModel> getAllUserCoin() {
     List<CoinModel> coins = [];
 

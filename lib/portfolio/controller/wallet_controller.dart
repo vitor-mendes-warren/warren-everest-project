@@ -5,7 +5,7 @@ import '../model/coin_model.dart';
 import '../repository/coin_repository.dart';
 
 class WalletController extends ChangeNotifier {
-  CoinRepository coinRepo;
+  CoinRepositoryOld coinRepo;
   late List<CoinModel> coins = [];
 
   WalletController(
