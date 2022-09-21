@@ -18,7 +18,7 @@ class DetailDescription extends HookConsumerWidget {
     required this.coin,
   }) : super(key: key);
 
-  final CoinModel coin;
+  final CoinUserModel coin;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

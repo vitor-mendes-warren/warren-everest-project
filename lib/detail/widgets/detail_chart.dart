@@ -6,7 +6,7 @@ import 'coin_chart.dart';
 import 'period_button.dart';
 
 class DetailChart extends HookConsumerWidget {
-  final CoinModel coin;
+  final CoinUserModel coin;
   const DetailChart({
     Key? key,
     required this.coin,

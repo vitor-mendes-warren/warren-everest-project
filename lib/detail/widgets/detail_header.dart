@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'coin_price.dart';
-import 'coin_title_detail.dart';
 
 import '../../portfolio/model/coin_model.dart';
+import 'coin_price.dart';
 import 'coin_ticker.dart';
+import 'coin_title_detail.dart';
 
 class DetailsHeader extends StatelessWidget {
   const DetailsHeader({
@@ -11,7 +11,7 @@ class DetailsHeader extends StatelessWidget {
     required this.coin,
   }) : super(key: key);
 
-  final CoinModel coin;
+  final CoinUserModel coin;
 
   @override
   Widget build(BuildContext context) {

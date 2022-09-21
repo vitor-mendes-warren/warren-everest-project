@@ -1,5 +1,5 @@
-import 'package:warren_task_one/portfolio/model/coin_view_data.dart';
-import 'package:warren_task_one/shared/api/models/coin/get_all_coins_response.dart';
+import '../model/coin_view_data.dart';
+import '../../shared/api/models/coin/get_all_coins_response.dart';
 
 extension CoinMapper on GetAllCoinsResponse {
   List<CoinViewData> toViewData() {

@@ -1,5 +1,5 @@
-import 'package:warren_task_one/shared/api/coinlist_endpoint.dart';
-import 'package:warren_task_one/shared/api/models/coin/get_all_coins_response.dart';
+import '../api/coinlist_endpoint.dart';
+import '../api/models/coin/get_all_coins_response.dart';
 
 class CoinRepository {
   final CoinlistEndpoint coinEndpoint;

@@ -6,7 +6,7 @@ import 'coin_balance_detail.dart';
 import 'coin_image.dart';
 
 class CoinItem extends StatelessWidget {
-  final CoinModel coin;
+  final CoinUserModel coin;
   const CoinItem({
     super.key,
     required this.coin,

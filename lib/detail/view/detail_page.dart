@@ -19,7 +19,7 @@ class DetailsPage extends StatelessWidget {
         ),
       ),
       body: BodyDetail(
-          coin: ModalRoute.of(context)!.settings.arguments as CoinModel),
+          coin: ModalRoute.of(context)!.settings.arguments as CoinUserModel),
     );
   }
 }

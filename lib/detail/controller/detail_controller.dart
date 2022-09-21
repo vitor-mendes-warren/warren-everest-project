@@ -1,10 +1,11 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+
 import '../../portfolio/model/coin_model.dart';
 import '../../shared/utils/util.dart';
 
 class DetailsController extends ChangeNotifier {
-  CoinModel? coin;
+  CoinUserModel? coin;
   int period = 5;
 
   List<FlSpot> getChartSpots() {

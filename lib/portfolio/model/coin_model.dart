@@ -1,6 +1,6 @@
 import 'package:decimal/decimal.dart';
 
-class CoinModel {
+class CoinUserModel {
   String name;
   String ticker;
   String image;
@@ -9,7 +9,7 @@ class CoinModel {
   late double percent;
   double variationDay;
 
-  CoinModel({
+  CoinUserModel({
     required this.name,
     required this.ticker,
     required this.image,

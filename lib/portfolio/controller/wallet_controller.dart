@@ -5,18 +5,12 @@ import '../model/coin_model.dart';
 import '../repository/coin_repository.dart';
 
 class WalletController extends ChangeNotifier {
-  CoinRepositoryOld coinRepo;
-  late List<CoinModel> coins = [];
-
-  WalletController(
-    this.coinRepo,
-  ) {
-    coins = coinRepo.getAllUserCoin();
-  }
+  late CoinRepositoryOld coinRepo;
+  late List<CoinUserModel> coins = [];
 
   Decimal getTotalBalance() {
     Decimal total = Decimal.fromInt(0);
-    for (CoinModel coin in coins) {
+    for (CoinUserModel coin in coins) {
       total += coin.userBalance;
     }
     return total;

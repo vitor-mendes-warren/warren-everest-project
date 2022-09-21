@@ -10,7 +10,7 @@ class CoinBalanceDetail extends StatelessWidget {
     required this.coin,
   }) : super(key: key);
 
-  final CoinModel coin;
+  final CoinUserModel coin;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class CoinBalanceDetail extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(coin.ticker,
+              Text(coin.name,
                   style: const TextStyle(
                     fontSize: 21,
                     fontFamily: "Mansny-Book",
@@ -34,7 +34,7 @@ class CoinBalanceDetail extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                coin.name,
+                coin.ticker,
                 style: const TextStyle(
                     fontFamily: "Mansny-Book",
                     fontSize: 16,

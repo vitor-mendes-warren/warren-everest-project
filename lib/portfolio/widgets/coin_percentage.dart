@@ -7,7 +7,7 @@ import '../model/coin_model.dart';
 import '../provider/wallet_provider.dart';
 
 class CoinPercentage extends HookConsumerWidget {
-  final CoinModel coin;
+  final CoinUserModel coin;
   const CoinPercentage({
     Key? key,
     required this.coin,

@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart' show JsonSerializable;
 
-import 'package:warren_task_one/shared/api/models/coin/coin_result_image_response.dart';
+import 'coin_result_image_response.dart';
 
 import 'coin_result_market_data_response.dart';
 
