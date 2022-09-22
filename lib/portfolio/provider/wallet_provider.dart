@@ -4,7 +4,6 @@ import '../usecase/get_all_coin_use_case.dart';
 
 import '../../shared/repository/coin_repository_provider.dart';
 import '../controller/wallet_controller.dart';
-import '../repository/coin_repository.dart';
 
 final viewWalletValueProvider = StateProvider<bool>(
   (ref) => false,
@@ -16,6 +15,7 @@ final pageIndexProvider = StateProvider<int>(
 final walletControllerProvider =
     ChangeNotifierProvider((ref) => WalletController());
 
+//TODO copiar mais oumenos o que ta rolando por aqui
 final getAllCoinUseCase = Provider((ref) {
   return GetAllCoinUseCase(repository: ref.read(coinRepositoryProvider));
 });

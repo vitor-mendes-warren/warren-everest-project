@@ -5,16 +5,16 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../../shared/utils/util.dart';
-import '../model/coin_model.dart';
+import '../model/wallet_view_data.dart';
 import '../provider/wallet_provider.dart';
 
 class CoinBalance extends HookConsumerWidget {
   const CoinBalance({
     Key? key,
-    required this.coin,
+    required this.wallet,
   }) : super(key: key);
 
-  final CoinUserModel coin;
+  final WalletViewData wallet;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -31,11 +31,12 @@ class CoinBalance extends HookConsumerWidget {
         child: Visibility(
             visible: (viewWalletValue.state),
             child: AutoSizeText(
+                maxLines: 1,
                 NumberFormat.simpleCurrency(name: 'US\$ ', decimalDigits: 2)
-                    .format(DecimalIntl(coin.userBalance)),
+                    .format(DecimalIntl(wallet.userBalance)),
                 style: const TextStyle(
                   color: Colors.black,
-                  fontSize: 21,
+                  fontSize: 14,
                 ))));
   }
 }

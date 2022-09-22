@@ -1,8 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'coinlist_endpoint.dart';
 
-final coinlistEndpointProvider = Provider(((ref) {
+import 'coin_prices_endpoint.dart';
+
+final coinHistoryPricesEndpoint = Provider(((ref) {
   final dio = Dio(BaseOptions(baseUrl: 'https://api.coingecko.com/api/v3'));
-  return CoinlistEndpoint(dio);
+  return CoinHistoryPricesEndpoint(dio);
 }));

@@ -26,7 +26,7 @@ class CoinList extends HookConsumerWidget {
           itemCount: walletController.coins.length,
           itemBuilder: (context, index) {
             return CoinItem(
-              coin: walletController.coins[index],
+              wallet: walletController.coins[index],
             );
           },
           physics: const BouncingScrollPhysics(),

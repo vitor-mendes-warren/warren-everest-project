@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 
+import 'package:warren_task_one/detail/model/coin_price_view_data.dart';
+import 'package:warren_task_one/portfolio/model/coin_view_data.dart';
+
+import '../../shared/api/models/coin_prices/coin_price_response.dart';
+
 class ConvertButton extends StatelessWidget {
-  const ConvertButton({
+  final CoinViewData coin;
+  List<CoinValueResponse> data;
+
+  ConvertButton({
     Key? key,
+    required this.coin,
+    required this.data,
   }) : super(key: key);
 
   @override
@@ -16,7 +26,10 @@ class ConvertButton extends StatelessWidget {
         minWidth: size.width,
         color: const Color.fromARGB(255, 224, 43, 87),
         height: size.height * 0.08,
-        onPressed: () {},
+        onPressed: () {
+          print('essa é  a ultima data ${data.last.values[0]}');
+          print('essa é  o valor da ultima  data ${data.last.values[1]}');
+        },
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),

@@ -7,6 +7,7 @@ part 'get_all_coins_response.g.dart';
 @JsonSerializable()
 class GetAllCoinsResponse {
   final List<CoinResultResponse> result;
+
   GetAllCoinsResponse(
     this.result,
   );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/portfolio/repository/coin_repository.dart';
+import 'package:warren_task_one/portfolio/repository/wallet_repository.dart';
 import 'coin_list.dart';
 import 'wallet_header.dart';
 
@@ -20,7 +20,7 @@ class BodyPortfolio extends HookConsumerWidget {
             data: (data) {
               final walletController = ref.watch(walletControllerProvider);
               walletController.coins =
-                  CoinRepositoryOld(allCoins: data).getAllUserCoin();
+                  WalletRepository(allCoins: data).getAllUserCoin();
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [WalletHeader(), CoinList()],

@@ -5,13 +5,14 @@ class CoinViewData {
   final String id;
   final String symbol;
   final String name;
-  final CoinResultImageResponse image;
-  final CoinResultMarketDataResponse market_data;
+  final CoinResultImageResponse? image;
+  final CoinResultMarketDataResponse? market_data;
+
   CoinViewData({
     required this.id,
     required this.symbol,
     required this.name,
-    required this.image,
-    required this.market_data,
+    this.image,
+    this.market_data,
   });
 }

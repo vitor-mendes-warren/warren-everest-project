@@ -6,7 +6,7 @@ extension CoinMapper on GetAllCoinsResponse {
     return result
         .map((result) => CoinViewData(
             id: result.id,
-            symbol: result.symbol,
+            symbol: result.symbol.toUpperCase(),
             name: result.name,
             image: result.image,
             market_data: result.market_data))

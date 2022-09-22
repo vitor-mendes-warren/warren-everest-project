@@ -1,13 +1,14 @@
-import '../api/coinlist_endpoint.dart';
+import 'package:warren_task_one/shared/api/coin_list_endpoint.dart';
+
 import '../api/models/coin/get_all_coins_response.dart';
 
 class CoinRepository {
-  final CoinlistEndpoint coinEndpoint;
+  final CoinlistEndpoint coinlistEndpoint;
 
-  CoinRepository({required this.coinEndpoint});
+  CoinRepository({required this.coinlistEndpoint});
 
-  Future<GetAllCoinsResponse> getAllCharacters() async {
-    final result = await coinEndpoint.getAllCoins();
+  Future<GetAllCoinsResponse> getAllCoins() async {
+    final result = await coinlistEndpoint.getAllCoins();
     return GetAllCoinsResponse.fromJson({"result": result.data});
   }
 }

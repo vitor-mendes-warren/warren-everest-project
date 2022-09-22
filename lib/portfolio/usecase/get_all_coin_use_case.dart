@@ -8,7 +8,7 @@ class GetAllCoinUseCase {
     required this.repository,
   });
   Future<List<CoinViewData>> execute() async {
-    final response = await repository.getAllCharacters();
+    final response = await repository.getAllCoins();
 
     return response.toViewData();
   }

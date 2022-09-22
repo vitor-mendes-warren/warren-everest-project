@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../portfolio/model/coin_model.dart';
+import '../../portfolio/model/wallet_view_data.dart';
 import '../widgets/body_detail.dart';
 
 class DetailsPage extends StatelessWidget {
@@ -19,7 +19,7 @@ class DetailsPage extends StatelessWidget {
         ),
       ),
       body: BodyDetail(
-          coin: ModalRoute.of(context)!.settings.arguments as CoinUserModel),
+          wallet: ModalRoute.of(context)!.settings.arguments as WalletViewData),
     );
   }
 }

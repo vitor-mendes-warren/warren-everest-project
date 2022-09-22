@@ -1,0 +1,18 @@
+import 'package:warren_task_one/shared/api/models/coin_prices/coin_price_response.dart';
+import 'package:json_annotation/json_annotation.dart';
+
+part 'get_coin_price_response.g.dart';
+
+@JsonSerializable()
+class GetCoinPriceResponse {
+  final List<CoinValueResponse> price;
+
+  GetCoinPriceResponse({
+    required this.price,
+  });
+
+  factory GetCoinPriceResponse.fromJson(Map<String, dynamic> json) =>
+      _$GetCoinPriceResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$GetCoinPriceResponseToJson(this);
+}
