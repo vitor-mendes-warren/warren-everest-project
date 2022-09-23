@@ -1,13 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../provider/wallet_provider.dart';
-import '../../shared/utils/util.dart';
 
-import '../model/coin_model.dart';
+import '../../shared/utils/util.dart';
+import '../model/wallet_view_data.dart';
+import '../provider/wallet_provider.dart';
 
 class CoinPercentage extends HookConsumerWidget {
-  final CoinModel coin;
+  final WalletViewData coin;
   const CoinPercentage({
     Key? key,
     required this.coin,
@@ -31,7 +31,7 @@ class CoinPercentage extends HookConsumerWidget {
             visible: (viewWalletValue.state),
             child: AutoSizeText(
                 maxLines: 1,
-                Util.getFormatedPercentage(coin.percent, coin.ticker),
+                Util.getFormatedPercentage(coin.percent, coin.coin.symbol),
                 style: const TextStyle(
                   color: Color.fromARGB(255, 117, 118, 128),
                   fontSize: 16,

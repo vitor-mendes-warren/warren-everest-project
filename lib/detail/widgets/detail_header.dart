@@ -1,17 +1,18 @@
+import 'package:decimal/decimal.dart';
 import 'package:flutter/material.dart';
-import 'coin_price.dart';
-import 'coin_title_detail.dart';
 
-import '../../portfolio/model/coin_model.dart';
+import '../../portfolio/model/wallet_view_data.dart';
+import 'coin_price.dart';
 import 'coin_ticker.dart';
+import 'coin_title_detail.dart';
 
 class DetailsHeader extends StatelessWidget {
   const DetailsHeader({
     Key? key,
-    required this.coin,
+    required this.wallet,
   }) : super(key: key);
 
-  final CoinModel coin;
+  final WalletViewData wallet;
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +24,13 @@ class DetailsHeader extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CoinTitleDetail(
-              coinIcon: coin.image,
-              coinName: coin.name,
+              coinIcon: wallet.coin.image!.small,
+              coinName: wallet.coin.name,
             ),
-            CoinTicker(coinTicker: coin.ticker),
+            CoinTicker(coinTicker: wallet.coin.symbol),
             CoinPrice(
-              coinPrice: coin.coinPrice,
+              coinPrice: Decimal.parse(
+                  wallet.coin.market_data!.current_price.usd.toString()),
             ),
           ]),
     );

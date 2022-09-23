@@ -16,9 +16,8 @@ class CoinImage extends StatelessWidget {
       child: Center(
         child: Container(
           height: size.height * .07,
-          decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(image: AssetImage(image))),
+          decoration:
+              BoxDecoration(image: DecorationImage(image: NetworkImage(image))),
         ),
       ),
     );

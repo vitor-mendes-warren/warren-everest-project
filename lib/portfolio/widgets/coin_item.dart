@@ -1,22 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../detail/provider/detail_provider.dart';
 import '../../detail/view/detail_page.dart';
-import '../model/coin_model.dart';
+import '../model/wallet_view_data.dart';
 import 'coin_balance_detail.dart';
 import 'coin_image.dart';
 
-class CoinItem extends StatelessWidget {
-  final CoinModel coin;
+class CoinItem extends HookConsumerWidget {
+  final WalletViewData wallet;
   const CoinItem({
     super.key,
-    required this.coin,
+    required this.wallet,
   });
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final detailController = ref.watch(detailControllerProvider);
+
     Size size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, DetailsPage.route, arguments: coin);
+        detailController.coin = wallet.coin;
+        final coinHistoryPriceProvider = ref.refresh(coinHistoryPricesProvider);
+
+        Navigator.pushNamed(context, DetailsPage.route, arguments: wallet);
       },
       child: Container(
         height: size.height * .12,
@@ -33,8 +40,8 @@ class CoinItem extends StatelessWidget {
           padding: EdgeInsets.symmetric(
               horizontal: size.width * .03, vertical: size.height * .02),
           child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            CoinImage(image: coin.image),
-            CoinBalanceDetail(coin: coin),
+            CoinImage(image: wallet.coin.image!.large),
+            CoinBalanceDetail(wallet: wallet),
             Padding(
               padding: EdgeInsets.only(
                   top: size.height * .009, left: size.width * .04),

@@ -29,8 +29,8 @@ class CoinChart extends HookConsumerWidget {
           child: Center(
               child: LineChart(
             LineChartData(
-                minX: 90 - detailController.period.toDouble(),
-                maxX: 90,
+                minX: detailController.getMinX(),
+                maxX: detailController.getIntervalMaxPoint(),
                 borderData: FlBorderData(show: false),
                 titlesData: FlTitlesData(show: false),
                 gridData: FlGridData(
@@ -38,7 +38,7 @@ class CoinChart extends HookConsumerWidget {
                 ),
                 lineBarsData: [
                   LineChartBarData(
-                    spots: detailController.getChartSpots(),
+                    spots: detailController.getCoinHistoryChartSpots(),
                     barWidth: 2.0,
                     dotData: FlDotData(show: false),
                     color: const Color.fromARGB(255, 224, 43, 87),
@@ -46,7 +46,7 @@ class CoinChart extends HookConsumerWidget {
                 ]),
 
             swapAnimationDuration:
-                const Duration(milliseconds: 500), // Optional
+                const Duration(milliseconds: 1500), // Optional
             swapAnimationCurve: Curves.linear, // Optional
           )),
         ),

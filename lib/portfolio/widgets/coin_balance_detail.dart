@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../model/coin_model.dart';
+import '../model/wallet_view_data.dart';
 import 'coin_balance.dart';
 import 'coin_percentage.dart';
 
 class CoinBalanceDetail extends StatelessWidget {
   const CoinBalanceDetail({
     Key? key,
-    required this.coin,
+    required this.wallet,
   }) : super(key: key);
 
-  final CoinModel coin;
+  final WalletViewData wallet;
 
   @override
   Widget build(BuildContext context) {
@@ -22,25 +22,25 @@ class CoinBalanceDetail extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(coin.ticker,
+              Text(wallet.coin.name,
                   style: const TextStyle(
-                    fontSize: 21,
+                    fontSize: 16,
                     fontFamily: "Mansny-Book",
                   )),
-              CoinBalance(coin: coin),
+              CoinBalance(wallet: wallet),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                coin.name,
+                wallet.coin.symbol,
                 style: const TextStyle(
                     fontFamily: "Mansny-Book",
-                    fontSize: 16,
+                    fontSize: 15,
                     color: Color.fromARGB(255, 117, 118, 128)),
               ),
-              CoinPercentage(coin: coin),
+              CoinPercentage(coin: wallet),
             ],
           ),
         ],

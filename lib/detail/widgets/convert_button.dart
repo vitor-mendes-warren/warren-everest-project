@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 
+import 'package:warren_task_one/portfolio/model/coin_view_data.dart';
+
+import '../../shared/api/models/coin_prices/coin_price_response.dart';
+
 class ConvertButton extends StatelessWidget {
+  final CoinViewData coin;
+  final List<CoinValueResponse> data;
+
   const ConvertButton({
     Key? key,
+    required this.coin,
+    required this.data,
   }) : super(key: key);
 
   @override
