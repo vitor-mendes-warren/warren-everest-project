@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:warren_task_one/portfolio/repository/wallet_repository.dart';
@@ -26,7 +27,15 @@ class BodyPortfolio extends HookConsumerWidget {
                 children: const [WalletHeader(), CoinList()],
               );
             },
-            error: (error, stackTrace) => const Text('erro'),
+            error: (error, stackTrace) => const AutoSizeText(
+                  maxLines: 1,
+                  'Ops, algo aconteceu! Tente novamente mais tarde ',
+                  style: TextStyle(
+                    fontFamily: "Mansny regular",
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                  ),
+                ),
             loading: () => const LoadingWallet()));
   }
 }

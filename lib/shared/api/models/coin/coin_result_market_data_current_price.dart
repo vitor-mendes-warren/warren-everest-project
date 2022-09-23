@@ -1,8 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
-
 part 'coin_result_market_data_current_price.g.dart';
 
-@JsonSerializable()
 class CoinResultMarketDataCurrentPrice {
   final double usd;
 

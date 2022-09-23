@@ -1,10 +1,7 @@
-import 'package:json_annotation/json_annotation.dart';
-
 import 'coin_result_response.dart';
 
 part 'get_all_coins_response.g.dart';
 
-@JsonSerializable()
 class GetAllCoinsResponse {
   final List<CoinResultResponse> result;
 

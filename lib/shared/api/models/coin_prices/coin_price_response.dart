@@ -1,8 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
-
 part 'coin_price_response.g.dart';
 
-@JsonSerializable()
 class CoinValueResponse {
   List<dynamic> values;
   CoinValueResponse({

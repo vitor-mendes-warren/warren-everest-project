@@ -1,8 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
-
 part 'coin_result_image_response.g.dart';
 
-@JsonSerializable()
 class CoinResultImageResponse {
   final String thumb;
   final String small;

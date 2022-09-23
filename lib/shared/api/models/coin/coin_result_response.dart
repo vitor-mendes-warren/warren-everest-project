@@ -1,12 +1,9 @@
-import 'package:json_annotation/json_annotation.dart' show JsonSerializable;
-
 import 'coin_result_image_response.dart';
 
 import 'coin_result_market_data_response.dart';
 
 part 'coin_result_response.g.dart';
 
-@JsonSerializable()
 class CoinResultResponse {
   final String id;
   final String symbol;
