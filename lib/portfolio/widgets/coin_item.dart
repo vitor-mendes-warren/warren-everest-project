@@ -16,7 +16,6 @@ class CoinItem extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final detailController = ref.watch(detailControllerProvider);
-    final usecase = ref.watch(getPriceHistory.state);
 
     Size size = MediaQuery.of(context).size;
     return GestureDetector(

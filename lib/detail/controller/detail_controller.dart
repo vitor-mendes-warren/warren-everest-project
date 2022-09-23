@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import '../../portfolio/model/coin_view_data.dart';
 import '../../shared/api/models/coin_prices/coin_price_response.dart';
-import '../../shared/utils/util.dart';
 
 class DetailsController extends ChangeNotifier {
   late CoinViewData? coin;
@@ -36,40 +35,38 @@ class DetailsController extends ChangeNotifier {
 
   void setCoinHistoryPriceValues(List<CoinValueResponse> prices) {
     _pricesList = prices;
-    for (var i = 0; i < _pricesList.length; i++) {
-      print(
-          'esse é o ponto $i data:${DateTime.fromMillisecondsSinceEpoch(_pricesList[i].values[0])} com o valor de : R\$${_pricesList[i].values[1]}');
+  }
+
+  List<CoinValueResponse> getrangeValues() {
+    if (_pricesList.length <= 90) {
+      return _pricesList.sublist(getIntervalMaxPoint().toInt() - period);
+    } else {
+      return _pricesList.sublist(
+          (getIntervalMaxPoint().toInt()) - _getPeriodIntervalPoint(),
+          getIntervalMaxPoint().toInt());
     }
-    // print(coin!.id);
-    // print('quantidade de pontos ${_pricesList.length}');
+  }
+
+  int getY() {
+    if (_pricesList.length <= 90) {
+      return getIntervalMaxPoint().toInt() - period;
+    } else {
+      return getIntervalMaxPoint().toInt() - _getPeriodIntervalPoint();
+    }
   }
 
   List<FlSpot> getCoinHistoryChartSpots() {
     List<FlSpot> chartSpots = [];
-    int j = getIntervalMaxPoint().toInt() - _getPeriodIntervalPoint() - 1;
+    List<CoinValueResponse> rangeValues = getrangeValues();
+    int j = _pricesList.length;
 
-    List<CoinValueResponse> rangeValues = _pricesList.sublist(
-        (getIntervalMaxPoint().toInt()) - _getPeriodIntervalPoint(),
-        getIntervalMaxPoint().toInt());
-
-    for (var i = 0; i < rangeValues.length; i++) {
-      chartSpots.add(FlSpot(j.toDouble(), rangeValues[i].values[1]));
-      print(
-          ' $j  = ${rangeValues[i].values[1]} data : ${DateTime.fromMillisecondsSinceEpoch(_pricesList[i].values[0])}');
-      j++;
-    }
-    return chartSpots;
-  }
-
-  List<FlSpot> getChartSpots() {
-    int j = 90;
-    List<FlSpot> chartSpots = [];
-    for (var i = UtilDataMocked.priceValues.length - 1;
-        i != UtilDataMocked.priceValues.length - (period + 2);
+    for (var i = rangeValues.length - 1;
+        i != rangeValues.length - (_getPeriodIntervalPoint() + 1);
         i--) {
-      chartSpots.add(FlSpot(j.toDouble(), UtilDataMocked.priceValues[i]));
+      chartSpots.add(FlSpot(j.toDouble(), rangeValues[i].values[1]));
       j--;
     }
+
     return chartSpots;
   }
 

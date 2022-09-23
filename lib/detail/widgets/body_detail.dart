@@ -2,10 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/detail/controller/detail_controller.dart';
 
 import '../../portfolio/model/wallet_view_data.dart';
-import '../../portfolio/provider/wallet_provider.dart';
 import '../../portfolio/widgets/loading_wallet.dart';
 import '../../shared/api/models/coin_prices/coin_price_response.dart';
 import '../provider/detail_provider.dart';

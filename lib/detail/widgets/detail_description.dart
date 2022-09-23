@@ -7,7 +7,6 @@ import 'package:warren_task_one/shared/api/models/coin_prices/coin_price_respons
 
 import '../../portfolio/model/wallet_view_data.dart';
 import '../../shared/utils/util.dart';
-import '../model/coin_price_view_data.dart';
 import 'bottom_line.dart';
 import 'convert_button.dart';
 import 'currency_variation_value.dart';
@@ -15,9 +14,8 @@ import 'detail_coin_value.dart';
 
 class DetailDescription extends HookConsumerWidget {
   final WalletViewData wallet;
-  //TODO tirar isso aqui de baixo
-  List<CoinValueResponse> data;
-  DetailDescription({
+  final List<CoinValueResponse> data;
+  const DetailDescription({
     super.key,
     required this.wallet,
     required this.data,

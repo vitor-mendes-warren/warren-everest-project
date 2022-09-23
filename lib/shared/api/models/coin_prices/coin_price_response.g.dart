@@ -8,7 +8,7 @@ part of 'coin_price_response.dart';
 
 CoinValueResponse _$CoinValueResponseFromJson(List<dynamic> json) =>
     CoinValueResponse(
-      values: (json as List<dynamic>),
+      values: (json),
     );
 
 Map<String, dynamic> _$CoinValueResponseToJson(CoinValueResponse instance) =>

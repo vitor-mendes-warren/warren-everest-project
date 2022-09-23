@@ -45,7 +45,8 @@ class CoinChart extends HookConsumerWidget {
                   )
                 ]),
 
-            swapAnimationDuration: const Duration(seconds: 4), // Optional
+            swapAnimationDuration:
+                const Duration(milliseconds: 1500), // Optional
             swapAnimationCurve: Curves.linear, // Optional
           )),
         ),
