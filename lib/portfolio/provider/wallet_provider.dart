@@ -14,11 +14,14 @@ final pageIndexProvider = StateProvider<int>(
 
 final walletControllerProvider =
     ChangeNotifierProvider((ref) => WalletController());
+final allCoinsControllerProvider =
+    ChangeNotifierProvider((ref) => AllCoinsController());
 
 final getAllCoinUseCase = Provider((ref) {
   return GetAllCoinUseCase(repository: ref.read(coinRepositoryProvider));
 });
 
-final allCoinsProvider = FutureProvider<List<CoinViewData>>((ref) async {
-  return ref.read(getAllCoinUseCase).execute();
+final getAllCoinsFutureProvider =
+    FutureProvider<List<CoinViewData>>((ref) async {
+  return await ref.read(getAllCoinUseCase).execute();
 });

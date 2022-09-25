@@ -28,11 +28,7 @@ class ConvertButton extends StatelessWidget {
         color: const Color.fromARGB(255, 224, 43, 87),
         height: size.height * 0.08,
         onPressed: () {
-          Navigator.pushReplacement(context, PageRouteBuilder(
-            pageBuilder: (context, animation, secondaryAnimation) {
-              return appRoutes[ConvertPage.route]!(context);
-            },
-          ));
+          Navigator.pushNamed(context, ConvertPage.route);
         },
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),

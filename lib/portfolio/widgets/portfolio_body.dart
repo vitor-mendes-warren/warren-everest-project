@@ -15,13 +15,16 @@ class BodyPortfolio extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final getAllCoinsProvider = ref.watch(allCoinsProvider);
+    final getAllCoinsProvider = ref.watch(getAllCoinsFutureProvider);
+    final walletController = ref.watch(walletControllerProvider);
+    final allCoinsController = ref.watch(allCoinsControllerProvider);
     return SafeArea(
         child: getAllCoinsProvider.when(
             data: (data) {
-              final walletController = ref.watch(walletControllerProvider);
               walletController.coins =
                   WalletRepository(allCoins: data).getAllUserCoin();
+
+              allCoinsController.coins = data;
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [WalletHeader(), CoinList()],

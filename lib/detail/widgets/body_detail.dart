@@ -33,15 +33,14 @@ class BodyDetailState extends ConsumerState<BodyDetail> {
         child: coinHistoryPriceProvider.when(data: (data) {
       detailController
           .setCoinHistoryPriceValues(data as List<CoinValueResponse>);
-      return const LoadingDetails();
-      // Column(
-      //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //   children: [
-      //     DetailsHeader(wallet: widget.wallet),
-      //     DetailChart(wallet: widget.wallet),
-      //     DetailDescription(data: data, wallet: widget.wallet)
-      //   ],
-      // );
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          DetailsHeader(wallet: widget.wallet),
+          DetailChart(wallet: widget.wallet),
+          DetailDescription(data: data, wallet: widget.wallet)
+        ],
+      );
     }, error: (error, stackTrace) {
       return Center(
         child: AutoSizeText(

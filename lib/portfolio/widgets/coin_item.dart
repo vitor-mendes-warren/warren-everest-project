@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../core/app_routes.dart';
 import '../../detail/provider/detail_provider.dart';
 import '../../detail/view/detail_page.dart';
 import '../model/wallet_view_data.dart';

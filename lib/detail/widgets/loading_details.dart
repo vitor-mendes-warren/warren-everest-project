@@ -28,7 +28,7 @@ class LoadingDetails extends StatelessWidget {
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                              color: Colors.amber,
+                              color: Colors.white,
                               borderRadius: BorderRadius.circular(7)),
                           height: size.height * .06,
                           width: size.width,
@@ -38,7 +38,7 @@ class LoadingDetails extends StatelessWidget {
                               vertical: size.height * .005),
                           child: Container(
                             decoration: BoxDecoration(
-                                color: Colors.amber,
+                                color: Colors.white,
                                 borderRadius: BorderRadius.circular(7)),
                             height: size.height * .03,
                             width: size.width * .1,
@@ -46,7 +46,7 @@ class LoadingDetails extends StatelessWidget {
                         ),
                         Container(
                           decoration: BoxDecoration(
-                              color: Colors.amber,
+                              color: Colors.white,
                               borderRadius: BorderRadius.circular(7)),
                           height: size.height * .06,
                           width: size.width * .6,
@@ -55,19 +55,70 @@ class LoadingDetails extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(vertical: 10),
                           child: Container(
                             decoration: BoxDecoration(
-                                color: Colors.amber,
+                                color: Colors.white,
                                 borderRadius: BorderRadius.circular(7)),
                             height: size.height * .2,
                             width: size.width,
                           ),
                         ),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Container(
-                              color: Colors.amber,
-                              height: size.height * .04,
-                              width: size.width * .08,
-                            )
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(7)),
+                                height: size.height * .035,
+                                width: size.width * .08,
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(7)),
+                                height: size.height * .035,
+                                width: size.width * .08,
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(7)),
+                                height: size.height * .035,
+                                width: size.width * .08,
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(7)),
+                                height: size.height * .035,
+                                width: size.width * .08,
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(7)),
+                                height: size.height * .035,
+                                width: size.width * .08,
+                              ),
+                            ),
                           ],
                         )
                       ]),
@@ -75,8 +126,7 @@ class LoadingDetails extends StatelessWidget {
               ],
             )),
         Expanded(
-            child: ListView.builder(
-          itemBuilder: (context, index) => Container(
+          child: Container(
             height: size.height * .12,
             decoration: const BoxDecoration(
               color: Colors.white,
@@ -96,9 +146,6 @@ class LoadingDetails extends StatelessWidget {
                 child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CircleAvatar(
-                        radius: size.width * .12,
-                      ),
                       Expanded(
                         flex: 3,
                         child: Column(
@@ -108,9 +155,32 @@ class LoadingDetails extends StatelessWidget {
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(7),
-                                  color: Colors.amber,
+                                  color: Colors.white,
                                 ),
                                 height: 10,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Expanded(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(7),
+                                  color: Colors.white,
+                                ),
+                                height: 10,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Expanded(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(7),
+                                  color: Colors.white,
+                                ),
                               ),
                             ),
                             const SizedBox(
@@ -128,19 +198,11 @@ class LoadingDetails extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            top: size.height * .009, left: size.width * .04),
-                        child: const Icon(
-                          Icons.arrow_forward_ios_sharp,
-                          size: 14,
-                        ),
-                      )
                     ]),
               ),
             ),
           ),
-        ))
+        )
       ],
     );
   }
