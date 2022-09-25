@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:warren_task_one/convert/view/convert_page.dart';
+import 'package:warren_task_one/core/app_routes.dart';
 
 import 'package:warren_task_one/portfolio/model/coin_view_data.dart';
 
@@ -25,7 +27,13 @@ class ConvertButton extends StatelessWidget {
         minWidth: size.width,
         color: const Color.fromARGB(255, 224, 43, 87),
         height: size.height * 0.08,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushReplacement(context, PageRouteBuilder(
+            pageBuilder: (context, animation, secondaryAnimation) {
+              return appRoutes[ConvertPage.route]!(context);
+            },
+          ));
+        },
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),

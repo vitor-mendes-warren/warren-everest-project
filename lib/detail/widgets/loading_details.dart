@@ -4,13 +4,11 @@ import 'package:shimmer/shimmer.dart';
 class LoadingDetails extends StatelessWidget {
   const LoadingDetails({
     super.key,
-    required this.size,
   });
-
-  final Size size;
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -63,6 +61,15 @@ class LoadingDetails extends StatelessWidget {
                             width: size.width,
                           ),
                         ),
+                        Row(
+                          children: [
+                            Container(
+                              color: Colors.amber,
+                              height: size.height * .04,
+                              width: size.width * .08,
+                            )
+                          ],
+                        )
                       ]),
                 ),
               ],
