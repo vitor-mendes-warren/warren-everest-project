@@ -8,7 +8,7 @@ class Util {
       visible ? Icons.visibility : Icons.visibility_off;
 
   static String getFormatedPercentage(double percentage, String ticker) {
-    return "${percentage.toStringAsFixed(2)} $ticker";
+    return "${percentage.toString()} $ticker";
   }
 
   static Color getVariationColor(String variation) =>

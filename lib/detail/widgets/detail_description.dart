@@ -3,9 +3,9 @@ import 'package:decimal/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
-import '../../shared/api/models/coin_prices/coin_price_response.dart';
 
 import '../../portfolio/model/wallet_view_data.dart';
+import '../../shared/api/models/coin_prices/coin_price_response.dart';
 import '../../shared/utils/util.dart';
 import 'bottom_line.dart';
 import 'convert_button.dart';

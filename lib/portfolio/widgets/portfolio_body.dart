@@ -1,13 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
 import '../../convert/provider/conver_provider.dart';
+import '../provider/wallet_provider.dart';
 import '../repository/wallet_repository.dart';
 import 'coin_list.dart';
-import 'wallet_header.dart';
-
-import '../provider/wallet_provider.dart';
 import 'loading_wallet.dart';
+import 'wallet_header.dart';
 
 class BodyPortfolio extends HookConsumerWidget {
   const BodyPortfolio({

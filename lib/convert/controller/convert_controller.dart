@@ -4,4 +4,11 @@ import '../../portfolio/model/coin_view_data.dart';
 
 class AllCoinsController extends ChangeNotifier {
   late List<CoinViewData> coins;
+  late CoinViewData coinToConvert = coins[1];
+
+  void setCoinToConvert(CoinViewData coin) {
+    coinToConvert = coin;
+
+    notifyListeners();
+  }
 }
