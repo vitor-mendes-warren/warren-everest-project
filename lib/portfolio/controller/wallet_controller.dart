@@ -1,7 +1,6 @@
 import 'package:decimal/decimal.dart';
 import 'package:flutter/material.dart';
 
-import '../model/coin_view_data.dart';
 import '../model/wallet_view_data.dart';
 import '../repository/wallet_repository.dart';
 
@@ -16,8 +15,4 @@ class WalletController extends ChangeNotifier {
     }
     return total;
   }
-}
-
-class AllCoinsController extends ChangeNotifier {
-  late List<CoinViewData> coins = [];
 }

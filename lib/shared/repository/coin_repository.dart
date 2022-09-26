@@ -1,4 +1,4 @@
-import 'package:warren_task_one/shared/api/coin_prices_endpoint.dart';
+import '../api/coin_prices_endpoint.dart';
 
 import '../api/models/coin/get_all_coins_response.dart';
 

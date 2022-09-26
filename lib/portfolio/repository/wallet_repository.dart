@@ -1,7 +1,6 @@
 import 'package:decimal/decimal.dart';
 
-import 'package:warren_task_one/portfolio/model/coin_view_data.dart';
-
+import '../model/coin_view_data.dart';
 import '../model/wallet_view_data.dart';
 
 class WalletRepository {

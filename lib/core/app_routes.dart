@@ -1,4 +1,4 @@
-import 'package:warren_task_one/convert/view/convert_page.dart';
+import '../convert/view/convert_page.dart';
 
 import '../detail/view/detail_page.dart';
 import '../movements/view/movements_page.dart';

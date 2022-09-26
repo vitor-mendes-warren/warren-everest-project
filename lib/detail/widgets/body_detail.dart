@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/detail/widgets/loading_details.dart';
+import 'loading_details.dart';
 
 import '../../portfolio/model/wallet_view_data.dart';
 import '../../shared/api/models/coin_prices/coin_price_response.dart';

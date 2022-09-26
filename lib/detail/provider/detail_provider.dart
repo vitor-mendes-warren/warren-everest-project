@@ -1,9 +1,9 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/detail/usecase/get_coin_prices_use_case.dart';
 
 import '../../shared/api/models/coin_prices/coin_price_response.dart';
 import '../../shared/repository/coin_prices_repository_provider.dart';
 import '../controller/detail_controller.dart';
+import '../usecase/get_coin_prices_use_case.dart';
 
 final detailControllerProvider = ChangeNotifierProvider(
   (ref) => DetailsController(),
