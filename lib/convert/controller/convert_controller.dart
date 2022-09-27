@@ -24,7 +24,8 @@ class ConvertController extends ChangeNotifier {
     currentAssetPriceToConvert = coinToConvert.market_data!.current_price.usd;
     currentAssetPrice = currentCoin.market_data!.current_price.usd;
     _setCoinPercent(userWallet.percent.toString());
-    isValidConversion = (currentCoin != coinToConvert);
+    isValidConversion =
+        (currentCoin != coinToConvert) && (_coinPercent >= _convertValue);
     if (currentCoin == coinToConvert) {
       helperMessage = 'Selecione uma moeda diferente para conversão';
     }
@@ -38,14 +39,12 @@ class ConvertController extends ChangeNotifier {
   }
 
   void _validateConversion() {
-    isValidConversion = _coinPercent >= _convertValue;
     if (_convertValue == Decimal.fromInt(0)) {
       isValidConversion = false;
       helperMessage = 'Digite um valor válido';
     } else if (_coinPercent < _convertValue) {
       helperMessage = 'Valor digitado superior ao saldo disponível';
     }
-
     notifyListeners();
   }
 

@@ -30,7 +30,7 @@ class ConvertButton extends HookConsumerWidget {
         height: size.height * 0.08,
         onPressed: () {
           convertController.setConvertValue('0');
-
+          convertController.notifyListeners();
           Navigator.pushNamed(context, ConvertPage.route, arguments: coin);
         },
         shape: RoundedRectangleBorder(
