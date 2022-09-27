@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../portfolio/model/coin_view_data.dart';
-import '../provider/conver_provider.dart';
+import '../provider/convert_provider.dart';
 
 class BottomCoinList extends StatefulHookConsumerWidget {
   const BottomCoinList({
@@ -24,6 +24,7 @@ class BottomCoinListState extends ConsumerState<BottomCoinList> {
   @override
   Widget build(BuildContext context) {
     final allCoinsController = ref.watch(allCoinsControllerProvider);
+    final convertController = ref.watch(convertControllerProvider);
 
     Size size = MediaQuery.of(context).size;
 
@@ -80,7 +81,6 @@ class BottomCoinListState extends ConsumerState<BottomCoinList> {
                 ),
               ),
               Expanded(
-                // padding: EdgeInsets.only(top: 12),
                 child: TextFormField(
                   onChanged: (text) {
                     setState(() {
@@ -90,7 +90,6 @@ class BottomCoinListState extends ConsumerState<BottomCoinList> {
                               .contains((text.toLowerCase())))
                           .toList();
                     });
-                    filterCoinList;
                   },
                   style: TextStyle(
                     fontSize: MediaQuery.of(context).size.width * 0.050,
@@ -108,88 +107,100 @@ class BottomCoinListState extends ConsumerState<BottomCoinList> {
             ]),
           ),
           Expanded(
-              child: ListView.builder(
-            itemCount: filterCoinList.isEmpty ? 1 : filterCoinList.length,
-            itemBuilder: (context, index) {
-              return filterCoinList.isEmpty
-                  ? const Center(
-                      child: Text('data'),
-                    )
-                  : Card(
-                      borderOnForeground: true,
-                      elevation: 4,
-                      child: InkWell(
-                        borderRadius: BorderRadius.circular(3),
-                        onTap: () {
-                          allCoinsController
-                              .setCoinToConvert(filterCoinList[index]);
-                          Navigator.pop(context);
-                        },
-                        child: Container(
-                          padding: EdgeInsets.all(size.height * .02),
-                          height: size.height * 0.1,
-                          decoration: const BoxDecoration(
-                            border: Border(
-                              top: BorderSide(
-                                color: Color.fromARGB(255, 227, 228, 235),
-                                width: 2,
-                              ),
+              child: Visibility(
+            visible: filterCoinList.isNotEmpty,
+            replacement: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Não foi possível encontrar a moeda',
+                    style: TextStyle(
+                        fontFamily: "Mansny regular",
+                        fontWeight: FontWeight.bold,
+                        fontSize: size.height * .021,
+                        color: const Color.fromARGB(255, 0, 0, 0)),
+                  ),
+                ],
+              ),
+            ),
+            child: ListView.builder(
+              itemCount: filterCoinList.length,
+              itemBuilder: (context, index) {
+                return Card(
+                    borderOnForeground: true,
+                    elevation: 4,
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(3),
+                      onTap: () {
+                        convertController.coinToConvert = filterCoinList[index];
+                        convertController.notifyListeners();
+                        allCoinsController
+                            .setCoinToConvert(filterCoinList[index]);
+                        Navigator.pop(context);
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(size.height * .015),
+                        height: size.height * 0.10,
+                        decoration: const BoxDecoration(
+                          border: Border(
+                            top: BorderSide(
+                              color: Color.fromARGB(255, 227, 228, 235),
+                              width: 2,
                             ),
                           ),
-                          child: Row(
-                            children: [
-                              Container(
-                                margin:
-                                    EdgeInsets.only(right: size.width * .05),
-                                width: size.width * .12,
-                                height: size.height * .07,
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: NetworkImage(
-                                            filterCoinList[index]
-                                                .image!
-                                                .small))),
-                              ),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          filterCoinList[index].name,
-                                          style: const TextStyle(
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                        const Icon(
-                                          Icons.arrow_forward_ios_sharp,
-                                          size: 14,
-                                        )
-                                      ],
-                                    ),
-                                    Text(
-                                      filterCoinList[index].symbol,
-                                      style: TextStyle(
-                                          fontFamily: "Mansny-regular",
-                                          fontWeight: FontWeight.w300,
-                                          // fontWeight: FontWeight.normal,
-                                          fontSize: size.height * .018,
-                                          color: const Color.fromARGB(
-                                              255, 154, 154, 163)),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
                         ),
-                      ));
-            },
+                        child: Row(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(right: size.width * .05),
+                              width: size.width * .12,
+                              height: size.height * .07,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: NetworkImage(
+                                          filterCoinList[index].image!.small))),
+                            ),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        filterCoinList[index].name,
+                                        style: const TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      const Icon(
+                                        Icons.arrow_forward_ios_sharp,
+                                        size: 14,
+                                      )
+                                    ],
+                                  ),
+                                  Text(
+                                    filterCoinList[index].symbol,
+                                    style: TextStyle(
+                                        fontFamily: "Mansny-regular",
+                                        fontWeight: FontWeight.w300,
+                                        fontSize: size.height * .018,
+                                        color: const Color.fromARGB(
+                                            255, 154, 154, 163)),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ));
+              },
+            ),
           ))
         ],
       ),

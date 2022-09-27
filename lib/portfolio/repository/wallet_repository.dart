@@ -23,7 +23,7 @@ class WalletRepository {
     ));
     walletCoins.add(WalletViewData(
       coin: allCoins[10],
-      userBalance: Decimal.parse('500.20'),
+      userBalance: Decimal.parse('500.22323'),
     ));
     walletCoins.add(WalletViewData(
       coin: allCoins[17],

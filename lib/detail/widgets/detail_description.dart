@@ -7,7 +7,6 @@ import 'package:intl/intl.dart';
 import '../../portfolio/model/wallet_view_data.dart';
 import '../../shared/api/models/coin_prices/coin_price_response.dart';
 import '../../shared/utils/util.dart';
-import 'bottom_line.dart';
 import 'convert_button.dart';
 import 'currency_variation_value.dart';
 import 'detail_coin_value.dart';
@@ -25,7 +24,7 @@ class DetailDescription extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Expanded(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           DetailCoinValue(
             description: 'Preço atual',
@@ -53,7 +52,6 @@ class DetailDescription extends HookConsumerWidget {
             data: data,
             coin: wallet.coin,
           ),
-          const BottomLine(),
         ],
       ),
     );

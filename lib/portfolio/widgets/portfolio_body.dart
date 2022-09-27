@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../convert/provider/conver_provider.dart';
+import '../../convert/provider/convert_provider.dart';
 import '../provider/wallet_provider.dart';
 import '../repository/wallet_repository.dart';
 import 'coin_list.dart';
