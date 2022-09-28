@@ -36,6 +36,10 @@ class UserCoinBalance extends HookConsumerWidget {
                 color: const Color.fromARGB(255, 95, 95, 95)),
           ),
           AutoSizeText(
+            style: TextStyle(
+                fontFamily: "Mansny-light",
+                fontSize: size.height * .017,
+                fontWeight: FontWeight.bold),
             Util.getFormatedPercentage(
                 walletController.selectedWalletCoin.percent, coin.symbol),
             maxFontSize: 25,

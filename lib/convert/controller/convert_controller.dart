@@ -8,34 +8,27 @@ import '../../portfolio/model/wallet_view_data.dart';
 
 class ConvertController extends ChangeNotifier {
   late bool isValidConversion;
-
   late Decimal _coinPercent;
   late Decimal _convertValue;
-
+  late String helperMessage;
   late double currentAssetPrice;
   late double currentAssetPriceToConvert;
   late CoinViewData coinToConvert;
   late CoinViewData currentCoin;
 
-  void refreshVar(CoinViewData coinToConvert, CoinViewData currentCoin,
+  void refresh(CoinViewData coinToConvert, CoinViewData currentCoin,
       WalletViewData userWallet) {
     this.currentCoin = currentCoin;
     this.coinToConvert = coinToConvert;
     currentAssetPriceToConvert = coinToConvert.market_data!.current_price.usd;
     currentAssetPrice = currentCoin.market_data!.current_price.usd;
     _setCoinPercent(userWallet.percent.toString());
+
     isValidConversion =
         (currentCoin != coinToConvert) && (_coinPercent >= _convertValue);
     if (currentCoin == coinToConvert) {
       helperMessage = 'Selecione uma moeda diferente para conversão';
     }
-  }
-
-  late String helperMessage;
-  ConvertController() {
-    _coinPercent = Decimal.fromInt(0);
-    _convertValue = Decimal.fromInt(0);
-    isValidConversion = true;
   }
 
   void _validateConversion() {

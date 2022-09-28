@@ -26,12 +26,14 @@ class BodyConvertState extends ConsumerState<BodyConvert>
 
   @override
   Widget build(BuildContext context) {
-    final convertController = ref.watch(convertControllerProvider);
     CoinViewData coin =
         ModalRoute.of(context)!.settings.arguments as CoinViewData;
+
+    final convertController = ref.watch(convertControllerProvider);
     final allCoinsController = ref.watch(allCoinsControllerProvider);
     final walletController = ref.watch(walletControllerProvider);
-    convertController.refreshVar(allCoinsController.coinToConvert, coin,
+
+    convertController.refresh(allCoinsController.coinToConvert, coin,
         walletController.selectedWalletCoin);
 
     Size size = MediaQuery.of(context).size;
