@@ -37,26 +37,20 @@ class LoadingDetails extends StatelessWidget {
                           padding: EdgeInsets.symmetric(
                               vertical: size.height * .005),
                           child: Container(
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(7)),
+                            decoration: getLoadingConatainerDecoration(),
                             height: size.height * .03,
                             width: size.width * .1,
                           ),
                         ),
                         Container(
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(7)),
+                          decoration: getLoadingConatainerDecoration(),
                           height: size.height * .06,
                           width: size.width * .6,
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 10),
                           child: Container(
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(7)),
+                            decoration: getLoadingConatainerDecoration(),
                             height: size.height * .2,
                             width: size.width,
                           ),
@@ -68,9 +62,7 @@ class LoadingDetails extends StatelessWidget {
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 10),
                               child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(7)),
+                                decoration: getLoadingConatainerDecoration(),
                                 height: size.height * .035,
                                 width: size.width * .08,
                               ),
@@ -79,9 +71,7 @@ class LoadingDetails extends StatelessWidget {
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 10),
                               child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(7)),
+                                decoration: getLoadingConatainerDecoration(),
                                 height: size.height * .035,
                                 width: size.width * .08,
                               ),
@@ -90,9 +80,7 @@ class LoadingDetails extends StatelessWidget {
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 10),
                               child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(7)),
+                                decoration: getLoadingConatainerDecoration(),
                                 height: size.height * .035,
                                 width: size.width * .08,
                               ),
@@ -101,9 +89,7 @@ class LoadingDetails extends StatelessWidget {
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 10),
                               child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(7)),
+                                decoration: getLoadingConatainerDecoration(),
                                 height: size.height * .035,
                                 width: size.width * .08,
                               ),
@@ -112,9 +98,7 @@ class LoadingDetails extends StatelessWidget {
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 10),
                               child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(7)),
+                                decoration: getLoadingConatainerDecoration(),
                                 height: size.height * .035,
                                 width: size.width * .08,
                               ),
@@ -153,10 +137,7 @@ class LoadingDetails extends StatelessWidget {
                           children: [
                             Expanded(
                               child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(7),
-                                  color: Colors.white,
-                                ),
+                                decoration: getLoadingConatainerDecoration(),
                                 height: 10,
                               ),
                             ),
@@ -165,10 +146,7 @@ class LoadingDetails extends StatelessWidget {
                             ),
                             Expanded(
                               child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(7),
-                                  color: Colors.white,
-                                ),
+                                decoration: getLoadingConatainerDecoration(),
                                 height: 10,
                               ),
                             ),
@@ -177,10 +155,7 @@ class LoadingDetails extends StatelessWidget {
                             ),
                             Expanded(
                               child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(7),
-                                  color: Colors.white,
-                                ),
+                                decoration: getLoadingConatainerDecoration(),
                               ),
                             ),
                             const SizedBox(
@@ -188,10 +163,7 @@ class LoadingDetails extends StatelessWidget {
                             ),
                             Expanded(
                               child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(7),
-                                  color: Colors.white,
-                                ),
+                                decoration: getLoadingConatainerDecoration(),
                                 height: 10,
                               ),
                             ),
@@ -205,5 +177,10 @@ class LoadingDetails extends StatelessWidget {
         )
       ],
     );
+  }
+
+  BoxDecoration getLoadingConatainerDecoration() {
+    return BoxDecoration(
+        color: Colors.white, borderRadius: BorderRadius.circular(7));
   }
 }
