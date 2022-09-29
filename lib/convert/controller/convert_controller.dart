@@ -24,8 +24,9 @@ class ConvertController extends ChangeNotifier {
     currentAssetPrice = currentCoin.market_data!.current_price.usd;
     _setCoinPercent(userWallet.percent.toString());
 
-    isValidConversion =
-        (currentCoin != coinToConvert) && (_coinPercent >= _convertValue);
+    isValidConversion = (currentCoin != coinToConvert) &&
+        (_coinPercent >= _convertValue) &&
+        _convertValue != Decimal.fromInt(0);
     if (currentCoin == coinToConvert) {
       helperMessage = 'Selecione uma moeda diferente para conversão';
     }
