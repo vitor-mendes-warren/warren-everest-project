@@ -47,7 +47,7 @@ class BodyConvertState extends ConsumerState<BodyConvert>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const ConvertTitle(),
+              const ConvertTitle(title: 'Quanto você gostaria de converter?'),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: size.height * .03),
                 child: Row(
