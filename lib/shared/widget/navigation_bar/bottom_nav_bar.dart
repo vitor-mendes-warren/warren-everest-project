@@ -10,7 +10,9 @@ class BottomNavBar extends HookConsumerWidget {
   final int pageIndex;
   const BottomNavBar({
     super.key,
+
     required this.pageIndex,
+
   });
 
   @override
