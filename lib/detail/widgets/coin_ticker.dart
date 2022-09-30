@@ -13,7 +13,7 @@ class CoinTicker extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Text(coinTicker,
         style: TextStyle(
-          fontFamily: "Mansny regular",
+          fontFamily: "Mansny-regular",
           fontWeight: FontWeight.normal,
           fontSize: size.height * .02,
         ));

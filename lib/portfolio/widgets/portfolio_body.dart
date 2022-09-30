@@ -1,12 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/portfolio/repository/wallet_repository.dart';
-import 'coin_list.dart';
-import 'wallet_header.dart';
 
+import '../../convert/provider/convert_provider.dart';
 import '../provider/wallet_provider.dart';
+import '../repository/wallet_repository.dart';
+import 'coin_list.dart';
 import 'loading_wallet.dart';
+import 'wallet_header.dart';
 
 class BodyPortfolio extends HookConsumerWidget {
   const BodyPortfolio({
@@ -15,13 +16,16 @@ class BodyPortfolio extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final getAllCoinsProvider = ref.watch(allCoinsProvider);
+    final getAllCoinsProvider = ref.watch(getAllCoinsFutureProvider);
+    final walletController = ref.watch(walletControllerProvider);
+    final allCoinsController = ref.watch(allCoinsControllerProvider);
     return SafeArea(
         child: getAllCoinsProvider.when(
             data: (data) {
-              final walletController = ref.watch(walletControllerProvider);
               walletController.coins =
                   WalletRepository(allCoins: data).getAllUserCoin();
+
+              allCoinsController.coins = data;
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [WalletHeader(), CoinList()],

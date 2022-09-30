@@ -4,13 +4,11 @@ import 'package:shimmer/shimmer.dart';
 class LoadingDetails extends StatelessWidget {
   const LoadingDetails({
     super.key,
-    required this.size,
   });
-
-  final Size size;
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -30,7 +28,7 @@ class LoadingDetails extends StatelessWidget {
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                              color: Colors.amber,
+                              color: Colors.white,
                               borderRadius: BorderRadius.circular(7)),
                           height: size.height * .06,
                           width: size.width,
@@ -39,37 +37,80 @@ class LoadingDetails extends StatelessWidget {
                           padding: EdgeInsets.symmetric(
                               vertical: size.height * .005),
                           child: Container(
-                            decoration: BoxDecoration(
-                                color: Colors.amber,
-                                borderRadius: BorderRadius.circular(7)),
+                            decoration: getLoadingConatainerDecoration(),
                             height: size.height * .03,
                             width: size.width * .1,
                           ),
                         ),
                         Container(
-                          decoration: BoxDecoration(
-                              color: Colors.amber,
-                              borderRadius: BorderRadius.circular(7)),
+                          decoration: getLoadingConatainerDecoration(),
                           height: size.height * .06,
                           width: size.width * .6,
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 10),
                           child: Container(
-                            decoration: BoxDecoration(
-                                color: Colors.amber,
-                                borderRadius: BorderRadius.circular(7)),
+                            decoration: getLoadingConatainerDecoration(),
                             height: size.height * .2,
                             width: size.width,
                           ),
                         ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: Container(
+                                decoration: getLoadingConatainerDecoration(),
+                                height: size.height * .035,
+                                width: size.width * .08,
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: Container(
+                                decoration: getLoadingConatainerDecoration(),
+                                height: size.height * .035,
+                                width: size.width * .08,
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: Container(
+                                decoration: getLoadingConatainerDecoration(),
+                                height: size.height * .035,
+                                width: size.width * .08,
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: Container(
+                                decoration: getLoadingConatainerDecoration(),
+                                height: size.height * .035,
+                                width: size.width * .08,
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10),
+                              child: Container(
+                                decoration: getLoadingConatainerDecoration(),
+                                height: size.height * .035,
+                                width: size.width * .08,
+                              ),
+                            ),
+                          ],
+                        )
                       ]),
                 ),
               ],
             )),
         Expanded(
-            child: ListView.builder(
-          itemBuilder: (context, index) => Container(
+          child: Container(
             height: size.height * .12,
             decoration: const BoxDecoration(
               color: Colors.white,
@@ -89,9 +130,6 @@ class LoadingDetails extends StatelessWidget {
                 child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CircleAvatar(
-                        radius: size.width * .12,
-                      ),
                       Expanded(
                         flex: 3,
                         child: Column(
@@ -99,10 +137,7 @@ class LoadingDetails extends StatelessWidget {
                           children: [
                             Expanded(
                               child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(7),
-                                  color: Colors.amber,
-                                ),
+                                decoration: getLoadingConatainerDecoration(),
                                 height: 10,
                               ),
                             ),
@@ -111,30 +146,41 @@ class LoadingDetails extends StatelessWidget {
                             ),
                             Expanded(
                               child: Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(7),
-                                  color: Colors.white,
-                                ),
+                                decoration: getLoadingConatainerDecoration(),
+                                height: 10,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Expanded(
+                              child: Container(
+                                decoration: getLoadingConatainerDecoration(),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Expanded(
+                              child: Container(
+                                decoration: getLoadingConatainerDecoration(),
                                 height: 10,
                               ),
                             ),
                           ],
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            top: size.height * .009, left: size.width * .04),
-                        child: const Icon(
-                          Icons.arrow_forward_ios_sharp,
-                          size: 14,
-                        ),
-                      )
                     ]),
               ),
             ),
           ),
-        ))
+        )
       ],
     );
+  }
+
+  BoxDecoration getLoadingConatainerDecoration() {
+    return BoxDecoration(
+        color: Colors.white, borderRadius: BorderRadius.circular(7));
   }
 }

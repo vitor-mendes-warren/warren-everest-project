@@ -1,3 +1,4 @@
+import 'package:easy_mask/easy_mask.dart';
 import 'package:flutter/material.dart';
 
 class Util {
@@ -8,7 +9,7 @@ class Util {
       visible ? Icons.visibility : Icons.visibility_off;
 
   static String getFormatedPercentage(double percentage, String ticker) {
-    return "${percentage.toStringAsFixed(2)} $ticker";
+    return "${percentage.toString()} $ticker";
   }
 
   static Color getVariationColor(String variation) =>
@@ -25,5 +26,13 @@ class Util {
 
   static String getDateTimeNowToTimestamp() {
     return (DateTime.now().millisecondsSinceEpoch / 1000).round().toString();
+  }
+
+  static TextInputMask getTextInputFormatter(double percentCoin) {
+    String integerSpace = '';
+    for (var i = 0; i < percentCoin.truncate().toString().length; i++) {
+      integerSpace = integerSpace + 9.toString();
+    }
+    return TextInputMask(mask: ['$integerSpace.999999999999999999999']);
   }
 }

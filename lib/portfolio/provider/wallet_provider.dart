@@ -19,6 +19,7 @@ final getAllCoinUseCase = Provider((ref) {
   return GetAllCoinUseCase(repository: ref.read(coinRepositoryProvider));
 });
 
-final allCoinsProvider = FutureProvider<List<CoinViewData>>((ref) async {
-  return ref.read(getAllCoinUseCase).execute();
+final getAllCoinsFutureProvider =
+    FutureProvider<List<CoinViewData>>((ref) async {
+  return await ref.read(getAllCoinUseCase).execute();
 });

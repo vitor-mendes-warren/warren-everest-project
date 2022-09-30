@@ -36,7 +36,7 @@ class LoadingWallet extends StatelessWidget {
                       Text('Cripto',
                           style: TextStyle(
                               fontFamily: "Montserrat",
-                              color: const Color.fromARGB(255, 244, 43, 87),
+                              color: Colors.white,
                               fontSize: size.height * .045)),
                       IconButton(
                           onPressed: () {},
@@ -69,7 +69,7 @@ class LoadingWallet extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(4),
-                        color: Colors.amber,
+                        color: Colors.white,
                       ),
                       width: size.width * 0.4,
                       height: size.height * .02,
@@ -112,7 +112,7 @@ class LoadingWallet extends StatelessWidget {
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(7),
-                                  color: Colors.amber,
+                                  color: Colors.white,
                                 ),
                                 height: 10,
                               ),
