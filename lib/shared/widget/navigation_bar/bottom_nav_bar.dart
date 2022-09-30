@@ -8,8 +8,8 @@ import 'bottom_nav_button.dart';
 
 class BottomNavBar extends HookConsumerWidget {
   const BottomNavBar({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
