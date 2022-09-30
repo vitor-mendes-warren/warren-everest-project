@@ -1,14 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/detail/provider/detail_provider.dart';
 
 import '../../movements/view/movements_page.dart';
 
 enum Direction { vertical, horizontal }
 
-class SlideFadeTransition extends StatefulHookConsumerWidget {
+class SlideFadeTransition extends StatefulWidget {
   final Widget child;
 
   final double offset;
@@ -36,7 +34,7 @@ class SlideFadeTransition extends StatefulHookConsumerWidget {
   _SlideFadeTransitionState createState() => _SlideFadeTransitionState();
 }
 
-class _SlideFadeTransitionState extends ConsumerState<SlideFadeTransition>
+class _SlideFadeTransitionState extends State<SlideFadeTransition>
     with SingleTickerProviderStateMixin {
   late Animation<Offset> _animationSlide;
 
@@ -77,8 +75,8 @@ class _SlideFadeTransitionState extends ConsumerState<SlideFadeTransition>
     Timer(widget.delayStart, () {
       _animationController.forward();
       Timer(const Duration(seconds: 4), () {
-        ref.watch(pageIndexProvider.state).state = 1;
         Navigator.pushNamed(context, MovementsPage.route);
+        // _animationController.forward();
       });
     });
   }
