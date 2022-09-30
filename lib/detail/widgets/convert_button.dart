@@ -29,8 +29,9 @@ class ConvertButton extends HookConsumerWidget {
         color: const Color.fromARGB(255, 224, 43, 87),
         height: size.height * 0.08,
         onPressed: () {
-          convertController.setConvertValue('0');
-          convertController.notifyListeners();
+          // convertController.setConvertValue('0');
+          // convertController.setCoinToConvert(coin);
+          convertController.initValues(coin);
           Navigator.pushNamed(context, ConvertPage.route, arguments: coin);
         },
         shape: RoundedRectangleBorder(

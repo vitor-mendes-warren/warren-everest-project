@@ -133,9 +133,7 @@ class BottomCoinListState extends ConsumerState<BottomCoinList> {
                     child: InkWell(
                       borderRadius: BorderRadius.circular(3),
                       onTap: () {
-                        convertController.coinToConvert = filterCoinList[index];
-                        convertController.notifyListeners();
-                        allCoinsController
+                        convertController
                             .setCoinToConvert(filterCoinList[index]);
                         Navigator.pop(context);
                       },

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../review/view/review_page.dart';
 import '../provider/convert_provider.dart';
 
 class TotalConvert extends HookConsumerWidget {
@@ -53,7 +54,14 @@ class TotalConvert extends HookConsumerWidget {
             backgroundColor: convertController.isValidConversion
                 ? const Color.fromARGB(255, 244, 43, 87)
                 : const Color.fromARGB(255, 150, 150, 150),
-            onPressed: () {},
+            onPressed: () {
+              if (convertController.isValidConversion) {
+                Navigator.pushNamed(
+                  context,
+                  ReviewPage.route,
+                );
+              }
+            },
             child: const Icon(
               Icons.arrow_forward,
               size: 18,

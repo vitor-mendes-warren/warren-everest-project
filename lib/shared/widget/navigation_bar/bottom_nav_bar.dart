@@ -7,8 +7,12 @@ import '../../utils/assets.dart';
 import 'bottom_nav_button.dart';
 
 class BottomNavBar extends HookConsumerWidget {
+  final int pageIndex;
   const BottomNavBar({
     super.key,
+
+    required this.pageIndex,
+
   });
 
   @override
@@ -29,10 +33,12 @@ class BottomNavBar extends HookConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           BottomNavButton(
+              pageIndex: pageIndex,
               icons: warrenIcons,
               route: PortfolioPage.route,
               buttonName: 'Portfólio'),
           BottomNavButton(
+              pageIndex: pageIndex,
               icons: cryptoIcons,
               route: MovementsPage.route,
               buttonName: 'Movimentações'),

@@ -1,22 +1,23 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
-class ConvertTitle extends StatelessWidget {
+class TextPageHeader extends StatelessWidget {
   final String title;
-  const ConvertTitle({
+  final double fontSize;
+  const TextPageHeader({
     Key? key,
     required this.title,
+    required this.fontSize,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return AutoSizeText(
       title,
       style: TextStyle(
-        fontFamily: "Mansny regular",
+        fontFamily: "Mansny-regular",
         fontWeight: FontWeight.bold,
-        fontSize: size.height * .037,
+        fontSize: fontSize,
       ),
     );
   }

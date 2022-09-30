@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/convert/widgets/convert_title.dart';
+import 'package:warren_task_one/shared/widget/text_page_header.dart';
 import 'package:warren_task_one/convert/widgets/total_convert.dart';
 import 'package:warren_task_one/portfolio/model/coin_view_data.dart';
 
@@ -30,11 +30,9 @@ class BodyConvertState extends ConsumerState<BodyConvert>
         ModalRoute.of(context)!.settings.arguments as CoinViewData;
 
     final convertController = ref.watch(convertControllerProvider);
-    final allCoinsController = ref.watch(allCoinsControllerProvider);
     final walletController = ref.watch(walletControllerProvider);
 
-    convertController.refresh(allCoinsController.coinToConvert, coin,
-        walletController.selectedWalletCoin);
+    convertController.refresh(coin, walletController.selectedWalletCoin);
 
     Size size = MediaQuery.of(context).size;
     return Column(
@@ -47,7 +45,10 @@ class BodyConvertState extends ConsumerState<BodyConvert>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const ConvertTitle(title: 'Quanto você gostaria de converter?'),
+              TextPageHeader(
+                fontSize: size.height * .037,
+                title: 'Quanto você gostaria de converter?',
+              ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: size.height * .03),
                 child: Row(

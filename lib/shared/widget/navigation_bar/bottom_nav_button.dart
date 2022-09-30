@@ -2,29 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/app_routes.dart';
-import '../../../portfolio/provider/wallet_provider.dart';
 import '../../utils/assets.dart';
 
+// ignore: must_be_immutable
 class BottomNavButton extends HookConsumerWidget {
-  const BottomNavButton({
+  BottomNavButton({
     Key? key,
     required this.icons,
     required this.route,
     required this.buttonName,
+    required this.pageIndex,
   }) : super(key: key);
 
   final Set<String> icons;
   final String route;
   final String buttonName;
+  int pageIndex;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final pageIndex = ref.watch(pageIndexProvider.state);
     void setPageIndex() {
       if (icons == warrenIcons) {
-        pageIndex.state = 0;
+        pageIndex = 0;
       } else {
-        pageIndex.state = 1;
+        pageIndex = 1;
       }
     }
 
@@ -45,7 +46,7 @@ class BottomNavButton extends HookConsumerWidget {
           children: [
             Image(
               height: size.height * 0.03,
-              image: AssetImage(icons.elementAt(pageIndex.state)),
+              image: AssetImage(icons.elementAt(pageIndex)),
               fit: BoxFit.cover,
             ),
             Text(

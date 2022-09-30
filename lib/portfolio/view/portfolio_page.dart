@@ -11,7 +11,7 @@ class PortfolioPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: BottomNavBar(pageIndex: 0),
       backgroundColor: Colors.white,
       body: BodyPortfolio(),
     );
