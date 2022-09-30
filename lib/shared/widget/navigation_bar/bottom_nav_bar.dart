@@ -7,8 +7,9 @@ import '../../utils/assets.dart';
 import 'bottom_nav_button.dart';
 
 class BottomNavBar extends HookConsumerWidget {
-  int pageIndex;
-  BottomNavBar({
+  final int pageIndex;
+  const BottomNavBar({
+    super.key,
     required this.pageIndex,
   });
 
