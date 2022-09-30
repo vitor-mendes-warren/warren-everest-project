@@ -13,7 +13,7 @@ class ConvertCoinContainer extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     Size size = MediaQuery.of(context).size;
-    final allCoinsController = ref.watch(allCoinsControllerProvider);
+    final convertController = ref.watch(convertControllerProvider);
     return InkWell(
       onTap: () {
         wshowModalBottomSheet<void>(
@@ -55,10 +55,10 @@ class ConvertCoinContainer extends HookConsumerWidget {
                   decoration: BoxDecoration(
                       image: DecorationImage(
                           image: NetworkImage(
-                              allCoinsController.coinToConvert.image!.small))),
+                              convertController.coinToConvert.image!.small))),
                 ),
                 AutoSizeText(
-                  allCoinsController.coinToConvert.symbol,
+                  convertController.coinToConvert.symbol,
                   maxLines: 1,
                   style: const TextStyle(
                     fontFamily: "Mansny-regular",

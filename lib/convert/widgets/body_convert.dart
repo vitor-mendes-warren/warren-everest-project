@@ -30,11 +30,9 @@ class BodyConvertState extends ConsumerState<BodyConvert>
         ModalRoute.of(context)!.settings.arguments as CoinViewData;
 
     final convertController = ref.watch(convertControllerProvider);
-    final allCoinsController = ref.watch(allCoinsControllerProvider);
     final walletController = ref.watch(walletControllerProvider);
 
-    convertController.refresh(allCoinsController.coinToConvert, coin,
-        walletController.selectedWalletCoin);
+    convertController.refresh(coin, walletController.selectedWalletCoin);
 
     Size size = MediaQuery.of(context).size;
     return Column(

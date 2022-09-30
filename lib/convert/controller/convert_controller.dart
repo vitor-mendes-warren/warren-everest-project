@@ -16,30 +16,61 @@ class ConvertController extends ChangeNotifier {
   late CoinViewData coinToConvert;
   late CoinViewData currentCoin;
 
-  void refresh(CoinViewData coinToConvert, CoinViewData currentCoin,
-      WalletViewData userWallet) {
+  void refresh(CoinViewData currentCoin, WalletViewData userWallet) {
     this.currentCoin = currentCoin;
-    this.coinToConvert = coinToConvert;
     currentAssetPriceToConvert = coinToConvert.market_data!.current_price.usd;
     currentAssetPrice = currentCoin.market_data!.current_price.usd;
     _setCoinPercent(userWallet.percent.toString());
 
-    isValidConversion = (currentCoin != coinToConvert) &&
-        (_coinPercent >= _convertValue) &&
-        _convertValue != Decimal.fromInt(0);
-    if (currentCoin == coinToConvert) {
-      helperMessage = 'Selecione uma moeda diferente para conversão';
-    }
+    isValidConversion = (_isRedundantConvert() &&
+        _isAvaiableBalance() &&
+        _isConvertValueNotEmpty());
   }
 
-  void _validateConversion() {
+  void setCoinToConvert(CoinViewData coinToConvert) {
+    this.coinToConvert = coinToConvert;
+    validateConversion();
+  }
+
+  void initValues(CoinViewData coinToConvert) {
+    setConvertValue('0');
+    setCoinToConvert(coinToConvert);
+  }
+
+  void validateConversion() {
+    if (_isConvertValueNotEmpty()) {
+      _isAvaiableBalance();
+    }
+    notifyListeners();
+  }
+
+  bool _isRedundantConvert() {
+    if (currentCoin == coinToConvert) {
+      isValidConversion = false;
+      helperMessage = 'Selecione uma moeda diferente para conversão';
+      return isValidConversion;
+    }
+    return isValidConversion = true;
+  }
+
+  bool _isAvaiableBalance() {
+    if (_coinPercent < _convertValue) {
+      isValidConversion = false;
+      helperMessage = 'Valor digitado superior ao saldo disponível';
+      return isValidConversion;
+    }
+    return isValidConversion = true;
+  }
+
+  bool _isConvertValueNotEmpty() {
     if (_convertValue == Decimal.fromInt(0)) {
       isValidConversion = false;
       helperMessage = 'Digite um valor válido';
-    } else if (_coinPercent < _convertValue) {
-      helperMessage = 'Valor digitado superior ao saldo disponível';
+      return isValidConversion;
+    } else {
+      isValidConversion = true;
+      return isValidConversion;
     }
-    notifyListeners();
   }
 
   void setConvertValue(String convertValue) {
@@ -48,7 +79,7 @@ class ConvertController extends ChangeNotifier {
     } else {
       _convertValue = Decimal.fromInt(0);
     }
-    _validateConversion();
+    validateConversion();
   }
 
   void _setCoinPercent(String convertValue) {
