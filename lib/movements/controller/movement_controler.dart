@@ -16,8 +16,8 @@ class MovementControler extends ChangeNotifier {
 
   void addMovement(ConvertController convertController) {
     movementRepo.addMovement(MovementModel(
-        coinEntry: convertController.currentCoin,
-        coinOut: convertController.coinToConvert,
+        coinEntry: convertController.coinToConvert,
+        coinOut: convertController.currentCoin,
         movementEntry: convertController.getReceiveValue(),
         movementOut: convertController.getConvertDecimalValue(),
         movementDate: DateFormat("dd/MM/yyyy").format(DateTime.now()),
