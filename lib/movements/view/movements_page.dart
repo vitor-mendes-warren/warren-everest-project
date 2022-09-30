@@ -9,9 +9,9 @@ class MovementsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        bottomNavigationBar: BottomNavBar(),
-        body: Center(
+    return Scaffold(
+        bottomNavigationBar: BottomNavBar(pageIndex: 1),
+        body: const Center(
             child: AutoSizeText(
           maxLines: 1,
           ' página de movimentações',

@@ -67,4 +67,19 @@ class ConvertController extends ChangeNotifier {
 
     return '${coinToConvert.symbol} ${(dolarValue.toDouble() / currentAssetPriceToConvert).toString()}';
   }
+
+  String getReceiveFormatedValue() {
+    Decimal dolarValue = Decimal.parse(
+        (currentAssetPrice * _convertValue.toDouble()).toString());
+
+    return '${(dolarValue.toDouble() / currentAssetPriceToConvert).toString()} ${coinToConvert.symbol}';
+  }
+
+  String getConvertedFormatedValue() {
+    return '$_convertValue ${currentCoin.symbol}';
+  }
+
+  String getExchangeValue() {
+    return ' 1 ${currentCoin.symbol} = ${((currentAssetPrice / currentAssetPriceToConvert.toDouble()).toString())} ${coinToConvert.symbol}';
+  }
 }

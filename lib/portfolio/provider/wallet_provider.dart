@@ -8,8 +8,8 @@ import '../controller/wallet_controller.dart';
 final viewWalletValueProvider = StateProvider<bool>(
   (ref) => false,
 );
-final pageIndexProvider = StateProvider<int>(
-  (ref) => 0,
+final pageIndexProvider = StateProvider<int?>(
+  (ref) => null,
 );
 
 final walletControllerProvider =
