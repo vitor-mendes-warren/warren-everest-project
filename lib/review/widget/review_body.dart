@@ -6,6 +6,7 @@ import 'package:rounded_loading_button/rounded_loading_button.dart';
 import 'package:warren_task_one/sucess/view/success_page.dart';
 
 import '../../convert/provider/convert_provider.dart';
+import '../../movements/provider/movement_provider.dart';
 import '../../shared/widget/text_page_header.dart';
 import '../../detail/widgets/detail_coin_value.dart';
 
@@ -21,26 +22,23 @@ class BodyReviewState extends ConsumerState<BodyReview> {
   bool btnConverIsPressed = false;
   @override
   Widget build(BuildContext context) {
-    final convertController = ref.watch(convertControllerProvider);
     final RoundedLoadingButtonController btnController =
         RoundedLoadingButtonController();
+    final convertController = ref.watch(convertControllerProvider);
+    final movementControler = ref.watch(movementControllerProvider);
 
-    void confirmConvertion() async {
+    Future<void> confirmConvertion() async {
+      movementControler.addMovement(convertController);
       setState(() {
         btnConverIsPressed = true;
       });
-      Timer(
-        const Duration(seconds: 2),
-        () {
-          btnController.success();
-          Timer(
-            const Duration(seconds: 1),
-            () {
-              Navigator.pushNamed(context, SucessPage.route);
-            },
-          );
-        },
-      );
+
+      Future.delayed(const Duration(seconds: 2)).then((value) {
+        btnController.success();
+        Future.delayed(const Duration(seconds: 1)).then((value) {
+          Navigator.pushNamed(context, SucessPage.route);
+        });
+      });
     }
 
     Size size = MediaQuery.of(context).size;

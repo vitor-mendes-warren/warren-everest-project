@@ -1,6 +1,8 @@
 import 'package:easy_mask/easy_mask.dart';
 import 'package:flutter/material.dart';
 
+import '../../movements/model/movement_model.dart';
+
 class Util {
   static Color getContainerValueColor(bool visible) =>
       visible ? Colors.white : const Color.fromARGB(255, 161, 161, 161);
@@ -34,5 +36,13 @@ class Util {
       integerSpace = integerSpace + 9.toString();
     }
     return TextInputMask(mask: ['$integerSpace.999999999999999999999']);
+  }
+
+  static String getFormatedEntryValue(MovementModel movement) {
+    return '${movement.movementEntry.toString()} ${movement.coinEntry.symbol}';
+  }
+
+  static String getFormatedOutValue(MovementModel movement) {
+    return '${movement.movementOut.toString()} ${movement.coinOut.symbol}';
   }
 }

@@ -74,9 +74,8 @@ class _SlideFadeTransitionState extends State<SlideFadeTransition>
 
     Timer(widget.delayStart, () {
       _animationController.forward();
-      Timer(const Duration(seconds: 4), () {
+      Timer(const Duration(milliseconds: 3300), () {
         Navigator.pushNamed(context, MovementsPage.route);
-        // _animationController.forward();
       });
     });
   }

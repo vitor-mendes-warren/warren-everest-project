@@ -17,7 +17,6 @@ class ConvertCoinContainer extends HookConsumerWidget {
     return InkWell(
       onTap: () {
         wshowModalBottomSheet<void>(
-          useSafeArea: true,
           backgroundColor: Colors.black,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -31,7 +30,7 @@ class ConvertCoinContainer extends HookConsumerWidget {
       child: Container(
         padding: EdgeInsets.symmetric(
             horizontal: size.width * .007, vertical: size.height * .005),
-        width: size.width * 0.28,
+        width: size.width * 0.30,
         decoration: BoxDecoration(
           border: Border.all(
             color: const Color.fromARGB(255, 227, 228, 235),
