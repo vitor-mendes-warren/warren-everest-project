@@ -5,7 +5,7 @@ import 'package:warren_task_one/movements/provider/movement_provider.dart';
 import 'package:warren_task_one/movements/wigdet/movements_list.dart';
 import 'package:warren_task_one/shared/widget/text_page_header.dart';
 
-import 'wigdet/movements_empty_body.dart';
+import 'movements_empty_body.dart';
 
 class MovementBody extends HookConsumerWidget {
   const MovementBody({

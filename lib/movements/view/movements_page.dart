@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:warren_task_one/movements/movements_body.dart';
+import 'package:warren_task_one/movements/wigdet/movements_body.dart';
 
 import '../../shared/widget/navigation_bar/bottom_nav_bar.dart';
 

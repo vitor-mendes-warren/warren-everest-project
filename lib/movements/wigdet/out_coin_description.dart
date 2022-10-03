@@ -77,7 +77,7 @@ class OutCoinDescription extends StatelessWidget {
                       ValuesText(
                         text: movement
                             .coinEntry.market_data!.price_change_percentage_24h
-                            .toString(),
+                            .toStringAsFixed(5),
                       ),
                       ValuesText(
                           text: NumberFormat.simpleCurrency(
@@ -86,7 +86,7 @@ class OutCoinDescription extends StatelessWidget {
                                   .coinEntry.market_data!.current_price.usd)),
                       ValuesText(
                           text:
-                              '${movement.movementEntry.toString()} ${movement.coinEntry.symbol}'),
+                              '${movement.movementEntry.toStringAsFixed(3)} ${movement.coinEntry.symbol}'),
                     ],
                   ),
                 ],
