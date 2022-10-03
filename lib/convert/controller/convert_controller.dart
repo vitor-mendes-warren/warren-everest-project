@@ -6,6 +6,8 @@ import 'package:intl/intl.dart';
 import '../../portfolio/model/coin_view_data.dart';
 import '../../portfolio/model/wallet_view_data.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class ConvertController extends ChangeNotifier {
   late bool isValidConversion;
   late Decimal _coinPercent;
@@ -15,6 +17,7 @@ class ConvertController extends ChangeNotifier {
   late double currentAssetPriceToConvert;
   late CoinViewData coinToConvert;
   late CoinViewData currentCoin;
+  late BuildContext context;
 
   void refresh(CoinViewData currentCoin, WalletViewData userWallet) {
     this.currentCoin = currentCoin;
@@ -32,7 +35,8 @@ class ConvertController extends ChangeNotifier {
     validateConversion();
   }
 
-  void initValues(CoinViewData coinToConvert) {
+  void initValues(CoinViewData coinToConvert, BuildContext context) {
+    this.context = context;
     setConvertValue('0');
     setCoinToConvert(coinToConvert);
   }
@@ -47,7 +51,7 @@ class ConvertController extends ChangeNotifier {
   bool _isRedundantConvert() {
     if (currentCoin == coinToConvert) {
       isValidConversion = false;
-      helperMessage = 'Selecione uma moeda diferente para conversão';
+      helperMessage = AppLocalizations.of(context!)!.sameCoins;
       return isValidConversion;
     }
     return isValidConversion = true;
@@ -56,7 +60,7 @@ class ConvertController extends ChangeNotifier {
   bool _isAvaiableBalance() {
     if (_coinPercent < _convertValue) {
       isValidConversion = false;
-      helperMessage = 'Valor digitado superior ao saldo disponível';
+      helperMessage = AppLocalizations.of(context!)!.insufficientFunds;
       return isValidConversion;
     }
     return isValidConversion = true;
@@ -65,7 +69,7 @@ class ConvertController extends ChangeNotifier {
   bool _isConvertValueNotEmpty() {
     if (_convertValue == Decimal.fromInt(0)) {
       isValidConversion = false;
-      helperMessage = 'Digite um valor válido';
+      helperMessage = AppLocalizations.of(context!)!.invalidInput;
       return isValidConversion;
     } else {
       isValidConversion = true;

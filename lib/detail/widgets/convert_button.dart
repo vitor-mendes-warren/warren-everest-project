@@ -5,6 +5,7 @@ import '../../convert/provider/convert_provider.dart';
 import '../../convert/view/convert_page.dart';
 import '../../portfolio/model/coin_view_data.dart';
 import '../../shared/api/models/coin_prices/coin_price_response.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ConvertButton extends HookConsumerWidget {
   final CoinViewData coin;
@@ -29,14 +30,14 @@ class ConvertButton extends HookConsumerWidget {
         color: const Color.fromARGB(255, 224, 43, 87),
         height: size.height * 0.08,
         onPressed: () {
-          convertController.initValues(coin);
+          convertController.initValues(coin, context);
           Navigator.pushNamed(context, ConvertPage.route, arguments: coin);
         },
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
         child: Text(
-          'Converter moeda',
+          AppLocalizations.of(context)!.convertCrypto,
           style: TextStyle(
             fontFamily: "Mansny regular",
             color: Colors.white,

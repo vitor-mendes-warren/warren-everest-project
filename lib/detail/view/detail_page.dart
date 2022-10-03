@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../portfolio/model/wallet_view_data.dart';
 import '../widgets/body_detail.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DetailsPage extends StatelessWidget {
   const DetailsPage({Key? key}) : super(key: key);
@@ -14,8 +15,8 @@ class DetailsPage extends StatelessWidget {
         elevation: 1,
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
-        title: const Text(
-          'Detalhes',
+        title: Text(
+          AppLocalizations.of(context)!.details,
         ),
       ),
       body: BodyDetail(

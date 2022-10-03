@@ -6,6 +6,8 @@ import 'package:warren_task_one/movements/wigdet/values_text.dart';
 
 import 'entry_coint_description.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class DescriptionBottomSheet extends StatelessWidget {
   const DescriptionBottomSheet({
     super.key,
@@ -48,8 +50,8 @@ class DescriptionBottomSheet extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    const DescriptionText(
-                      text: 'Movimentação',
+                    DescriptionText(
+                      text: AppLocalizations.of(context)!.movementsAppBar,
                     ),
                     ValuesText(text: movement.dolarValue.toString()),
                   ],
@@ -57,8 +59,8 @@ class DescriptionBottomSheet extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    const DescriptionText(
-                      text: 'Data ',
+                    DescriptionText(
+                      text: AppLocalizations.of(context)!.movementDate,
                     ),
                     ValuesText(text: movement.movementDate.toString()),
                   ],

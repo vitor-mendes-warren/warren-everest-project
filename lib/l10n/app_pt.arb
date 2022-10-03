@@ -1,0 +1,112 @@
+{
+  "crypto": "Cripto",
+  "@crypto": {
+    "description": "titulo carteira de crytomoedas"
+  },
+  "userBalance": "Valor total de moedas",
+  "@userBalance": {
+    "description": "valor total de moedas em U$S"
+  },
+  "details": "Detalhes",
+  "@details": {
+    "description": "titulo da barra de detalhes"
+  },
+  "convertCrypto": "Converter moeda",
+  "@convertCrypto": {
+    "description": "titulo do botão de converter moedas"
+  },
+  "currentPrice": "Preço atual",
+  "@currentPrice": {
+    "description": "texto do preço atual da moeda "
+  },
+  "priceVariation": "Variação 24H ",
+  "@priceVariation": {
+    "description": "texto da variação de preço  %"
+  },
+  "userCryptoBalance": "Quantidade",
+  "@userCryptoBalance": {
+    "description": "texto quantidade de cryptos"
+  },
+  "userCryptoValue": "Valor",
+  "@userCryptoValue": {
+    "description": "valor da crypto do usuario"
+  },
+  "convert": "Converter",
+  "@convert": {
+    "description": "titulo da barra de conversão"
+  },
+  "total": "Total estimado ",
+  "@total": {
+    "description": "texto do valor total estimado"
+  },
+  "convertTitle": "Quanto você gostaria de converter?",
+  "@convertTitle": {
+    "description": "título da pagina de conversão"
+  },
+  "sameCoins": "Selecione uma moeda diferente para conversão",
+  "@sameCoins": {
+    "description": "mensagem de erro da conversao da mesma moeda"
+  },
+
+  "invalidInput": "Digite um valor válido",
+  "@sameCoins": {
+    "description": "mensagem de erro de valor inválido"
+  },
+
+  "insufficientFunds": "Valor digitado superior ao saldo disponível",
+  "@insufficientFunds": {
+    "description": "mensagem de erro de saldo insuficiente"
+  },
+  "totalBalance": "Salto total:",
+  "@totalBalance": {
+    "description": "saldo total da moeda específica"
+  },
+  "review": "Revisar",
+  "@review": {
+    "description": "titulo da barra da pagina de revisão"
+  },
+  "reviewTitle": "Revise os dados da sua conversão",
+  "@reviewTitle": {
+    "description": "texto principal da pagina de conversão"
+  },
+  "payWith": "Converter",
+  "@payWith": {
+    "description": "valor convertido"
+  },
+  "receive": "Receber",
+  "@receive": {
+    "description": "valor recebido"
+  },
+  "exchangeRate": "Câmbio",
+  "@exchangeRate": {
+    "description": "valor de cambio da moeda"
+  },
+  "movementsAppBar": "Movimentações",
+  "@movementsAppBar": {
+    "description": "titulo da pagina de movimentações"
+  },
+  "portfolio": "Portfolio",
+  "@portfolio": {
+    "description": "titulo da barra da pagina de portfolio"
+  },
+  "successTitle": "Conversão efetuada",
+  "@sucessTitle": {
+    "description": "titulo da pagina de sucesso na conversão"
+  },
+  "movementDate": "Data",
+  "@movementDate": {
+    "description": "data da movimentação"
+  },
+  "successSubtitle": "Conversão da moeda efetuada com sucesso!",
+  "@sucessSubtitle": {
+    "description": "subtitulo da pagina de sucesso na conversão"
+  },
+  "movementAmount": "Quantidade",
+  "@movementAmount": {
+    "description": "quantidade de movimentações da moeda"
+  },
+   "movementsEmpty": "Você não possui movimentações",
+  "@movementsEmpty": {
+    "description": "mensagem de aviso que não possui movimentações"
+  }
+}

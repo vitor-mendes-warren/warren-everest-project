@@ -4,6 +4,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../review/view/review_page.dart';
 import '../provider/convert_provider.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class TotalConvert extends HookConsumerWidget {
   const TotalConvert({
     super.key,
@@ -32,11 +34,11 @@ class TotalConvert extends HookConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Padding(
-                padding: EdgeInsets.only(bottom: 5),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 5),
                 child: Text(
-                  'Total estimado',
-                  style: TextStyle(
+                  AppLocalizations.of(context)!.total,
+                  style: const TextStyle(
                       fontFamily: "Mansny-LIGHT",
                       fontWeight: FontWeight.bold,
                       color: Color.fromARGB(255, 150, 150, 150)),

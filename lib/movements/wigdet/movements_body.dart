@@ -4,6 +4,7 @@ import 'package:warren_task_one/movements/model/movement_model.dart';
 import 'package:warren_task_one/movements/provider/movement_provider.dart';
 import 'package:warren_task_one/movements/wigdet/movements_list.dart';
 import 'package:warren_task_one/shared/widget/text_page_header.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'movements_empty_body.dart';
 
@@ -26,7 +27,8 @@ class MovementBody extends HookConsumerWidget {
           Padding(
             padding: EdgeInsets.only(bottom: size.height * 0.04),
             child: TextPageHeader(
-                title: 'Movimentações', fontSize: size.height * .045),
+                title: AppLocalizations.of(context)!.movementsAppBar,
+                fontSize: size.height * .045),
           ),
           Expanded(
             child: Visibility(
