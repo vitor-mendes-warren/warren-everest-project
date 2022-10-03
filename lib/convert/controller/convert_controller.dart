@@ -51,7 +51,7 @@ class ConvertController extends ChangeNotifier {
   bool _isRedundantConvert() {
     if (currentCoin == coinToConvert) {
       isValidConversion = false;
-      helperMessage = AppLocalizations.of(context!)!.sameCoins;
+      helperMessage = AppLocalizations.of(context)!.sameCoins;
       return isValidConversion;
     }
     return isValidConversion = true;
@@ -60,7 +60,7 @@ class ConvertController extends ChangeNotifier {
   bool _isAvaiableBalance() {
     if (_coinPercent < _convertValue) {
       isValidConversion = false;
-      helperMessage = AppLocalizations.of(context!)!.insufficientFunds;
+      helperMessage = AppLocalizations.of(context)!.insufficientFunds;
       return isValidConversion;
     }
     return isValidConversion = true;
@@ -69,7 +69,7 @@ class ConvertController extends ChangeNotifier {
   bool _isConvertValueNotEmpty() {
     if (_convertValue == Decimal.fromInt(0)) {
       isValidConversion = false;
-      helperMessage = AppLocalizations.of(context!)!.invalidInput;
+      helperMessage = AppLocalizations.of(context)!.invalidInput;
       return isValidConversion;
     } else {
       isValidConversion = true;
