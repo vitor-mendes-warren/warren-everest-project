@@ -32,9 +32,12 @@ class BodyReviewState extends ConsumerState<BodyReview> {
       setState(() {
         btnConverIsPressed = true;
       });
-      btnController.success();
+
       Future.delayed(const Duration(seconds: 2)).then((value) {
-        Navigator.pushNamed(context, SucessPage.route);
+        btnController.success();
+        Future.delayed(const Duration(seconds: 2)).then((value) {
+          Navigator.pushNamed(context, SucessPage.route);
+        });
       });
     }
 

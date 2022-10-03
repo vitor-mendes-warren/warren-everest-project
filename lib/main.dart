@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderScope(
         child: MaterialApp(
-      useInheritedMediaQuery: true,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
       initialRoute: PortfolioPage.route,

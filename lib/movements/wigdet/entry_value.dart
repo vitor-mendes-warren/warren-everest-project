@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class EntryValue extends StatelessWidget {
@@ -11,7 +12,8 @@ class EntryValue extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Text(
+    return AutoSizeText(
+      maxLines: 1,
       value,
       style: TextStyle(
         fontFamily: "Mansny-light",

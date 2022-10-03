@@ -16,7 +16,7 @@ class CurrentCoinContainer extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(
           horizontal: size.width * .007, vertical: size.height * .005),
-      width: size.width * 0.28,
+      width: size.width * 0.30,
       decoration: BoxDecoration(
         color: const Color.fromARGB(255, 236, 238, 245),
         border: Border.all(

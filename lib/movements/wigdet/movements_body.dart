@@ -32,7 +32,7 @@ class MovementBody extends HookConsumerWidget {
             child: Visibility(
               visible: allMovements.isNotEmpty,
               replacement: const MovimentsEmptyBody(),
-              child: MovementsList(allMovements: allMovements),
+              child: MovementsList(movementsList: allMovements),
             ),
           )
         ],
