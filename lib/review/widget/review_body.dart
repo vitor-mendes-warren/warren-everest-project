@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rounded_loading_button/rounded_loading_button.dart';
-import 'package:warren_task_one/movements/controller/movement_controler.dart';
 import 'package:warren_task_one/sucess/view/success_page.dart';
 
 import '../../convert/provider/convert_provider.dart';
@@ -33,6 +32,7 @@ class BodyReviewState extends ConsumerState<BodyReview> {
       setState(() {
         btnConverIsPressed = true;
       });
+      btnController.success();
       Future.delayed(const Duration(seconds: 2)).then((value) {
         Navigator.pushNamed(context, SucessPage.route);
       });
