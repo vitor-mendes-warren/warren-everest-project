@@ -9,6 +9,7 @@ import '../../convert/provider/convert_provider.dart';
 import '../../movements/provider/movement_provider.dart';
 import '../../shared/widget/text_page_header.dart';
 import '../../detail/widgets/detail_coin_value.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class BodyReview extends StatefulHookConsumerWidget {
   const BodyReview({
@@ -50,21 +51,21 @@ class BodyReviewState extends ConsumerState<BodyReview> {
               horizontal: size.width * 0.04, vertical: size.height * 0.035),
           child: TextPageHeader(
               fontSize: size.height * .048,
-              title: 'Revise os dados da sua conversão'),
+              title: AppLocalizations.of(context)!.reviewTitle),
         ),
         SizedBox(
           child: Column(
             children: [
               DetailCoinValue(
-                description: 'Converter',
+                description: AppLocalizations.of(context)!.convert,
                 value: convertController.getConvertedFormatedValue(),
               ),
               DetailCoinValue(
-                description: 'Receber',
+                description: AppLocalizations.of(context)!.review,
                 value: convertController.getReceiveFormatedValue(),
               ),
               DetailCoinValue(
-                description: 'Câmbio',
+                description: AppLocalizations.of(context)!.exchangeRate,
                 value: convertController.getExchangeValue(),
               ),
               Padding(
@@ -81,7 +82,7 @@ class BodyReviewState extends ConsumerState<BodyReview> {
                     onPressed: confirmConvertion,
                     width: size.width,
                     child: Text(
-                      'Converter moeda',
+                      AppLocalizations.of(context)!.convertCrypto,
                       style: TextStyle(
                         fontFamily: "Mansny regular",
                         color: Colors.white,

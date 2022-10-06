@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:warren_task_one/movements/wigdet/description_text.dart';
 import 'package:warren_task_one/movements/wigdet/values_text.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../model/movement_model.dart';
 
 class OutCoinDescription extends StatelessWidget {
@@ -64,10 +64,13 @@ class OutCoinDescription extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      DescriptionText(text: 'Variação 24H'),
-                      DescriptionText(text: 'Valor de mercado'),
-                      DescriptionText(text: 'Quantidade'),
+                    children: [
+                      DescriptionText(
+                          text: AppLocalizations.of(context)!.priceVariation),
+                      DescriptionText(
+                          text: AppLocalizations.of(context)!.userCryptoValue),
+                      DescriptionText(
+                          text: AppLocalizations.of(context)!.movementAmount),
                     ],
                   ),
                   Column(

@@ -11,6 +11,8 @@ import 'convert_coin_container.dart';
 import 'current_coin_container.dart';
 import 'user_coin_balance.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class BodyConvert extends StatefulHookConsumerWidget {
   const BodyConvert({
     super.key,
@@ -30,8 +32,8 @@ class BodyConvertState extends ConsumerState<BodyConvert>
         ModalRoute.of(context)!.settings.arguments as CoinViewData;
 
     final convertController = ref.watch(convertControllerProvider);
-    final walletController = ref.watch(walletControllerProvider);
 
+    final walletController = ref.watch(walletControllerProvider);
     convertController.refresh(coin, walletController.selectedWalletCoin);
 
     Size size = MediaQuery.of(context).size;
@@ -47,7 +49,7 @@ class BodyConvertState extends ConsumerState<BodyConvert>
             children: [
               TextPageHeader(
                 fontSize: size.height * .037,
-                title: 'Quanto você gostaria de converter?',
+                title: AppLocalizations.of(context)!.convertTitle,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: size.height * .03),

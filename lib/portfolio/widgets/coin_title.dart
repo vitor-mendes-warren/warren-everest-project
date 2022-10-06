@@ -3,6 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../shared/utils/util.dart';
 import '../provider/wallet_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CoinTitle extends HookConsumerWidget {
   const CoinTitle({
@@ -18,7 +19,7 @@ class CoinTitle extends HookConsumerWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text('Cripto',
+          Text(AppLocalizations.of(context)!.crypto,
               style: TextStyle(
                   fontFamily: "Montserrat",
                   color: const Color.fromARGB(255, 244, 43, 87),

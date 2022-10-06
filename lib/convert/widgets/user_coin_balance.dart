@@ -5,6 +5,7 @@ import 'package:warren_task_one/portfolio/model/coin_view_data.dart';
 
 import '../../portfolio/provider/wallet_provider.dart';
 import '../../shared/utils/util.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class UserCoinBalance extends HookConsumerWidget {
   const UserCoinBalance({
@@ -29,7 +30,7 @@ class UserCoinBalance extends HookConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            'Saldo disponível',
+            AppLocalizations.of(context)!.userCryptoBalance,
             style: TextStyle(
                 fontFamily: "Mansny regular",
                 fontSize: size.height * .02,

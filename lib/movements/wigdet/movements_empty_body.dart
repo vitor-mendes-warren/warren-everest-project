@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MovimentsEmptyBody extends StatelessWidget {
   const MovimentsEmptyBody({
@@ -21,7 +22,7 @@ class MovimentsEmptyBody extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(top: size.height * 0.02),
             child: Text(
-              'Você não possui movimentações',
+              AppLocalizations.of(context)!.movementsEmpty,
               style: TextStyle(
                 fontFamily: "Mansny regular",
                 fontWeight: FontWeight.bold,

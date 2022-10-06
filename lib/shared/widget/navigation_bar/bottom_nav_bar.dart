@@ -6,13 +6,13 @@ import '../../../portfolio/view/portfolio_page.dart';
 import '../../utils/assets.dart';
 import 'bottom_nav_button.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class BottomNavBar extends HookConsumerWidget {
   final int pageIndex;
   const BottomNavBar({
     super.key,
-
     required this.pageIndex,
-
   });
 
   @override
@@ -36,12 +36,12 @@ class BottomNavBar extends HookConsumerWidget {
               pageIndex: pageIndex,
               icons: warrenIcons,
               route: PortfolioPage.route,
-              buttonName: 'Portfólio'),
+              buttonName: AppLocalizations.of(context)!.portfolio),
           BottomNavButton(
               pageIndex: pageIndex,
               icons: cryptoIcons,
               route: MovementsPage.route,
-              buttonName: 'Movimentações'),
+              buttonName: AppLocalizations.of(context)!.movementsAppBar),
         ],
       ),
     );

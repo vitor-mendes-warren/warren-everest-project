@@ -5,6 +5,7 @@ import 'package:warren_task_one/movements/wigdet/description_text.dart';
 import 'package:warren_task_one/movements/wigdet/values_text.dart';
 
 import '../model/movement_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class EntryCoinDescription extends StatelessWidget {
   const EntryCoinDescription({
@@ -59,10 +60,13 @@ class EntryCoinDescription extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      DescriptionText(text: 'Variação 24H'),
-                      DescriptionText(text: 'Valor de mercado'),
-                      DescriptionText(text: 'Quantidade '),
+                    children: [
+                      DescriptionText(
+                          text: AppLocalizations.of(context)!.priceVariation),
+                      DescriptionText(
+                          text: AppLocalizations.of(context)!.userCryptoValue),
+                      DescriptionText(
+                          text: AppLocalizations.of(context)!.movementAmount),
                     ],
                   ),
                   Column(

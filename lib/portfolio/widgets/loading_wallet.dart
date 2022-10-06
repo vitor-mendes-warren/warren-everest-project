@@ -5,6 +5,8 @@ import 'package:shimmer/shimmer.dart';
 
 import '../../shared/utils/util.dart';
 
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class LoadingWallet extends StatelessWidget {
   const LoadingWallet({
     super.key,
@@ -33,7 +35,7 @@ class LoadingWallet extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Cripto',
+                      Text(AppLocalizations.of(context)!.crypto,
                           style: TextStyle(
                               fontFamily: "Montserrat",
                               color: Colors.white,
