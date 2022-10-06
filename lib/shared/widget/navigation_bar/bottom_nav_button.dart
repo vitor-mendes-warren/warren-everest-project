@@ -39,22 +39,19 @@ class BottomNavButton extends HookConsumerWidget {
           },
         ));
       },
-      child: SizedBox(
-        width: 100,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Image(
-              height: size.height * 0.03,
-              image: AssetImage(icons.elementAt(pageIndex)),
-              fit: BoxFit.cover,
-            ),
-            Text(
-              buttonName,
-              style: TextStyle(fontSize: size.width * 0.03),
-            )
-          ],
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Image(
+            height: size.height * 0.03,
+            image: AssetImage(icons.elementAt(pageIndex)),
+            fit: BoxFit.cover,
+          ),
+          Text(
+            buttonName,
+            style: TextStyle(fontSize: size.width * 0.03),
+          )
+        ],
       ),
     );
   }

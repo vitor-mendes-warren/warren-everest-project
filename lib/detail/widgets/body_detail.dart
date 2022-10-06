@@ -62,7 +62,7 @@ class BodyDetailState extends ConsumerState<BodyDetail> {
         ),
       );
     }, loading: () {
-      Timer(const Duration(seconds: 2), () {
+      Timer(const Duration(seconds: 1), () {
         setState(() {});
       });
       return const LoadingDetails();
