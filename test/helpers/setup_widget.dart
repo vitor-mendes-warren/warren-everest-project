@@ -8,25 +8,20 @@ import 'package:warren_task_one/movements/controller/movement_controler.dart';
 import 'package:warren_task_one/movements/provider/movement_provider.dart';
 import 'package:warren_task_one/movements/repository/movement_repository.dart';
 
-import 'mock_data.dart';
-
 class SetupWidgetTester extends StatelessWidget {
   final Widget child;
 
-  SetupWidgetTester({
+  const SetupWidgetTester({
     Key? key,
     required this.child,
   }) : super(key: key);
 
-  late MockData mockData = MockData();
   @override
   Widget build(BuildContext context) {
     final movementControllerProviderMock = ChangeNotifierProvider(
         (ref) => MovementControler(MovementRepository()));
     return ProviderScope(
         overrides: [
-          // convertControllerProvider
-          //     .overrideWithProvider(convertControllerProviderMock),
           movementControllerProvider
               .overrideWithProvider(movementControllerProvider)
         ],
