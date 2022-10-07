@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widget/success_page.dart';
+import '../widget/success_body.dart';
 
 class SucessPage extends StatelessWidget {
   const SucessPage({super.key});
@@ -19,7 +19,15 @@ class SucessPage extends StatelessWidget {
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
       ),
-      body: const SuccessBody(),
+      body: const Center(child: SuccessBody()
+          // child: SlideFadeTransition(
+          //     curve: Curves.elasticOut,
+          //     delayStart: Duration(milliseconds: 100),
+          //     animationDuration: Duration(milliseconds: 2500),
+          //     offset: -3.0,
+          //     direction: Direction.vertical,
+          //     child: SizedBox(height: 150, child: SuccessBody())),
+          ),
     );
   }
 }

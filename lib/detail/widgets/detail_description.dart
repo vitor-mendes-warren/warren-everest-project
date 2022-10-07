@@ -24,38 +24,35 @@ class DetailDescription extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Expanded(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          DetailCoinValue(
-            description: AppLocalizations.of(context)!.currentPrice,
-            value: NumberFormat.simpleCurrency(name: 'US\$ ', decimalDigits: 2)
-                .format(DecimalIntl(Decimal.parse(
-                    (wallet.coin.market_data!.current_price.usd).toString()))),
-          ),
-          CurrencyVariationValue(
-            description: AppLocalizations.of(context)!.priceVariation,
-            value:
-                '${(wallet.coin.market_data!.price_change_percentage_24h.toStringAsFixed(2)).toString()}%',
-          ),
-          DetailCoinValue(
-            description: AppLocalizations.of(context)!.userCryptoBalance,
-            value:
-                Util.getFormatedPercentage(wallet.percent, wallet.coin.symbol),
-          ),
-          DetailCoinValue(
-            description: AppLocalizations.of(context)!.userCryptoValue,
-            value: NumberFormat.simpleCurrency(name: 'US\$ ', decimalDigits: 2)
-                .format(DecimalIntl(
-                    Decimal.parse((wallet.userBalance.toDouble()).toString()))),
-          ),
-          ConvertButton(
-            data: data,
-            coin: wallet.coin,
-          ),
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        DetailCoinValue(
+          description: AppLocalizations.of(context)!.currentPrice,
+          value: NumberFormat.simpleCurrency(name: 'US\$ ', decimalDigits: 2)
+              .format(DecimalIntl(Decimal.parse(
+                  (wallet.coin.market_data!.current_price.usd).toString()))),
+        ),
+        CurrencyVariationValue(
+          description: AppLocalizations.of(context)!.priceVariation,
+          value:
+              '${(wallet.coin.market_data!.price_change_percentage_24h.toStringAsFixed(2)).toString()}%',
+        ),
+        DetailCoinValue(
+          description: AppLocalizations.of(context)!.userCryptoBalance,
+          value: Util.getFormatedPercentage(wallet.percent, wallet.coin.symbol),
+        ),
+        DetailCoinValue(
+          description: AppLocalizations.of(context)!.userCryptoValue,
+          value: NumberFormat.simpleCurrency(name: 'US\$ ', decimalDigits: 2)
+              .format(DecimalIntl(
+                  Decimal.parse((wallet.userBalance.toDouble()).toString()))),
+        ),
+        ConvertButton(
+          data: data,
+          coin: wallet.coin,
+        ),
+      ],
     );
   }
 }

@@ -11,7 +11,7 @@ class SuccessLoadingBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [WalletHeader(), CoinList()],
+      children: const [WalletHeader(), Expanded(child: CoinList())],
     );
   }
 }

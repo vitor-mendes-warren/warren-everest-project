@@ -44,7 +44,8 @@ class BodyDetailState extends ConsumerState<BodyDetail> {
             children: [
               DetailsHeader(wallet: widget.wallet),
               DetailChart(wallet: widget.wallet),
-              DetailDescription(data: data, wallet: widget.wallet)
+              Expanded(
+                  child: DetailDescription(data: data, wallet: widget.wallet))
             ],
           ),
         ),

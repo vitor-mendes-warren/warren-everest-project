@@ -2,8 +2,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:network_image_mock/network_image_mock.dart';
-import 'package:warren_task_one/detail/view/detail_page.dart';
 import 'package:warren_task_one/portfolio/widgets/coin_item.dart';
+import 'package:warren_task_one/portfolio/widgets/coin_list.dart';
 import 'package:warren_task_one/portfolio/widgets/coin_title.dart';
 import 'package:warren_task_one/portfolio/widgets/success_loading_body.dart';
 import '../helpers/mock_data.dart';
@@ -35,18 +35,26 @@ void main() {
       await tester.pumpAndSettle();
       expect(totalBalance, findsOneWidget);
     });
-  });
-  testWidgets('WHEN coin item tap event THEN details page navigation ',
-      (WidgetTester tester) async {
-    mockNetworkImagesFor(() async {
-      await loadPage(tester, CoinItem(wallet: mockData.getWalletViewData()));
+    testWidgets('WHEN coin item tap event THEN coin item structure  ',
+        (WidgetTester tester) async {
+      mockNetworkImagesFor(() async {
+        await loadPage(tester, CoinItem(wallet: mockData.getWalletViewData()));
 
-      final gesture = find.byType(GestureDetector);
-      expect(gesture, findsOneWidget);
-      await tester.tap(gesture);
-      await tester.pumpAndSettle();
+        final gesture = find.byType(GestureDetector);
+        expect(gesture, findsOneWidget);
+      });
+    });
+    testWidgets('WHEN coin list intialize THEN build coin item',
+        (WidgetTester tester) async {
+      mockNetworkImagesFor(() async {
+        await loadPage(tester, const CoinList());
 
-      expect(find.byType(DetailsPage), findsOneWidget);
+        final coinItem = find.byType(CoinItem);
+        final listview = find.byWidget(ListView());
+
+        expect(coinItem, findsNothing);
+        expect(listview, findsNothing);
+      });
     });
   });
 }

@@ -5,6 +5,7 @@
 // import 'package:everest_flutter_crypto_tests/modules/wallet/model/crypto_data_view_data.dart';
 import 'package:decimal/decimal.dart';
 import 'package:faker/faker.dart';
+import 'package:warren_task_one/detail/controller/detail_controller.dart';
 import 'package:warren_task_one/movements/model/movement_model.dart';
 import 'package:warren_task_one/portfolio/model/coin_view_data.dart';
 import 'package:warren_task_one/portfolio/model/wallet_view_data.dart';
@@ -33,14 +34,14 @@ class MockData {
           movementEntry: Decimal.parse('1212312'),
           movementOut: Decimal.parse('123123123'),
           movementDate: '2020/10/12',
-          dolarValue: 'qsqsdqwd'),
+          dolarValue: faker.lorem.toString()),
       MovementModel(
           coinEntry: getCoinViewData(),
           coinOut: getCoinViewData(),
           movementEntry: Decimal.parse('1212312'),
           movementOut: Decimal.parse('123123123'),
           movementDate: '2020/10/12',
-          dolarValue: 'qsqsdqwd'),
+          dolarValue: faker.lorem.toString()),
     ];
   }
 
@@ -53,54 +54,8 @@ class MockData {
         market_data: CoinResultMarketDataResponse(
             CoinResultMarketDataCurrentPrice(123123), 123123));
   }
-  // CryptoDataViewData createCryptoViewData() {
-  //   CryptoDataViewData repo = CryptoDataViewData(
-  //     id: faker.guid.guid(),
-  //     symbol: faker.guid.guid(),
-  //     name: faker.guid.guid(),
-  //     image: faker.internet.httpUrl(),
-  //     current_price: faker.currency.random.decimal(scale: 15, min: 1),
-  //     market_cap_change_percentage_24h:
-  //         faker.currency.random.decimal(scale: 15, min: 1),
-  //   );
-  //   return repo;
-  // }
 
-  // CryptoDataArguments createCryptoDataArguments() {
-  //   CryptoDataArguments repo = CryptoDataArguments(
-  //     crypto: createCryptoViewData(),
-  //     cryptoBalance: faker.currency.random.decimal(scale: 15, min: 1),
-  //     cryptoValue: faker.currency.random.decimal(scale: 15, min: 1),
-  //   );
-  //   return repo;
-  // }
-
-  // ExchangeArguments createExchangeArguments() {
-  //   ExchangeArguments repo = ExchangeArguments(
-  //       crypto: createCryptoViewData(),
-  //       cryptoBalance: faker.currency.random.decimal(scale: 15, min: 1),
-  //       cryptoValue: faker.currency.random.decimal(scale: 15, min: 1));
-  //   return repo;
-  // }
-
-  // ReviewArguments createReviewArguments() {
-  //   ReviewArguments repo = ReviewArguments(
-  //     cryptoToExchangeValue: faker.currency.random.decimal(scale: 15, min: 1),
-  //     cryptoToExchangeData: createCryptoViewData(),
-  //     cryptoBeingExchangedValue:
-  //         faker.currency.random.decimal(scale: 15, min: 1),
-  //     cryptoBeingExchangeData: createCryptoViewData(),
-  //   );
-  //   return repo;
-  // }
-
-  // TransactionsModel createTransactionModel() {
-  //   TransactionsModel repo = TransactionsModel(
-  //       cryptoBeingExchangedInfo: faker.guid.guid(),
-  //       cryptoToExchangeInfo: faker.guid.guid(),
-  //       moneyBeingExchangedInfo: faker.guid.guid(),
-  //       exchangeEqualsTo: faker.guid.guid(),
-  //       date: faker.date.dateTime());
-  //   return repo;
-  // }
+  DetailsController getDetailsController() {
+    return DetailsController();
+  }
 }
