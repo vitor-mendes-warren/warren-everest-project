@@ -13,7 +13,7 @@ import '../helpers/setup_widget.dart';
 
 void main() {
   MockData mockData = MockData();
-  group('Testing detail page', () {
+  group('Testing convert page', () {
     testWidgets(
         'WHEN current coin container initialize THEN build coin container layout ',
         (WidgetTester tester) async {
@@ -32,8 +32,8 @@ void main() {
         'WHEN convert button initialize THEN build convert button components',
         (WidgetTester tester) async {
       mockNetworkImagesFor(() async {
-        await loadPage(
-            tester, ConvertButton(coin: mockData.getCoinViewData(), data: []));
+        await loadPage(tester,
+            ConvertButton(coin: mockData.getCoinViewData(), data: const []));
         expect(find.byType(MaterialButton), findsOneWidget);
         expect(find.byType(Padding), findsWidgets);
         expect(find.byType(Text), findsWidgets);
@@ -42,6 +42,7 @@ void main() {
         expect(find.byType(ConvertPage), findsNothing);
       });
     });
+
     testWidgets(
         'WHEN  currency variation value initialize THEN build convert button components',
         (WidgetTester tester) async {

@@ -10,6 +10,19 @@ import '../helpers/setup_widget.dart';
 void main() {
   group('Testing detail page', () {
     testWidgets(
+        'WHEN success body initialize initialize THEN build body widgets',
+        (WidgetTester tester) async {
+      mockNetworkImagesFor(() async {
+        await loadPage(tester, const SuccessBody());
+
+        expect(find.byType(TextPageHeader), findsOneWidget);
+        expect(find.byType(Text), findsAtLeastNWidgets(2));
+        expect(find.byType(CircleAvatar), findsOneWidget);
+        expect(find.byType(Column), findsOneWidget);
+        expect(find.byType(Icon), findsOneWidget);
+      });
+    });
+    testWidgets(
         'WHEN text page header initialize THEN build balance autosizetext',
         (WidgetTester tester) async {
       mockNetworkImagesFor(() async {
