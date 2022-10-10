@@ -5,7 +5,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:warren_task_one/shared/repository/coin_prices_repository.dart';
 
 import '../shared/api_factory.dart';
-import 'all_coins_repository_mock.dart';
+import 'all_coins_repository_mock_test.dart';
 
 void main() {
   late CoinEndpointMock historyPriceCoinEndPoint;

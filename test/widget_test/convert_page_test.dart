@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:network_image_mock/network_image_mock.dart';
 import 'package:warren_task_one/convert/view/convert_page.dart';
+import 'package:warren_task_one/convert/widgets/body_convert.dart';
+import 'package:warren_task_one/convert/widgets/bottom_coin_list.dart';
 import 'package:warren_task_one/convert/widgets/current_coin_container.dart';
 import 'package:warren_task_one/detail/widgets/convert_button.dart';
 import 'package:warren_task_one/detail/widgets/currency_variation_value.dart';
@@ -15,7 +17,7 @@ void main() {
   MockData mockData = MockData();
   group('Testing convert page', () {
     testWidgets(
-        'WHEN current coin container initialize THEN build coin container layout ',
+        'WHEN initialize CurrentCoinContainer  THEN build CurrentCoinContainer widgets',
         (WidgetTester tester) async {
       mockNetworkImagesFor(() async {
         await loadPage(
@@ -29,7 +31,7 @@ void main() {
       });
     });
     testWidgets(
-        'WHEN convert button initialize THEN build convert button components',
+        'WHEN initialize and press ConvertButton  THEN build ConvertButton and ConvertPage widgets',
         (WidgetTester tester) async {
       mockNetworkImagesFor(() async {
         await loadPage(tester,
@@ -42,9 +44,27 @@ void main() {
         expect(find.byType(ConvertPage), findsNothing);
       });
     });
+    testWidgets('WHEN initialize  ConvertPage  THEN build ConvertPage  widgets',
+        (WidgetTester tester) async {
+      mockNetworkImagesFor(() async {
+        ConvertPage convertPage = ConvertPage(
+          coin: mockData.getCoinViewData(),
+        );
+        await loadPage(tester, convertPage);
+        expect(find.byType(BodyConvert), findsOneWidget);
+      });
+    });
+    testWidgets(
+        'WHEN initialize  BottomCoinList  THEN build BottomCoinList widgets',
+        (WidgetTester tester) async {
+      mockNetworkImagesFor(() async {
+        await loadPage(tester, const BottomCoinList());
+        expect(find.byType(Container), findsAtLeastNWidgets(6));
+      });
+    });
 
     testWidgets(
-        'WHEN  currency variation value initialize THEN build convert button components',
+        'WHEN initialize  CurrencyVariationValue  THEN build CurrencyVariationValue widgets',
         (WidgetTester tester) async {
       mockNetworkImagesFor(() async {
         await loadPage(

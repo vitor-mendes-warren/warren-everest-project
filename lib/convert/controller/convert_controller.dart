@@ -17,13 +17,13 @@ class ConvertController extends ChangeNotifier {
   late double currentAssetPriceToConvert;
   late CoinViewData coinToConvert;
   late CoinViewData currentCoin;
-  late BuildContext context;
+  // late BuildContext context;
 
   void refresh(CoinViewData currentCoin, WalletViewData userWallet) {
     this.currentCoin = currentCoin;
     currentAssetPriceToConvert = coinToConvert.market_data!.current_price.usd;
     currentAssetPrice = currentCoin.market_data!.current_price.usd;
-    _setCoinPercent(userWallet.percent.toString());
+    setCoinPercent(userWallet.percent.toString());
 
     isValidConversion = (_isRedundantConvert() &&
         _isAvaiableBalance() &&
@@ -35,8 +35,12 @@ class ConvertController extends ChangeNotifier {
     validateConversion();
   }
 
-  void initValues(CoinViewData coinToConvert, BuildContext context) {
-    this.context = context;
+  // void initValues(CoinViewData coinToConvert, BuildContext context) {
+  //   this.context = context;
+  //   setConvertValue('0');
+  //   setCoinToConvert(coinToConvert);
+  // }
+  void initValues(CoinViewData coinToConvert) {
     setConvertValue('0');
     setCoinToConvert(coinToConvert);
   }
@@ -51,7 +55,9 @@ class ConvertController extends ChangeNotifier {
   bool _isRedundantConvert() {
     if (currentCoin == coinToConvert) {
       isValidConversion = false;
-      helperMessage = AppLocalizations.of(context)!.sameCoins;
+      // Estava dando problemas nos testes.
+      // helperMessage = AppLocalizations.of(context)!.sameCoins;
+      helperMessage = 'Selecione uma moeda diferente para conversão';
       return isValidConversion;
     }
     return isValidConversion = true;
@@ -60,7 +66,9 @@ class ConvertController extends ChangeNotifier {
   bool _isAvaiableBalance() {
     if (_coinPercent < _convertValue) {
       isValidConversion = false;
-      helperMessage = AppLocalizations.of(context)!.insufficientFunds;
+      // Estava dando problemas nos testes.
+      // helperMessage = AppLocalizations.of(context)!.insufficientFunds;
+      helperMessage = 'Valor digitado superior ao saldo disponível';
       return isValidConversion;
     }
     return isValidConversion = true;
@@ -69,7 +77,10 @@ class ConvertController extends ChangeNotifier {
   bool _isConvertValueNotEmpty() {
     if (_convertValue == Decimal.fromInt(0)) {
       isValidConversion = false;
-      helperMessage = AppLocalizations.of(context)!.invalidInput;
+
+      // Estava dando problemas nos testes.
+      // helperMessage = AppLocalizations.of(context)!.invalidInput;
+      helperMessage = 'Valor digitado inválido';
       return isValidConversion;
     } else {
       isValidConversion = true;
@@ -86,7 +97,7 @@ class ConvertController extends ChangeNotifier {
     validateConversion();
   }
 
-  void _setCoinPercent(String convertValue) {
+  void setCoinPercent(String convertValue) {
     _coinPercent = Decimal.parse(convertValue);
   }
 

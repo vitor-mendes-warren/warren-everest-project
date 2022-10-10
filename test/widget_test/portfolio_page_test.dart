@@ -12,7 +12,7 @@ import '../helpers/setup_widget.dart';
 void main() {
   MockData mockData = MockData();
   group('Testing portfolio page', () {
-    testWidgets('WHEN visibility iconbutton tap THEN visibility icon change',
+    testWidgets('WHEN visibility IconButton tap THEN visibility icon change',
         (WidgetTester tester) async {
       await loadPage(tester, const CoinTitle());
       final visibilityIconData = find.byIcon(Icons.visibility_off);
@@ -23,7 +23,7 @@ void main() {
       await tester.pumpAndSettle();
       expect(visibilityIconData, findsNothing);
     });
-    testWidgets('WHEN visibility icon button tap THEN wallet balance hide ',
+    testWidgets('WHEN visibility IconButton tap THEN wallet balance hide',
         (WidgetTester tester) async {
       await loadPage(tester, const SuccessLoadingBody());
       final totalBalance = find.byType(AutoSizeText);
@@ -35,7 +35,7 @@ void main() {
       await tester.pumpAndSettle();
       expect(totalBalance, findsOneWidget);
     });
-    testWidgets('WHEN coin item tap event THEN coin item structure  ',
+    testWidgets('WHEN intialize CoinItem THEN build CoinItem widgets  ',
         (WidgetTester tester) async {
       mockNetworkImagesFor(() async {
         await loadPage(tester, CoinItem(wallet: mockData.getWalletViewData()));
@@ -44,7 +44,7 @@ void main() {
         expect(gesture, findsOneWidget);
       });
     });
-    testWidgets('WHEN coin list intialize THEN build coin item',
+    testWidgets('WHEN intialize CoinList THEN build CoinList widgets',
         (WidgetTester tester) async {
       mockNetworkImagesFor(() async {
         await loadPage(tester, const CoinList());

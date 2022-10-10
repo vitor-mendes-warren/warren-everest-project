@@ -5,7 +5,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:warren_task_one/shared/api/coin_prices_endpoint.dart';
 
 import '../shared/api_factory.dart';
-import 'all_coins_end_point_mock.dart';
+import 'all_coins_end_point_mock_test.dart';
 
 void main() {
   late Response<Map<String, dynamic>> sucess;

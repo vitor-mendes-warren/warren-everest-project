@@ -15,32 +15,36 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class BodyConvert extends StatefulHookConsumerWidget {
   const BodyConvert({
+    this.coin,
     super.key,
   });
 
   @override
   BodyConvertState createState() => BodyConvertState();
+  final CoinViewData? coin;
 }
 
 class BodyConvertState extends ConsumerState<BodyConvert>
     with SingleTickerProviderStateMixin {
   TextEditingController convertValueController = TextEditingController();
-
+  CoinViewData? coin;
   @override
   Widget build(BuildContext context) {
-    CoinViewData coin =
+    coin = widget.coin ??
         ModalRoute.of(context)!.settings.arguments as CoinViewData;
+    // CoinViewData coin =
+    //     ModalRoute.of(context)!.settings.arguments as CoinViewData;
 
     final convertController = ref.watch(convertControllerProvider);
 
     final walletController = ref.watch(walletControllerProvider);
-    convertController.refresh(coin, walletController.selectedWalletCoin);
+    convertController.refresh(coin!, walletController.selectedWalletCoin);
 
     Size size = MediaQuery.of(context).size;
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        UserCoinBalance(coin: coin),
+        UserCoinBalance(coin: coin!),
         Padding(
           padding: EdgeInsets.symmetric(
               horizontal: size.width * 0.04, vertical: size.height * 0.035),
@@ -56,7 +60,7 @@ class BodyConvertState extends ConsumerState<BodyConvert>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CurrentCoinContainer(coin: coin),
+                    CurrentCoinContainer(coin: coin!),
                     const Icon(
                       Icons.cached,
                       color: Color.fromARGB(255, 244, 43, 87),
@@ -89,7 +93,7 @@ class BodyConvertState extends ConsumerState<BodyConvert>
                       ),
                       prefixIconConstraints: BoxConstraints.loose(size),
                       prefixIcon: Text(
-                        '${coin.symbol} ',
+                        '${coin!.symbol} ',
                         style: TextStyle(
                             fontSize: size.height * .04,
                             color: convertValueController.text.isNotEmpty
