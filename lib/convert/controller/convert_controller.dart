@@ -6,8 +6,6 @@ import 'package:intl/intl.dart';
 import '../../portfolio/model/coin_view_data.dart';
 import '../../portfolio/model/wallet_view_data.dart';
 
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 class ConvertController extends ChangeNotifier {
   late bool isValidConversion;
   late Decimal _coinPercent;
@@ -17,7 +15,6 @@ class ConvertController extends ChangeNotifier {
   late double currentAssetPriceToConvert;
   late CoinViewData coinToConvert;
   late CoinViewData currentCoin;
-  // late BuildContext context;
 
   void refresh(CoinViewData currentCoin, WalletViewData userWallet) {
     this.currentCoin = currentCoin;
@@ -35,11 +32,6 @@ class ConvertController extends ChangeNotifier {
     validateConversion();
   }
 
-  // void initValues(CoinViewData coinToConvert, BuildContext context) {
-  //   this.context = context;
-  //   setConvertValue('0');
-  //   setCoinToConvert(coinToConvert);
-  // }
   void initValues(CoinViewData coinToConvert) {
     setConvertValue('0');
     setCoinToConvert(coinToConvert);
@@ -55,8 +47,6 @@ class ConvertController extends ChangeNotifier {
   bool _isRedundantConvert() {
     if (currentCoin == coinToConvert) {
       isValidConversion = false;
-      // Estava dando problemas nos testes.
-      // helperMessage = AppLocalizations.of(context)!.sameCoins;
       helperMessage = 'Selecione uma moeda diferente para conversão';
       return isValidConversion;
     }
@@ -66,8 +56,6 @@ class ConvertController extends ChangeNotifier {
   bool _isAvaiableBalance() {
     if (_coinPercent < _convertValue) {
       isValidConversion = false;
-      // Estava dando problemas nos testes.
-      // helperMessage = AppLocalizations.of(context)!.insufficientFunds;
       helperMessage = 'Valor digitado superior ao saldo disponível';
       return isValidConversion;
     }
@@ -78,8 +66,6 @@ class ConvertController extends ChangeNotifier {
     if (_convertValue == Decimal.fromInt(0)) {
       isValidConversion = false;
 
-      // Estava dando problemas nos testes.
-      // helperMessage = AppLocalizations.of(context)!.invalidInput;
       helperMessage = 'Valor digitado inválido';
       return isValidConversion;
     } else {
