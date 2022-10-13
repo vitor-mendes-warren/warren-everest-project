@@ -10,6 +10,7 @@ import 'package:warren_task_one/portfolio/model/wallet_view_data.dart';
 import 'package:warren_task_one/shared/api/models/coin/coin_result_image_response.dart';
 import 'package:warren_task_one/shared/api/models/coin/coin_result_market_data_current_price.dart';
 import 'package:warren_task_one/shared/api/models/coin/coin_result_market_data_response.dart';
+import 'package:warren_task_one/shared/api/models/coin/coin_result_response.dart';
 import 'package:warren_task_one/shared/api/models/coin_prices/coin_price_response.dart';
 
 class MockData {
@@ -88,6 +89,35 @@ class MockData {
         image: CoinResultImageResponse('thumb', 'small', 'large'),
         market_data: CoinResultMarketDataResponse(
             CoinResultMarketDataCurrentPrice(123123), 123123));
+  }
+
+  List<CoinViewData> getCoinViewDataList() {
+    List<CoinViewData> allCoinsList = [];
+
+    for (var i = 0; i < 20; i++) {
+      allCoinsList.add(getCoinViewData());
+    }
+
+    return allCoinsList;
+  }
+
+  CoinResultResponse getCoinResultResponse() {
+    return CoinResultResponse(
+        'bitcoin',
+        'btc',
+        'Bitcoin',
+        CoinResultImageResponse('thumb', 'small', 'large'),
+        CoinResultMarketDataResponse(
+            CoinResultMarketDataCurrentPrice(123123), 123123));
+  }
+
+  List<CoinResultResponse> getCoinResultResponseList() {
+    List<CoinResultResponse> coinResultResponseList = [];
+
+    for (var i = 0; i < 20; i++) {
+      coinResultResponseList.add(getCoinResultResponse());
+    }
+    return coinResultResponseList;
   }
 
   DetailsController getDetailsController() {
