@@ -1,9 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:warren_task_one/detail/controller/detail_controller.dart';
 import 'package:warren_task_one/detail/mapper/coin_price_mapper.dart';
-import 'package:warren_task_one/detail/provider/detail_provider.dart';
 import 'package:warren_task_one/movements/controller/movement_controler.dart';
 import 'package:warren_task_one/movements/repository/movement_repository.dart';
 import 'package:warren_task_one/portfolio/repository/wallet_repository.dart';
