@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../portfolio/model/wallet_view_data.dart';
 import '../widgets/body_detail.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DetailsPage extends StatelessWidget {
-  const DetailsPage({Key? key}) : super(key: key);
   static const route = '/details-page';
 
+  final WalletViewData? walletViewData;
+  const DetailsPage({
+    Key? key,
+    this.walletViewData,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +24,8 @@ class DetailsPage extends StatelessWidget {
         ),
       ),
       body: BodyDetail(
-          wallet: ModalRoute.of(context)!.settings.arguments as WalletViewData),
+          wallet: walletViewData ??
+              ModalRoute.of(context)!.settings.arguments as WalletViewData),
     );
   }
 }

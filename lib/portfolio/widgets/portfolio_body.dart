@@ -1,13 +1,12 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:warren_task_one/portfolio/widgets/success_loading_body.dart';
 
 import '../../convert/provider/convert_provider.dart';
 import '../provider/wallet_provider.dart';
 import '../repository/wallet_repository.dart';
-import 'coin_list.dart';
 import 'loading_wallet.dart';
-import 'wallet_header.dart';
 
 class BodyPortfolio extends HookConsumerWidget {
   const BodyPortfolio({
@@ -26,10 +25,7 @@ class BodyPortfolio extends HookConsumerWidget {
                   WalletRepository(allCoins: data).getAllUserCoin();
 
               allCoinsController.coins = data;
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [WalletHeader(), CoinList()],
-              );
+              return const SuccessLoadingBody();
             },
             error: (error, stackTrace) => const AutoSizeText(
                   maxLines: 1,

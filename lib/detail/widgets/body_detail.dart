@@ -44,7 +44,8 @@ class BodyDetailState extends ConsumerState<BodyDetail> {
             children: [
               DetailsHeader(wallet: widget.wallet),
               DetailChart(wallet: widget.wallet),
-              DetailDescription(data: data, wallet: widget.wallet)
+              Expanded(
+                  child: DetailDescription(data: data, wallet: widget.wallet))
             ],
           ),
         ),
@@ -62,7 +63,7 @@ class BodyDetailState extends ConsumerState<BodyDetail> {
         ),
       );
     }, loading: () {
-      Timer(const Duration(seconds: 2), () {
+      Timer(const Duration(seconds: 1), () {
         setState(() {});
       });
       return const LoadingDetails();

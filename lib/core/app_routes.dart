@@ -12,5 +12,5 @@ var appRoutes = {
   DetailsPage.route: (context) => const DetailsPage(),
   ConvertPage.route: (context) => const ConvertPage(),
   ReviewPage.route: (context) => const ReviewPage(),
-  SucessPage.route: (context) => const SucessPage()
+  SuccessPage.route: (context) => const SuccessPage()
 };

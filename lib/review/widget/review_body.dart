@@ -37,7 +37,7 @@ class BodyReviewState extends ConsumerState<BodyReview> {
       Future.delayed(const Duration(seconds: 2)).then((value) {
         btnController.success();
         Future.delayed(const Duration(seconds: 1)).then((value) {
-          Navigator.pushNamed(context, SucessPage.route);
+          Navigator.pushNamed(context, SuccessPage.route);
         });
       });
     }
