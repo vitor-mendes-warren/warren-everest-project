@@ -31,13 +31,13 @@
             <td class="headerValue">C:\desenvolvimento\warren-everest-project\coverage\lcov.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">2</td>
             <td class="headerCovTableEntry">10</td>
-            <td class="headerCovTableEntryLo">20.0 %</td>
+            <td class="headerCovTableEntry">10</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-10-10 00:27:44</td>
+            <td class="headerValue">2022-10-13 14:08:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -70,20 +70,20 @@
 <a name="8"><span class="lineNum">       8 </span>            : class MovementControler extends ChangeNotifier {</a>
 <a name="9"><span class="lineNum">       9 </span>            :   MovementRepository movementRepo;</a>
 <a name="10"><span class="lineNum">      10 </span>            : </a>
-<a name="11"><span class="lineNum">      11 </span><span class="lineCov">          2 :   MovementControler(</span></a>
+<a name="11"><span class="lineNum">      11 </span><span class="lineCov">          3 :   MovementControler(</span></a>
 <a name="12"><span class="lineNum">      12 </span>            :     this.movementRepo,</a>
 <a name="13"><span class="lineNum">      13 </span>            :   );</a>
 <a name="14"><span class="lineNum">      14 </span>            : </a>
 <a name="15"><span class="lineNum">      15 </span><span class="lineCov">          3 :   List&lt;MovementModel&gt; getAllMoviments() =&gt; movementRepo.getAllMoviments();</span></a>
 <a name="16"><span class="lineNum">      16 </span>            : </a>
-<a name="17"><span class="lineNum">      17 </span><span class="lineNoCov">          0 :   void addMovement(ConvertController convertController) {</span></a>
-<a name="18"><span class="lineNum">      18 </span><span class="lineNoCov">          0 :     movementRepo.addMovement(MovementModel(</span></a>
-<a name="19"><span class="lineNum">      19 </span><span class="lineNoCov">          0 :         coinEntry: convertController.coinToConvert,</span></a>
-<a name="20"><span class="lineNum">      20 </span><span class="lineNoCov">          0 :         coinOut: convertController.currentCoin,</span></a>
-<a name="21"><span class="lineNum">      21 </span><span class="lineNoCov">          0 :         movementEntry: convertController.getReceiveValue(),</span></a>
-<a name="22"><span class="lineNum">      22 </span><span class="lineNoCov">          0 :         movementOut: convertController.getConvertDecimalValue(),</span></a>
-<a name="23"><span class="lineNum">      23 </span><span class="lineNoCov">          0 :         movementDate: DateFormat(&quot;dd/MM/yyyy&quot;).format(DateTime.now()),</span></a>
-<a name="24"><span class="lineNum">      24 </span><span class="lineNoCov">          0 :         dolarValue: convertController.getDolarFormatedValue()));</span></a>
+<a name="17"><span class="lineNum">      17 </span><span class="lineCov">          1 :   void addMovement(ConvertController convertController) {</span></a>
+<a name="18"><span class="lineNum">      18 </span><span class="lineCov">          3 :     movementRepo.addMovement(MovementModel(</span></a>
+<a name="19"><span class="lineNum">      19 </span><span class="lineCov">          1 :         coinEntry: convertController.coinToConvert,</span></a>
+<a name="20"><span class="lineNum">      20 </span><span class="lineCov">          1 :         coinOut: convertController.currentCoin,</span></a>
+<a name="21"><span class="lineNum">      21 </span><span class="lineCov">          1 :         movementEntry: convertController.getReceiveValue(),</span></a>
+<a name="22"><span class="lineNum">      22 </span><span class="lineCov">          1 :         movementOut: convertController.getConvertDecimalValue(),</span></a>
+<a name="23"><span class="lineNum">      23 </span><span class="lineCov">          3 :         movementDate: DateFormat(&quot;dd/MM/yyyy&quot;).format(DateTime.now()),</span></a>
+<a name="24"><span class="lineNum">      24 </span><span class="lineCov">          1 :         dolarValue: convertController.getDolarFormatedValue()));</span></a>
 <a name="25"><span class="lineNum">      25 </span>            :   }</a>
 <a name="26"><span class="lineNum">      26 </span>            : }</a>
 </pre>

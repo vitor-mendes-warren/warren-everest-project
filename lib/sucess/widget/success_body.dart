@@ -1,15 +1,28 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:warren_task_one/shared/widget/text_page_header.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class SuccessBody extends HookConsumerWidget {
+import '../../movements/view/movements_page.dart';
+
+class SuccessBody extends StatefulWidget {
   const SuccessBody({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  State<SuccessBody> createState() => _SuccessBodyState();
+}
+
+class _SuccessBodyState extends State<SuccessBody> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [

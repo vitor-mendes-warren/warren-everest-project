@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-10-10 00:27:44</td>
+            <td class="headerValue">2022-10-13 14:08:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -79,17 +79,17 @@
 <a name="17"><span class="lineNum">      17 </span><span class="lineCov">          2 :   static Color getVariationColor(String variation) =&gt;</span></a>
 <a name="18"><span class="lineNum">      18 </span><span class="lineCov">          6 :       variation.trim()[0] == '-' ? Colors.red : Colors.green;</span></a>
 <a name="19"><span class="lineNum">      19 </span>            : </a>
-<a name="20"><span class="lineNum">      20 </span><span class="lineCov">          7 :   static String getNinetyDaysAgoToTimestamp() {</span></a>
-<a name="21"><span class="lineNum">      21 </span><span class="lineCov">          7 :     return (DateTime.now()</span></a>
-<a name="22"><span class="lineNum">      22 </span><span class="lineCov">          7 :                 .subtract(const Duration(days: 90))</span></a>
-<a name="23"><span class="lineNum">      23 </span><span class="lineCov">         14 :                 .millisecondsSinceEpoch /</span></a>
+<a name="20"><span class="lineNum">      20 </span><span class="lineCov">          2 :   static String getNinetyDaysAgoToTimestamp() {</span></a>
+<a name="21"><span class="lineNum">      21 </span><span class="lineCov">          2 :     return (DateTime.now()</span></a>
+<a name="22"><span class="lineNum">      22 </span><span class="lineCov">          2 :                 .subtract(const Duration(days: 90))</span></a>
+<a name="23"><span class="lineNum">      23 </span><span class="lineCov">          4 :                 .millisecondsSinceEpoch /</span></a>
 <a name="24"><span class="lineNum">      24 </span>            :             1000)</a>
-<a name="25"><span class="lineNum">      25 </span><span class="lineCov">          7 :         .round()</span></a>
-<a name="26"><span class="lineNum">      26 </span><span class="lineCov">          7 :         .toString();</span></a>
+<a name="25"><span class="lineNum">      25 </span><span class="lineCov">          2 :         .round()</span></a>
+<a name="26"><span class="lineNum">      26 </span><span class="lineCov">          2 :         .toString();</span></a>
 <a name="27"><span class="lineNum">      27 </span>            :   }</a>
 <a name="28"><span class="lineNum">      28 </span>            : </a>
-<a name="29"><span class="lineNum">      29 </span><span class="lineCov">          7 :   static String getDateTimeNowToTimestamp() {</span></a>
-<a name="30"><span class="lineNum">      30 </span><span class="lineCov">         35 :     return (DateTime.now().millisecondsSinceEpoch / 1000).round().toString();</span></a>
+<a name="29"><span class="lineNum">      29 </span><span class="lineCov">          2 :   static String getDateTimeNowToTimestamp() {</span></a>
+<a name="30"><span class="lineNum">      30 </span><span class="lineCov">         10 :     return (DateTime.now().millisecondsSinceEpoch / 1000).round().toString();</span></a>
 <a name="31"><span class="lineNum">      31 </span>            :   }</a>
 <a name="32"><span class="lineNum">      32 </span>            : </a>
 <a name="33"><span class="lineNum">      33 </span><span class="lineCov">          1 :   static TextInputMask getTextInputFormatter(double percentCoin) {</span></a>

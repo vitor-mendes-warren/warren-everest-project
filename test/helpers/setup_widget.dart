@@ -3,8 +3,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:warren_task_one/convert/provider/convert_provider.dart';
-
 import 'package:warren_task_one/core/app_routes.dart';
+
 import 'package:warren_task_one/detail/provider/detail_provider.dart';
 import 'package:warren_task_one/movements/controller/movement_controler.dart';
 import 'package:warren_task_one/movements/provider/movement_provider.dart';
